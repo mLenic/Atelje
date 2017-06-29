@@ -1,10 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { BrowserModule }  from '@angular/platform-browser';
+import { NgModule }       from '@angular/core';
+import { FormsModule }    from '@angular/forms';
+import { HttpModule }     from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+//Custom modules
+import { AppRoutingModule } from './app-routing.module';
+
+//Custom Components
+import { AppComponent }   from './app.component';
+import { HomeComponent }  from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
