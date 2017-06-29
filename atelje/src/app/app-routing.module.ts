@@ -1,9 +1,12 @@
 // Native Modules
-import { NgModule } from '@angular/core';
+import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Custom components
-import { HomeComponent } from './home/home.component';
+import { HomeComponent }    from './home/home.component';
+import { BlogComponent }    from './blog/blog.component';
+import { AboutComponent }   from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
      { path: '',        redirectTo: '/home',        pathMatch: 'full'   },
