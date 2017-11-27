@@ -1,0 +1,31 @@
+@font-face {
+    font-family: OpenSans-Light;
+    src: url("~/assets/fonts/OpenSans-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family : Montserrat-Regular;
+    src         : url("~/assets/fonts/MontserratRegular.woff") format("woff");
+}
+
+@font-face {
+    font-family : PlayfairDisplay-Regular;
+    src         : url("~/assets/fonts/PlayfairDisplay-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family : PlayfairDisplay-Bold;
+    src         : url("~/assets/fonts/PlayfairDisplay-Bold.woff") format("woff");
+}
+
+$black: #000000;
+$white: #ffffff;
+$gray: #7f7f7f;
+$light-gray: #d9d8d8;
+
+$nav-height: 200px;
+
+$wide-width: 100%;
+$narrow-width: 70%;
+$content-padding: 50px;
+$space-between-elements: 30px;

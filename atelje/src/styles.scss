@@ -1,0 +1,28 @@
+@import 'variables.scss';
+
+* {
+	box-sizing: border-box;
+    -webkit-appearance: none;
+    color: $gray;
+    font-family: OpenSans-Light;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    font-family: PlayfairDisplay-Bold;
+    /* font-family: OpenSans-Light; */
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.title-margin {
+    margin-bottom: 20px;
+}
+
+.content-padding {
+    padding: 20px;
+}

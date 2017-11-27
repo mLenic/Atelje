@@ -1,0 +1,27 @@
+@import '../../variables.scss';
+
+.home-wrapper {
+    padding-top: $nav-height;
+
+    .home-img-div {
+        width: 100%;
+
+        .home-img {
+            display: none;
+            width: 100%;
+            max-height: 80vh;
+            overflow: hidden;
+            opacity: 0.3;
+            z-index: -1;
+        }
+    }
+
+    .home-content {
+        padding: $content-padding;
+        text-align: justify;
+
+        .title {
+            margin-bottom: $space-between-elements;
+        }
+    }
+}

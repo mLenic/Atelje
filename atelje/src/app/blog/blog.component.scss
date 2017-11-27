@@ -1,0 +1,7 @@
+@import '../../variables.scss';
+
+.blog-wrapper{
+    padding-top: calc(#{$nav-height} + #{$space-between-elements});
+    padding-left: $content-padding;
+    padding-right: $content-padding;
+}

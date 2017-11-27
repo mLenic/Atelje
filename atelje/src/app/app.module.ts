@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
+import { FooterComponent } from './core/footer/footer.component';
 
 @NgModule({
   declarations: [
