@@ -2,6 +2,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { NgModule }       from '@angular/core';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule }     from '@angular/http';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 //Custom modules
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,7 @@ import { FooterComponent } from './core/footer/footer.component';
     HttpModule,
     AppRoutingModule,
     CoreModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

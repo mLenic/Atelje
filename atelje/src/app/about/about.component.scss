@@ -4,6 +4,7 @@
     padding-top: calc(#{$nav-height} + #{$space-between-elements});
 
     .hypnosis-title {
+        display: none;
         margin-bottom: 50px;
         padding: 100px 0;
         font-size: 40px;
@@ -18,7 +19,79 @@
         border-top: 1px solid $gray;
         border-bottom: 1px solid $gray;
     }
+
+
     .hypnosis-inner-wrapper {
+        display: flex;
+
+        .hypnosis-navigation {
+            width: 250px;
+            .nav-about-hypnosis, .nav-about-audio {
+                margin-right: 10px;
+                margin-bottom: 10px;
+                padding: 10px;
+                width: 100%;
+                font-size: 20px;
+                border: 2px solid #C0E895;
+                color: #C0E895;
+                font-family: Montserrat-Regular;
+                text-align: center;
+                cursor: pointer;
+            }
+            .line {
+                margin-top: 20px;
+                height: 3px;
+                width: 100%;
+                background-color: $gray;
+            }
+
+            .categories-title {
+                margin-top: 20px;
+                font-size: 20px;
+                color: $gray;
+                font-family: Montserrat-Regular;
+                text-align: center;
+            }
+            .hypnosis-categories {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .hypnosis-category-element {
+                    margin-right: 10px;
+                    margin-top: 10px;
+                    padding: 10px;
+                    width: 250px;
+                    font-size: 20px;
+                    background-color: #C0E895;
+                    color: #ffffff;
+                    font-family: Montserrat-Regular;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+        }
+        .hypnosis-content {
+            margin-left: 40px;
+
+            .introduction {
+               
+            }
+
+            .hypnosis-about-element {
+                
+                .question {
+                    margin: 10px 0;
+                    padding: 10px 0;
+                    font-size: 24px;
+                    font-weight: 800;
+                    font-family: Playfair-Display;
+                    cursor: pointer;
+                    //background-color: #C0E895;
+                    //color: #ffffff;
+                }
+            }
+        }
 
         padding-left: $content-padding;
         padding-right: $content-padding;
