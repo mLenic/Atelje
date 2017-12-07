@@ -1,3 +1,20 @@
 <div class="blog-wrapper">
-  blog works!
+  <div class="blog-posts-wrapper">
+    <div *ngFor='let element of posts' class="blog-post">
+      <div class="blog-color-div"> 
+      </div>
+      <div class="blog-title">
+        {{element.title}}
+      </div>  
+      <div class="blog-subtitle">
+        {{element.subtitle}}
+      </div>
+      <div class="blog-date">
+        {{element.date}}
+      </div>
+      <div class="blog-date">
+        {{element.category}}
+      </div>
+    </div>
+  </div>
 </div>

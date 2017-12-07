@@ -5,6 +5,7 @@
 
     .home-img-div {
         width: 100%;
+        padding-top: 50px;
 
         .home-img {
             width: 100%;
@@ -12,6 +13,30 @@
             object-fit: cover;
             overflow: hidden;
             z-index: -1;
+        }
+    }
+
+    .home-cover-text {
+
+        position: absolute;
+        top: #{$nav-height};
+        right: 0;
+        text-align: right;
+        margin-top: 190px;
+        margin-right: 40px;
+        width: 100%;
+        
+        
+        .home-text-1 {
+            font-family: Montserrat-Regular;
+            font-size: 60px;
+            color: $white;
+        }
+
+        .home-text-2 {
+            font-family: Montserrat-Regular;
+            font-size: 40px;
+            color: $white;
         }
     }
 
