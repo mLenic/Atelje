@@ -1,3 +1,17 @@
-p {
-    color: #ff0099;
+@import '../../variables.scss';
+
+.contact-wrapper {
+
+    padding-top: $nav-height;
+
+    .contact-form-wrapper {
+        width: $narrow-width;
+        margin: auto;
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
 }

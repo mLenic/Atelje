@@ -16,7 +16,7 @@ a {
 .title {
     font-family: PlayfairDisplay-Bold;
     /* font-family: OpenSans-Light; */
-    font-size: 30px;
+    font-size: 45px;
     font-weight: 700;
 }
 
@@ -27,3 +27,52 @@ a {
 .content-padding {
     padding: 20px;
 }
+
+//---------- BUTTONS, INPUT FIELDS, LABELS
+.button-light {
+    padding: 10px 20px;
+    border: 2px solid $light-green;
+    border-radius: 10px;
+    background-color: $white;
+    color: $light-green;
+
+    &:hover {
+        background-color: $light-green;
+        color: $white;
+        cursor: pointer;
+    }
+}
+
+.input {
+    padding: 10px;
+    border: 2px solid $gray;
+    outline: none; 
+
+    &:focus {
+        border: 2px solid $light-green;
+        /*background-color: $very-light-green;*/
+    }
+}
+
+.label {
+    
+}
+//----------
+
+//---------- DELTOID LINE
+
+.deltoid-line-dark-green {
+    height: 13px;
+    background-image: url("~/assets/images/deltoid-dark-green.svg");
+}
+
+.deltoid-line-light-green {
+    height: 13px;
+    background-image: url("~/assets/images/deltoid-light-green.svg");
+}
+
+.deltoid-line-dark-green-light-bg {
+    height: 13px;
+    background-image: url("~/assets/images/deltoid-dark-green-light-bg.svg");
+}
+//----------

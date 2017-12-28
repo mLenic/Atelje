@@ -40,12 +40,50 @@
         }
     }
 
-    .home-content {
-        padding: $content-padding;
+    .about-home {
+        /*padding: $content-padding;*/
+        width: $narrow-width;
+        margin: auto;
         text-align: justify;
 
+
         .title {
-            margin-bottom: $space-between-elements;
+            color: $dark-green;
         }
+    }
+
+    .hypnosis-home {
+        width: $narrow-width;
+        margin: auto;
+        margin-top: $space-between-elements;
+        text-align: center;
+
+        .title {
+            color: $dark-green;
+        }
+
+        .hypnosis-home-content {
+            margin-top: $space-between-elements;
+        }
+
+        .hypnosis-home-button {
+            margin-top: $space-between-elements;
+        }
+    }
+
+    .blog-home {
+        width: $narrow-width;
+        margin: auto;
+        margin-top: $space-between-elements;
+        text-align: center;
+
+        .title {
+            margin-top: $space-between-elements;
+            color: $dark-green;
+        }
+    }
+
+    .deltoid-line {
+        margin-top: $space-between-elements;
     }
 }
