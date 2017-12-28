@@ -4,6 +4,8 @@ const router = express.Router();
 const axios = require('axios');
 const API = 'https://jsonplaceholder.typicode.com';
 
+var User = require('/models/user');
+
 /* GET api listing. */
 router.get('/', (req, res) => {
   res.send('api works');
