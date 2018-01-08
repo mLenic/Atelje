@@ -12,11 +12,7 @@ var blogSchema = new Schema({
     color: String,
     datePosted: Date,
     type: String,
-    picture1: binData,
-    picture2: binData,
-    picture3: binData,
-    picture4: binData,
-    picture5: binData,
+    //TODO: Add pictures
 });
 
 

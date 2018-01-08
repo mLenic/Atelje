@@ -4,10 +4,11 @@ const router = express.Router();
 const axios = require('axios');
 const API = 'https://jsonplaceholder.typicode.com';
 
-var User = require('../models/user');
+var user = require('../models/user');
+var blog = require('../models/blog');
 
 var mongoose = require('mongoose');
-const mongodbUrl = 'mongodb://localhost:27017/k1ller'
+const mongodbUrl = 'mongodb://localhost:27017/AteljePsihoterapije'
 
 var MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectID;
@@ -33,6 +34,15 @@ getDatabase = function() {
 
 app.set('port', process.env.PORT || 3000)
 
+router.get('/init', function (req, res) {
+  console.log('Initalizing database, adding users...');
+
+  user.initUsers(db);
+
+  res.json({
+    message: 'success'
+  });
+});
 
 /* GET api listing. */
 router.get('/', (req, res) => {

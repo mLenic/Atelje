@@ -15,7 +15,37 @@ var userSchema = new Schema({
 
 var User = mongoose.model('User', userSchema);
 
+var initUsers = function(db) {
+
+  db.collection('user', function (err, collection) {
+      if (err) {
+        console.error('Error accessing user collection: ' + err);
+      }    
+  
+     
+      var user = new User ({
+          name: 'Špela',
+          username: 'spela.verbnik@gmail.com',
+          password: 'test', //Needs to be hashed
+          admin: true,
+          created_at: new Date(),
+          updated_at: new Date(),
+      });
+
+      collection.save(user, function (err) {
+          if (err) {
+          console.error('Error when saving user: ' + err);
+          }
+
+          console.log('Initial user saved successfully!');
+      });
+  
+  });
+}
+
+
 // make this available to our users in our Node applications
 module.exports =  {
-  User: User
+  User: User,
+  initUsers: initUsers,
 }
