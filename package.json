@@ -12,10 +12,6 @@
     "deploy": "git push heroku master && git push heroku master",
     "test": "ng test"
   },
-  "engines": {
-    "node": "6.10.0",
-    "npm": "4.3.0"
-  },
   "private": true,
   "dependencies": {
     "typescript": "~2.2.0",
@@ -55,7 +51,10 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
-    "tslint": "~4.5.0",
-    
+    "tslint": "~4.5.0"
+  },
+  "engines": {
+    "node": "6.10.0",
+    "npm": "4.3.0"
   }
 }
