@@ -9,7 +9,7 @@
     "e2e": "ng e2e",
     "start": "node server.js",
     "postinstall": "ng build --aot -prod",
-    "deploy": "git push heroku backend",
+    "deploy": "git push heroku master && git push heroku master",
     "test": "ng test"
   },
   "engines": {
