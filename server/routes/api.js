@@ -16,7 +16,7 @@ var ObjectId = require('mongodb').ObjectID;
 var app = express();
 
 // Connect to the db
-MongoClient.connect(mongodbUrl, function (err, db) {
+/*MongoClient.connect(mongodbUrl, function (err, db) {
   if (err) {
     throw err;
   }
@@ -25,7 +25,7 @@ MongoClient.connect(mongodbUrl, function (err, db) {
 
   // set db variable
   this.db = db;
-});
+});*/
 
 
 getDatabase = function() {
@@ -37,7 +37,7 @@ app.set('port', process.env.PORT || 3000)
 router.get('/init', function (req, res) {
   console.log('Initalizing database, adding users...');
 
-  user.initUsers(db);
+  //user.initUsers(db);
 
   res.json({
     message: 'success'
@@ -49,7 +49,7 @@ router.get('/', (req, res) => {
   res.send('api works');
 });
 
-router.get('/posts', (req, res) =>{
+/*router.get('/posts', (req, res) =>{
     axios.get(`${API}/posts`)
     .then(posts => {
       console.log(posts.data);
@@ -58,6 +58,6 @@ router.get('/posts', (req, res) =>{
     .catch(error => {
       res.status(500).send(error)
     });
-});
+});*/
 
 module.exports = router;

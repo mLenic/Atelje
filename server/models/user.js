@@ -14,7 +14,7 @@ var userSchema = new Schema({
 
 
 var User = mongoose.model('User', userSchema);
-
+/*
 var initUsers = function(db) {
 
   db.collection('user', function (err, collection) {
@@ -41,11 +41,11 @@ var initUsers = function(db) {
       });
   
   });
-}
+}*/
 
 
 // make this available to our users in our Node applications
 module.exports =  {
   User: User,
-  initUsers: initUsers,
+  //initUsers: initUsers,
 }
