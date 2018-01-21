@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var SC: any;
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
