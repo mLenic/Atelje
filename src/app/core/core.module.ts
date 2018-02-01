@@ -3,10 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { NavigationComponent }  from './navigation/navigation.component';
 import { FooterComponent }  from './footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     NavigationComponent,
@@ -14,7 +17,9 @@ import { FooterComponent }  from './footer/footer.component';
   ],
   exports: [
     NavigationComponent,
-    FooterComponent
+    FooterComponent,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CoreModule { }

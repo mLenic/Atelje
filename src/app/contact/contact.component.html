@@ -1,16 +1,26 @@
 <div class="contact-wrapper">
   <div class="contact-form-wrapper">
-    <div class="form-field">
-      <label for="name" class="label">Ime:</label>
-      <input type="text" id="name" class="input" name="fname">
-    </div>
-    <div class="form-field">
-      <label for="email" class="label">E-mail:</label>
-      <input type="text" id="email" class ="input" name="fname">
-    </div>
-    <div class="form-field">
-      <label class="label">Sporočilo:</label>
-      <textarea class="message input"></textarea>
-    </div>
+    <form name="contactform" [formGroup]="contactForm" (ngSubmit)="sendMail()">
+        <div class="form-field">
+          <label for="name" class="label">Ime:</label>
+          <input type="text" id="name" class="input" name="fname" [formControl]="name">
+          <div *ngIf="formErrors.name" class="help-block alert alert-danger">{{ formErrors.name }}</div>
+        </div>
+        <br/>
+        <div class="form-field">
+          <label for="email" class="label">E-mail:</label>
+          <input type="text" id="email" class ="input" name="fname" [formControl]="email">
+          <div *ngIf="formErrors.email" class="help-block alert alert-danger">{{ formErrors.email }}</div>
+        </div>
+        <br/>
+        <div class="form-field">
+          <label class="label">Sporočilo:</label>
+          <textarea class="message input" [formControl]="message"></textarea>
+          <div *ngIf="formErrors.message" class="help-block alert alert-danger">{{ formErrors.message }}</div>
+        </div>
+        <br/>
+        <button class="message input" style="cursor: pointer">Pošlji sporočilo</button>
+    </form>
+    
   </div>
 </div>
