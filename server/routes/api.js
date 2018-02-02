@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 const axios = require('axios');
-const API = 'https://jsonplaceholder.typicode.com';
 
 var user = require('../models/user');
 var blog = require('../models/blog');
+
+var mailer = require('../mailing/contact');
 
 var mongoose = require('mongoose');
 const mongodbUrl = 'mongodb://localhost:27017/AteljePsihoterapije'
@@ -15,6 +16,7 @@ var ObjectId = require('mongodb').ObjectID;
 
 var app = express();
 
+const cors = require('cors');
 // Connect to the db
 /*MongoClient.connect(mongodbUrl, function (err, db) {
   if (err) {
@@ -49,15 +51,19 @@ router.get('/', (req, res) => {
   res.send('api works');
 });
 
-/*router.get('/posts', (req, res) =>{
-    axios.get(`${API}/posts`)
-    .then(posts => {
-      console.log(posts.data);
-      res.status(200).send(posts.data);
-    })
-    .catch(error => {
-      res.status(500).send(error)
-    });
-});*/
+router.post('/mailing/contact/new', function (req, res) {
+
+  mailer(req.body, function(status) {
+    if(status){
+      res.status(200);
+      res.send("Sent contact");
+    } else{
+      res.status(400);
+      res.send("Error");
+    }
+  });
+  
+  
+});
 
 module.exports = router;

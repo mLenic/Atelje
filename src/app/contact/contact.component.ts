@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
 
+import { ContactService } from './contact.service';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -14,10 +16,18 @@ export class ContactComponent implements OnInit {
   public email:       FormControl;
   public message:     FormControl;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private contactService: ContactService,
+  ) {}
 
   ngOnInit() {
     this.buildForm();
+  }
+
+  public response = {
+    status: null,
+    message: null,
   }
 
   public validationMessages = {
@@ -92,7 +102,24 @@ export class ContactComponent implements OnInit {
     this.onValueChanged(this.contactForm);
     if(this.contactForm.valid){
       //send mail
+
+      var form = {
+        name: this.contactForm.controls['name'].value,
+        email: this.contactForm.controls['email'].value,
+        message: this.contactForm.controls['message'].value,
+      }
+
       console.log("Sending mail");
+      this.contactService.sendContactMail(form)
+                  .subscribe(data => {
+                    if(data == 200){
+                      this.response.status = 200;
+                      this.response.message = "Sporočilo je bilo uspešno poslano."
+                    } else {
+                      this.response.status = 400;
+                      this.response.message = "Sporočilo ni bilo uspešno poslano."
+                    }
+                  })
     }
   }
 

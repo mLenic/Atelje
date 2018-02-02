@@ -4,9 +4,9 @@ const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 
+const cors = require('cors');
 // Get our API routes
 const api = require('./server/routes/api');
-
 const app = express();
 
 // Parsers for POST data
@@ -15,6 +15,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
+
+//Cors setup
+app.use(cors({origin: 'http://localhost:4200'}));
 
 // Set our api routes
 app.use('/api', api);

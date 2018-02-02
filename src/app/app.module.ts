@@ -16,6 +16,9 @@ import { BlogComponent } from './blog/blog.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
 import { FooterComponent } from './core/footer/footer.component';
 
+//Custom Services
+import { ContactService } from './contact/contact.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,9 @@ import { FooterComponent } from './core/footer/footer.component';
     CoreModule,
     AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    ContactService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
