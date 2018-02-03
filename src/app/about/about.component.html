@@ -1,98 +1,79 @@
 <div class="hypnosis-wrapper">
-  <div class="hypnosis-title">
-    Hipnoza
+  <div class="bg-img-div">
+    <img class="bg-img" src="assets/images/birds_blur.jpg">
   </div>
-  <div class="hypnosis-inner-wrapper">
-    <div class="hypnosis-navigation">
-      <div class="nav-about-hypnosis">
-        O hipnozi
+  <div class="home-cover-text page-title-div">
+    <div class="title">
+      Hipnoza
+    </div>
+    <div class="title-line">
+    </div>
+    <div class="subtitle">
+      Posnetki hipnoze
+    </div>
+  </div>
+  <div class="hypnosis-inner-wrapper full-screen">
+    <div class="hypnosis">
+      <div class="hypnosis-sub-navigation">
+        <div class="hypnosis-sub-navigation-link">
+          O hipnozi
+        </div>
+        <div class="hypnosis-sub-navigation-link">
+          O posnetkih
+        </div>
+        <div class="hypnosis-sub-navigation-link">
+          Posnetki
+        </div>
       </div>
-      <div class="nav-about-audio">
-        O posnetkih
-      </div>
-      <div class="line">
+      <div class="hypnosis-content">
+        <div class="introduction full-screen">
+          <div class="introduction-element title-small">
+              Rasti&strmeti k soncu s hipnozo?
+          </div>
+          <div class="introduction-element highlighted">
+              Hipnoza je stanje globoke sproščenosti, usmerjene pozornosti in sprejemljivosti za sugestije. Vsaka oseba, ki je zmožna razumeti hipnoterapevtove besede je zmožna vstopiti v hipnotizirano stanje. Seveda, če si to želi in je primerno motivirana.
+          </div>
+          <div class="introduction-element">
+              Če čutite, da bi bil to lahko doprinos k vašemu življenju - vabljeni k poslušanju.
+          </div>
+          <div class="introduction-element">
+              To je vse kar potrebujete za velike spremembe.
+          </div>   
+        </div>
+        <div *ngFor='let element of about' class="hypnosis-about-element">
+          <div class="hypnosis-question title-smaller" (click)="elementClicked(element)">
+            {{element.question}}
+          </div>  
+          <div class="hypnosis-answer" *ngIf="element.show">
+            {{element.answer}}
+          </div>
+        </div>
 
-      </div>
-      <div class="categories-title">
-        Posnetki
-      </div>
-      <div class="hypnosis-categories">
-        <div class="hypnosis-category-element">
-          Krepitev ega
-        </div>
-        <div class="hypnosis-category-element">
-          Depresija
-        </div>
-        <div class="hypnosis-category-element">
-          Tesnoba & anksioznost
-        </div>
-        <div class="hypnosis-category-element">
-          Prehranjevanje & telesna teža
-        </div>
-        <div class="hypnosis-category-element">
-          Krepitev ega
-        </div>
-        <div class="hypnosis-category-element">
-          Depresija
-        </div>
-        <div class="hypnosis-category-element">
-          Tesnoba & anksioznost
-        </div>
-        <div class="hypnosis-category-element">
-          Prehranjevanje & telesna teža
+        <div class="hypnosis-recording-element">
+          <br/>
+          <br/>
+          <br/>
+          Preden začneva.. <br/>
+          <br/>
+          te prosim, da si izbereš miren in udoben prostor. Pomembno je, da se lahko sprostiš in da se ob tem počutiš varno.<br/>
+          Ne pozabi izkjučiti mobilnega telefona in drugih elektronskih naprav. <br/>
+          Njapomembnejše pa je, da hipnoze ne poslušaš medtem ko voziš oz. kadarkoli moraš ostati zbran. <br/>
+          <br/>
+          <i>Si pripravljen na velike spremembe?</i><br/>
+      
+          <br/>
+          <div class="form-field">
+            <div class="confirm"> Da </div>
+            <a class="more" href="/contact"> Dodatna vprašanja </a>
+          </div>
+          <br/>
+          <div class="recordingframe" click>
+            <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fbrianskyze%2F008-prescriptive-grammar-radio-show%2F" frameborder="0"></iframe>
+          </div>
+          
         </div>
       </div>
     </div>
-    <div class="hypnosis-content">
-      <div class="introduction">
-          V nadaljevanju si lahko preberete nekaj osnov o hipnozi in zvočnih posnetkih. 
-          <br>
-          <br>
-          V kolikor mislite, da bi bila hipnoza lahko doprinos v vašem življenju – 
-          Vabljeni k poslušanju.
-          <br>
-          <br>
-          Hipnoza je stanju globoke sproščenosti, usmerjene pozornosti in sprejemljivosti za sugestije. Vsaka oseba, ki je zmožna razumeti hipnoterapevtove besede je zmožna vstopiti v hipnotizirano stanje. Seveda, če si to želi in je primerno motivirana.
-          <br>
-          <br>
-          To je vse kar potrebujete za velike spremembe.
-          
-          
-      </div>
-      <div *ngFor='let element of about' class="hypnosis-about-element">
-        <div class="question" (click)="elementClicked(element)">
-          {{element.question}}
-        </div>  
-        <div class="hypnosis-answer" *ngIf="element.show">
-          {{element.answer}}
-        </div>
-      </div>
-
-      <div class="hypnosis-recording-element">
-        <br/>
-        <br/>
-        <br/>
-        Preden začneva.. <br/>
-        <br/>
-        te prosim, da si izbereš miren in udoben prostor. Pomembno je, da se lahko sprostiš in da se ob tem počutiš varno.<br/>
-        Ne pozabi izkjučiti mobilnega telefona in drugih elektronskih naprav. <br/>
-        Njapomembnejše pa je, da hipnoze ne poslušaš medtem ko voziš oz. kadarkoli moraš ostati zbran. <br/>
-        <br/>
-        <i>Si pripravljen na velike spremembe?</i><br/>
-    
-        <br/>
-        <div class="form-field">
-          <div class="confirm"> Da </div>
-          <a class="more" href="/contact"> Dodatna vprašanja </a>
-        </div>
-        <br/>
-        <div class="recordingframe" click>
-          <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fbrianskyze%2F008-prescriptive-grammar-radio-show%2F" frameborder="0"></iframe>
-        </div>
-        
-      </div>
-    </div>
-
   </div>
 
   <!-- hypnosis-inner-wrapper -->

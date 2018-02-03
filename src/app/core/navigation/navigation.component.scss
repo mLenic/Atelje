@@ -1,37 +1,54 @@
 @import '../../../variables.scss';
 
 .nav-wrapper {
-    position: absolute;
-    height: $nav-height;
+    position: fixed;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    height: $nav-height;
     justify-content: space-between;
     align-items: center;
-    opacity: 1;
+    
+
+    .name-wrapper {
+        padding-left: calc(#{$nav-height} - 80px);
+        font-family: Avenir-Regular;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 570;
+    }
 
     .logo-wrapper {
         display: flex;
         align-items: center;
         .logo-img {
-            height: calc(#{$nav-height} * 0.6);
+            height: calc(#{$nav-height} - 40px);
             width: auto;
         }
 
     }
 
-    .nav {
+    .links-wrapper {
         display: flex;
-        
+        padding-right: calc(#{$nav-height} - 80px);
+        font-size: 20px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 5px;
 
         .link {
-            margin-left: 20px;
+            margin-left: 40px;
 
             &:first-of-type {
                 margin-left: 0;
             }
+
+            &.active-link {
+                padding: 5px;
+
+                //text-decoration: underline;
+                border: 1px solid $black;
+            }
         }
-
-
     }
 }

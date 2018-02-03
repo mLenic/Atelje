@@ -33,6 +33,16 @@
     src: url("/assets/fonts/FuturaLight.woff") format("woff");
 }
 
+@font-face {
+    font-family : Avenir-Regular;
+    src         : url("/assets/fonts/Avenir-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family : Avenir-Light;
+    src         : url("/assets/fonts/Avenir-Light.woff") format("woff");
+}
+
 $black: #000000;
 $white: #ffffff;
 $gray: #7f7f7f;
@@ -42,9 +52,11 @@ $dark-green: #7d9162;
 $light-green: #aabf8d;
 $very-light-green: #dceabc;
 
-$nav-height: 200px;
+$nav-height: 100px;
 
 $wide-width: 100%;
-$narrow-width: 80%;
+$narrow-width: 80vw;
 $content-padding: 50px;
 $space-between-elements: 30px;
+
+$regular-font-size: 14px;

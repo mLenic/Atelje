@@ -3,9 +3,9 @@
 * {
 	box-sizing: border-box;
     -webkit-appearance: none;
-    color: $gray;
+    color: $black;
     font-family: OpenSans-Light;
-    font-size: 16px;
+    font-size: 20px;
     margin: 0;
 }
 
@@ -14,10 +14,30 @@ a {
 }
 
 .title {
-    font-family: PlayfairDisplay-Bold;
-    /* font-family: OpenSans-Light; */
-    font-size: 45px;
-    font-weight: 700;
+    font-family: PlayfairDisplay-Regular;
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    font-family: OpenSans-Light;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+.title-small {
+    font-family: PlayfairDisplay-Regular;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.title-smaller {
+    font-family: PlayfairDisplay-Regular;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .title-margin {
@@ -28,17 +48,24 @@ a {
     padding: 20px;
 }
 
+.title-line {
+    height: 1px;
+    width: 200px;
+    background-color: $black;
+}
+
 //---------- BUTTONS, INPUT FIELDS, LABELS
 .button-light {
-    padding: 10px 20px;
-    border: 2px solid $light-green;
-    border-radius: 10px;
+    padding: 10px 10px;
+    min-width: 100px;
+    border: 1px solid $black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     background-color: $white;
-    color: $light-green;
+    transition: 0.2s;
 
     &:hover {
-        background-color: $light-green;
-        color: $white;
+        letter-spacing: 5px;
         cursor: pointer;
     }
 }
@@ -58,6 +85,41 @@ a {
     
 }
 //----------
+
+//---------- BACKGROUND IMG
+
+.bg-img-div {
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+
+    .bg-img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        overflow: hidden;
+    }
+}
+
+//---------- FULL-SCREEN-DIV
+
+.full-screen {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.page-title-div {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote {
+    letter-spacing: 2px;
+}
 
 //---------- DELTOID LINE
 
