@@ -7,6 +7,11 @@
     height: $nav-height;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s;
+
+    &.white {
+        background-color: $white;
+    }
     
 
     .name-wrapper {
