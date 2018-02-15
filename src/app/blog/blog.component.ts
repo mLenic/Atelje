@@ -12,7 +12,7 @@ export class BlogComponent implements OnInit {
   posts: any[] = [
     {
       "title": "Kaj je hipnoza?",
-      "subtitle": "Hipnoza je vsakdanji psihološki pojav, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
+      "subtitle": "Hipnoza je vsakdanji psihološki pojav, pri katerem hipnotizer Hipnoza je vsakdanji psihološki pojav, pri katerem hipnotizer sugerira Hipnoza je vsakdanji psihološki pojav, pri katerem hipnotizer sugerira Hipnoza je vsakdanji psihološki pojav, pri katerem hipnotizer sugerira Hipnoza je vsakdanji psihološki pojav, pri katerem hipnotizer sugerira sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
       "date": "7.12.2017",
       "category": "hipnoza",
       "color": "#8C7BAD"

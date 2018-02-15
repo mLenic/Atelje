@@ -12,22 +12,56 @@
       To je blog...
     </div>
   </div>
-  <div class="blog-posts-wrapper">
-    <div *ngFor='let element of posts' class="blog-post">
-      <div class="blog-color-div"> 
-      </div>
-      <div class="blog-title">
-        {{element.title}}
-      </div>  
-      <div class="blog-subtitle">
-        {{element.subtitle}}
-      </div>
-      <div class="blog-date">
-        {{element.date}}
-      </div>
-      <div class="blog-date">
-        {{element.category}}
-      </div>
+  <div class="blog-content">
+    <div class="blog-filter">
+        <div class="blog-search">
+          <input class="input blog-input" placeholder="Iskanje" />
+        </div>
+        <div class="blog-category-search">
+          <div class="category-label">Kategorije</div>
+          <div class="category-checkboxes">
+            <label class="checkbox-container">Hipnoza
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+              </label>
+              
+              <label class="checkbox-container">Two
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              
+              <label class="checkbox-container">Three
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              
+              <label class="checkbox-container">Four
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+        </div>
+    </div>
+    <div class="blog-posts-wrapper">
+      <div *ngFor='let element of posts' class="blog-element">
+            <div class="blog-element-category">
+              {{element.category}}
+            </div>
+            <div class="blog-element-title">
+              {{element.title}}
+            </div>
+            <div class="blog-element-date">
+              18. MAREC 2018
+            </div>
+            <div class="blog-element-img-div">
+              <img class="blog-element-img" src="assets/images/forest_blur.jpg">
+            </div>
+            <div class="blog-element-description">
+                <p>
+                  usklajenosti s sabo in svetom, k polnejšem in srečnejšemuživljenju. Vabljeni, da se skupaj, vsakdanznova, vprašamo, kakoje lahkonašeživljenješeboljmelodičnoin počakamo, da namzaigrasvojočudovitosimfonijo. usklajenosti s sabo in svetom, k polnejšem in srečnejšemuživljenju. Vabljeni, da se skupaj, vsakdanznova, vprašamo, kakoje lahkonašeživljenješeboljmelodičnoin počakamo, da namzaigrasvojočudovitosimf
+                </p>
+            </div>
+        </div>
     </div>
   </div>
 </div>

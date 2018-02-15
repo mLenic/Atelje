@@ -12,9 +12,11 @@
       Posnetki hipnoze
     </div>
   </div>
-  <div class="hypnosis-inner-wrapper full-screen">
+  <div class="hypnosis-inner-wrapper full-screen" [class.fixed-subnav-change]="fixedSubNav">
     <div class="hypnosis">
-      <div class="hypnosis-sub-navigation">
+      <div class="empty-div" [class.empty-div]="fixedSubNav">
+      </div>
+      <div class="hypnosis-sub-navigation" [class.fixed]="fixedSubNav">
         <div class="hypnosis-sub-navigation-link">
           O hipnozi
         </div>
@@ -25,7 +27,7 @@
           Posnetki
         </div>
       </div>
-      <div class="hypnosis-content">
+      <div class="hypnosis-content" [class.fixed-subnav-change]="fixedSubNav">
         <div class="introduction full-screen">
           <div class="introduction-element title-small">
               Rasti&strmeti k soncu s hipnozo?
@@ -40,12 +42,14 @@
               To je vse kar potrebujete za velike spremembe.
           </div>   
         </div>
-        <div *ngFor='let element of about' class="hypnosis-about-element">
-          <div class="hypnosis-question title-smaller" (click)="elementClicked(element)">
-            {{element.question}}
-          </div>  
-          <div class="hypnosis-answer" *ngIf="element.show">
-            {{element.answer}}
+        <div class="hypnosis-questions-wrapper">
+          <div *ngFor='let element of about' class="hypnosis-about-element">
+            <div class="hypnosis-question title-smaller" (click)="elementClicked(element)">
+              {{element.question}}
+            </div>  
+            <div class="hypnosis-answer" *ngIf="element.show">
+              {{element.answer}}
+            </div>
           </div>
         </div>
 

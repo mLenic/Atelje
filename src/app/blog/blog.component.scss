@@ -1,31 +1,210 @@
 @import '../../variables.scss';
 
+/*
+p {
+    text-indent: 50px;
+}
+*/
+
 .blog-wrapper{
 
-    .blog-posts-wrapper {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        .blog-post {
-            margin-bottom: 20px;
-            width: 32%;
-            background-color: #CEB5FF;
+    .blog-content {
 
-            .blog-color-div {
-                height: 100px;
+        background-color: $white;
+        padding: $content-padding 0;
+
+        .blog-filter {
+            width: $narrow-width;
+            margin: auto;
+            margin-bottom: 50px;
+
+            .blog-search {
+                margin-bottom: 40px;
                 width: 100%;
-                background-color: #8C7BAD;
-            }
-            
-            .blog-title {
-                font-family: PlayfairDisplay-Bold;
-                font-size: 30px;
+                text-align: center;
+
+                .blog-input {
+                    width: 30%;
+                    margin: auto;
+                    padding: 10;
+                    background-image:url(/assets/images/search.svg); 
+                    background-repeat: no-repeat; 
+                    background-position: 10px 10px;
+                    background-size: 30px 30px;
+                    text-indent: 40px;
+                    border: none;
+                    border-bottom: 1px solid $black;
+                    font-size: 20px;
+                    transition: width 0.3s;
+
+                    &:focus {
+                        width: 50%;
+                    }
+
+                    &::placeholder {
+                        color: #7E9CC1;
+                    }
+                }
+
             }
 
-            .blog-subtitle {
-                font-size: 20px;
+            .blog-category-search {
+
+                .category-label {
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    text-align: center;
+                }
+
+                .category-checkboxes {
+                    //height: 80px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px 0;
+
+                    /* Customize the label (the container) */
+                    .checkbox-container {
+                        display: block;
+                        position: relative;
+                        padding-left: 35px;
+                        margin-bottom: 12px;
+                        cursor: pointer;
+                        //font-size: 22px;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        padding-right: 35px;
+                        font-size: 18px;
+                    }
+                    
+                    /* Hide the browser's default checkbox */
+                    .checkbox-container input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+                    
+                    /* Create a custom checkbox */
+                    .checkmark {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 25px;
+                        width: 25px;
+                        background-color: $white;
+                        border: 1px solid $black;
+                        transition: background-color 0.3s;
+                    }
+                    
+                    /* On mouse-over, add a grey background color */
+                    .checkbox-container:hover input ~ .checkmark {
+                        background-color: $black;
+                    }
+                    
+                    /* When the checkbox is checked, add a blue background */
+                    .checkbox-container input:checked ~ .checkmark {
+                        background-color: $black;
+                    }
+                    
+                    /* Create the checkmark/indicator (hidden when not checked) */
+                    .checkmark:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                    }
+                    
+                    /* Show the checkmark when checked */
+                    .checkbox-container input:checked ~ .checkmark:after {
+                        display: block;
+                    }
+                    
+                    /* Style the checkmark/indicator */
+                    .checkbox-container .checkmark:after {
+                        left: 9px;
+                        top: 5px;
+                        width: 5px;
+                        height: 10px;
+                        border: solid white;
+                        border-width: 0 3px 3px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+                }
             }
 
+        }
+
+        .blog-posts-wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: $narrow-width;
+            margin: auto;
+
+            .blog-element {
+                width: 30%;
+                padding: 20px;
+                text-align: center;
+
+                a {
+                    cursor: pointer;
+                }
+                .blog-element-category {
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-size: 14px;
+                }
+                .blog-element-title {
+                    margin: 10px 0;
+                    font-family: PlayfairDisplay-Regular;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-size: 30px;
+                }
+
+                .blog-element-date {
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-size: 14px;
+                }
+
+                .blog-element-img-div {
+                    margin: 20px 0;
+
+                    .blog-element-img {
+                        width: 100%;
+                        height: 200px;
+                        object-fit: cover;
+                        overflow: hidden;
+                        border: 1px solid $black;
+                    }
+                }
+
+                .blog-element-description {
+                    width: 100%;
+                    height: 100px;
+                    text-overflow: ellipsis;
+
+                    p {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        height: 100%;
+                        text-overflow: ellipsis;
+                        max-width: 200ch;
+                        /*
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        */
+                    }
+                }
+            }
         }
     }
 }

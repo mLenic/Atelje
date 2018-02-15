@@ -136,6 +136,20 @@
                         width: 100%;
                         height: 100px;
                         text-overflow: ellipsis;
+
+                        p {
+                            overflow: hidden;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            height: 100%;
+                            text-overflow: ellipsis;
+                            max-width: 200ch;
+                            /*
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3;
+                            -webkit-box-orient: vertical;
+                            */
+                        }
                     }
                 }
             }

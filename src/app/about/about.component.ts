@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, HostListener } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 declare var SC: any;
 
@@ -9,6 +10,8 @@ declare var SC: any;
 })
 export class AboutComponent implements OnInit {
   currentlyShownElement = null;
+  fixedSubNav: boolean = false;
+  windowHeight = 0;
   about: any[] = [
     {
       "question": "Kaj je hipnoza?",
@@ -37,7 +40,7 @@ export class AboutComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private document: Document) { }
 
   elementClicked(element) {
     //if any other question was shown close it
@@ -50,6 +53,31 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.windowHeight = window.innerHeight;
+  }
+
+  @HostListener("window:scroll", [])
+  
+  onWindowScroll() {
+    
+    const scrollTop = window.scrollY;
+    const windowHeight = window.outerHeight;
+    console.log(scrollTop);
+    
+    if(scrollTop > (this.windowHeight - 100)) //nav-height = 100px
+    {
+        console.log("oi");
+        this.fixedSubNav = true;
+        console.log(this.fixedSubNav);
+    }
+    else {
+        this.fixedSubNav = false;
+        console.log(this.fixedSubNav);
+    }
+  }
+  scrollToTop()
+  {
+    this.document.body.scrollTop = 0;
   }
 
 }
