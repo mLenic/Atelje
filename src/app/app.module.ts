@@ -7,6 +7,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 //Custom modules
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule }       from './core/core.module';
+import { HiddenModule }     from './hidden/hidden.module';
+
 //Custom Components
 import { AppComponent }   from './app.component';
 import { HomeComponent }  from './home/home.component';
@@ -33,7 +35,8 @@ import { ContactService } from './contact/contact.service';
     HttpModule,
     AppRoutingModule,
     CoreModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HiddenModule,
   ],
   providers: [
     ContactService,

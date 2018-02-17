@@ -1,0 +1,17 @@
+@import '../../../variables.scss';
+
+.login-wrapper {
+
+    padding-top: $nav-height;
+
+    .login-form-wrapper {
+        width: $narrow-width;
+        margin: auto;
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+}

@@ -9,12 +9,13 @@ import { AboutComponent }   from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-     { path: '',        redirectTo: '/domov',        pathMatch: 'full'   },
-     { path: 'domov',    component: HomeComponent                        },
-     { path: 'about',   component: AboutComponent                       },
-     { path: 'contact', component: ContactComponent                     },
-     { path: 'blog',    component: BlogComponent                        },
-     { path: '**',      component: HomeComponent                        }
+     { path: '',                redirectTo: '/domov',        pathMatch: 'full'      },
+     { path: 'domov',           component: HomeComponent                            },
+     { path: 'about',           component: AboutComponent                           },
+     { path: 'contact',         component: ContactComponent                         },
+     { path: 'blog',            component: BlogComponent                            },
+     { path: 'hidden',          loadChildren: './hidden/hidden.module#HiddenModule' },
+     { path: '**',              component: HomeComponent                            }
 ];
 
 @NgModule({

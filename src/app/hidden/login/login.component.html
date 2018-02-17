@@ -1,0 +1,19 @@
+<div class="login-wrapper">
+    <div class="login-form-wrapper">
+      <form name="contactform" [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="form-field">
+            <label for="email" class="label">Email</label>
+            <input type="text" id="email" class="input" name="email" [formControl]="email">
+          </div>
+          <br/>
+          <div class="form-field">
+            <label for="password" class="label">Geslo:</label>
+            <input type="password" id="password" class="input" name="password" [formControl]="password">
+          </div>
+          <br/>
+          <button class="message input" style="cursor: pointer">Vpiši</button>
+          <div *ngIf="response.status">{{response.message}}</div>
+      </form>
+      
+    </div>
+  </div>
