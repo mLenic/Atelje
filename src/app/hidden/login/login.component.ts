@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
-
+import { Router } from '@angular/router';
 import { HiddenService } from '../service/hidden.service';
 
 @Component({
@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
     constructor(
         private fb: FormBuilder,
         private srv: HiddenService,
+        private router: Router,
       ) {}
 
     ngOnInit() {
@@ -59,6 +60,7 @@ export class LoginComponent implements OnInit {
                       this.response.status = 200;
                       this.response.message = "Uspešen vpis."
                       localStorage.setItem("pwd", form.password);
+                      this.router.navigate(['/hidden/blogpost']);
                     } else {
                       this.response.status = 400;
                       this.response.message = "Neuspešen vpis."

@@ -1,0 +1,21 @@
+@import '../../../variables.scss';
+
+.blog-wrapper {
+
+    padding-top: $nav-height;
+
+    .blog-form-wrapper {
+        width: $narrow-width;
+        margin: auto;
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .form-field .cols {
+            width: 32%;
+          }
+    }
+}

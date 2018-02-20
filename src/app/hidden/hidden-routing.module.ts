@@ -9,8 +9,8 @@ import { BlogformComponent } from './blogform/blogform.component';
 import { AuthGuard } from '../hidden/guard/auth.guard';
 
 const routes: Routes = [
-    { path: 'login',   component: LoginComponent    },
-    { path: 'blog',    component: BlogformComponent, canActivate: [AuthGuard] },
+    { path: 'login',        component: LoginComponent    },
+    { path: 'blogpost',     component: BlogformComponent, canActivate: [AuthGuard] },
 ];
 @NgModule({
     imports: [ RouterModule.forChild(routes) ],
