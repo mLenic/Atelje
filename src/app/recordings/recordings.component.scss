@@ -1,0 +1,14 @@
+@import '../../variables.scss';
+
+.recordings-wrapper {
+
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .recordings-content {
+        width: $narrow-width;
+    }
+}

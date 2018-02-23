@@ -42,7 +42,11 @@ p {
                     }
 
                     &::placeholder {
-                        color: #7E9CC1;
+                        //color: #7E9CC1;
+                        color: $gray;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        font-size: 14px;
                     }
                 }
 
@@ -135,6 +139,12 @@ p {
                         transform: rotate(45deg);
                     }
                 }
+            }
+
+            .blog-search-button {
+                margin-top: 30px;
+                width: 100%;
+                text-align: center;
             }
 
         }

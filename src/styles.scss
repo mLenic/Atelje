@@ -4,9 +4,14 @@
 	box-sizing: border-box;
     -webkit-appearance: none;
     color: $black;
-    font-family: OpenSans-Light;
+    //font-family: OpenSans-Light;
+    font-family: OpenSans-Regular;
     font-size: 20px;
     margin: 0;
+}
+
+p {
+    line-height: 32px;
 }
 
 a {
@@ -55,17 +60,23 @@ a {
 }
 
 //---------- BUTTONS, INPUT FIELDS, LABELS
-.button-light {
-    padding: 10px 10px;
-    min-width: 100px;
-    border: 1px solid $black;
+.button-dark {
+    padding: 10px 20px;
+    //min-width: 100px;
+    border: 1px solid $white;
+    //border: none;
+    outline: 6px solid $black;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    background-color: $white;
+    letter-spacing: 4px;
+    //background-color: $white;
+    background-color: $black;
+    color: $white;
     transition: 0.2s;
+    font-family: OpenSans-Regular;
+    font-size: 16px;
 
     &:hover {
-        letter-spacing: 5px;
+        //letter-spacing: 5px;
         cursor: pointer;
     }
 }
@@ -76,13 +87,36 @@ a {
     outline: none; 
 
     &:focus {
-        border: 1px solid $light-green;
+        //border: 1px solid $light-green;
         /*background-color: $very-light-green;*/
+        outline: none;
     }
 }
 
 .label {
     
+}
+
+.underlined-input {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid $black;
+    font-size: 20px;
+    transition: width 0.3s;
+
+    &:hover {
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $gray;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 14px;
+      }
 }
 //----------
 

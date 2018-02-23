@@ -1,0 +1,102 @@
+@import '../../variables.scss';
+
+$blogpost-header-height: 50vh;
+
+.blogpost-wrapper {
+    min-height: 100vh;
+    padding-top: $nav-height;
+
+    .blogpost-header {
+        height: $blogpost-header-height;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .blogpost-img-div {
+            position: absolute;
+            width: 100%;
+            //position: fixed;
+            z-index: -2;
+        
+            .blogpost-img {
+                width: 100%;
+                height: $blogpost-header-height;
+                object-fit: cover;
+                overflow: hidden;
+            }
+        }
+
+        .light-bg-div {
+            height: $blogpost-header-height;
+            width: 100%;
+            position: absolute;
+            background-color: $white;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .blogpost-category {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: OpenSans-Regular;
+            font-size: 18px;
+        }
+        .blogpost-title {
+            margin: 10px 0;
+            font-family: PlayfairDisplay-Regular;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 45px;
+        }
+
+        .blogpost-date {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+    }
+
+    .blogpost-content {
+        padding: $content-padding 0;
+        width: $narrow-width;
+        margin: auto;
+
+        p {
+            text-indent: 40px;
+            text-align: justify;
+        }
+
+        .blogpost-quote {
+            width: 50%;
+            margin: 50px auto;
+            
+            .quote-text {
+                text-align: center;
+            }
+
+            .quote-author {
+                margin-top: 20px;
+                text-align: right;
+            }
+        }
+
+        .blogpost-gallery {
+            margin-top: $content-padding;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .gallery-img-div {
+                width: 30%;
+                margin-bottom: 50px;
+                .gallery-img {
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}

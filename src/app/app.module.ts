@@ -18,6 +18,8 @@ import { FooterComponent } from './core/footer/footer.component';
 
 //Custom Services
 import { ContactService } from './contact/contact.service';
+import { RecordingsComponent } from './recordings/recordings.component';
+import { BlogpostComponent } from './blogpost/blogpost.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { ContactService } from './contact/contact.service';
     AboutComponent,
     ContactComponent,
     BlogComponent,
+    RecordingsComponent,
+    BlogpostComponent,
   ],
   imports: [
     BrowserModule,
