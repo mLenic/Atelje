@@ -1,0 +1,51 @@
+<div class="blog-wrapper">
+    <div class="blog-form-wrapper">
+      Dodajanje novega vpisa za blog
+      <hr>
+      <br/>
+      <form name="blogpostForm" [formGroup]="blogpostForm" (ngSubmit)="submitBlog()">
+          <div class="form-field cols">
+            <label for="title" class="label">Naslov</label>
+            <input type="text" id="title" class="input cols" name="title" [formControl]="title">
+          </div>
+          <br/>
+
+          <div class="form-field">
+            <label for="subtitle" class="label">Podnaslov</label>
+            <input type="text" id="subtitle" class="input cols" name="subtitle" [formControl]="subtitle">
+          </div>
+          <br/>
+          <div class="form-field cols">
+            <label for="description" class="label">Opis</label>
+            <input type="text" id="description" class="input" name="description" [formControl]="description">
+          </div>
+          <br/>
+          <div class="form-field">
+            <label class="label">Vsebina:</label>
+            <textarea class="message input" [formControl]="message"></textarea>
+          </div>
+          <br/>
+          <div class="form-field">
+            <label class="label">Kategorija:</label>
+            <select type="text" class="input" [(ngModel)]="category" [ngModelOptions]="{standalone: true}">
+                <option value="personal" selected>Osebno</option>
+                <option value="hypnosis">Hipnoza</option>
+                <option value="rest">Ostalo</option>
+              </select>
+          </div>
+
+          <br/>
+          <div class="form-field">
+            <label class="label">Barva:</label>
+            <select type="text" class="input" [(ngModel)]="colour" [ngModelOptions]="{standalone: true}">
+                <option style="background-color: red" value="red" selected>Rdeča</option>
+                <option style="background-color: green" value="green" >Zelena</option>
+                <option style="background-color: blue" value="blue" >Modra</option>
+              </select>
+          </div>
+
+          
+      </form>
+      
+    </div>
+  </div>

@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 //Cors setup
-app.use(cors({origin: 'http://localhost:4200'}));
+app.use(cors({origin: 'http://atelje:4200'}));
 
 // Set our api routes
 app.use('/api', api);

@@ -18,6 +18,7 @@ const routes: Routes = [
      { path: 'blog',    component: BlogComponent                        },
      { path: 'blogpost',    component: BlogpostComponent                        },
      { path: 'recordings',    component: RecordingsComponent                        },
+     { path: 'hidden',          loadChildren: './hidden/hidden.module#HiddenModule' },
      { path: '**',      component: HomeComponent                        }
 ];
 
