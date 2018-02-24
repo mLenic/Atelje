@@ -60,3 +60,32 @@ $content-padding: 50px;
 $space-between-elements: 30px;
 
 $regular-font-size: 14px;
+
+
+@mixin breakpoint-2560 {
+    @media only screen and (min-width: 1921px) and (max-width: 2560px) { @content; }
+}
+  
+@mixin breakpoint-1920 {
+    @media only screen and (min-width: 1681px) and (max-width: 1920px) { @content; }
+}
+  
+@mixin breakpoint-1680 {
+    @media only screen and (min-width: 1441px) and (max-width: 1680px) { @content; }
+}
+  
+@mixin breakpoint-1440 {
+    @media only screen and (min-width: 1281px) and (max-width: 1440px) { @content; }
+}
+  
+@mixin breakpoint-1280 {
+    @media only screen and (max-width: 1280px) { @content; }
+}
+
+@mixin breakpoint-960 {
+    @media only screen and (max-width: 960px) { @content; }
+}
+
+@mixin breakpoint-768 {
+    @media only screen and (max-width: 768px) { @content; }
+}

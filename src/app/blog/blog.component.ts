@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GeneralService } from '../core/service/general.service';
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private generalService: GeneralService) { }
 
   posts: any[] = [
     {
@@ -104,6 +106,8 @@ export class BlogComponent implements OnInit {
   ];
 
   ngOnInit() {
+    this.generalService.currentLink = 'blog';
+    this.generalService.printCurrentLink();
   }
 
 }

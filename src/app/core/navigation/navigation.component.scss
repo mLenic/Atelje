@@ -7,15 +7,29 @@
     height: $nav-height;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s;
+
+    @include breakpoint-768 {
+        &.white-bg-mobile {
+            background-color: $white;
+            //transition: background-color 0.3s;
+        }
+    }
+    
 
     &.white {
         background-color: $white;
     }
+
+    &.transition {
+        transition: background-color 0.3s;
+        @include breakpoint-768 {
+            transition: background-color 0s;
+        }
+    }
     
     .name-wrapper {
         padding-left: calc(#{$nav-height} - 80px);
-        font-family: Avenir-Regular;
+        font-family: OpenSans-Regular;
         font-size: 20px;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -26,7 +40,8 @@
         display: flex;
         align-items: center;
         .logo-img {
-            height: calc(#{$nav-height} - 40px);
+            //height: calc(#{$nav-height} - 40px);
+            height: calc(#{$nav-height} - 15px);
             width: auto;
         }
 
@@ -35,7 +50,6 @@
     .links-wrapper {
         display: flex;
         padding-right: calc(#{$nav-height} - 80px);
-        font-size: 20px;
         letter-spacing: 2px;
         text-transform: uppercase;
         padding: 5px;
@@ -43,16 +57,59 @@
         .link {
             margin-left: 40px;
 
-            &:first-of-type {
+            @include breakpoint-768 {
                 margin-left: 0;
             }
 
-            &.active-link {
-                padding: 5px;
+            a {
+                font-size: 18px;
+            }
 
-                //text-decoration: underline;
-                border: 1px solid $black;
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+
+        @include breakpoint-768 {
+            visibility: hidden;
+            width: 0;
+            overflow: hidden;
+            display: none;
+            z-index: 5;
+
+            &.visible-navigation {
+                visibility: visible;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: fixed;
+                top: $nav-height;
+                left: 0;
+                width: 100vw;
+                height: 90vh;
+                background-color: $white;
+
+                .link {
+                    margin-top: 50px;
+                }
             }
         }
     }
+
+    .nav-mobile-icon {
+        display: none;
+    
+        @include breakpoint-768 {
+            cursor: pointer;
+            //position: fixed;
+            display: block;
+            //right: 10px;
+            //top: 10px;
+        }
+    }
+}
+
+.active {
+    padding: 5px;
+    border: 1px solid $black;
 }

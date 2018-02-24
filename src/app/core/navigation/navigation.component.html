@@ -1,23 +1,38 @@
-<div class="nav-wrapper content-padding" [class.white]="whiteNavBg">
+<div class="nav-wrapper content-padding" [class.white]="whiteNavBg" [class.transition]="bgTransition" [class.white-bg-mobile]="mobileNavigation">
+  <!--
   <div class="name-wrapper">
     terapevtski atelje
   </div>
+  -->
   <div class="logo-wrapper">
-    <a href="/home"><img class="logo-img" src="assets/images/logo.svg"/></a>
+    <a href="/home"><img class="logo-img" src="assets/images/logo7.svg"/></a>
+    
+    <div class="name-wrapper">
+      terapevtski atelje
+    </div>
+  
   </div>
-  <div class="links-wrapper">
-    <div class="link active-link">
-      <a href="/home">domov</a>
+      <!--
+    <div class="name-wrapper">
+      terapevtski atelje
+    </div>
+  -->
+
+  <div class="links-wrapper" [class.visible-navigation]="mobileNavigation">
+    <div class="link">
+      <a href="/home" [class.active]="generalService.currentLink=='home'">domov</a>
     </div>
     <div class="link">
-      <a href="/about">hipnoza</a>
+      <a href="/about" [class.active]="generalService.currentLink=='hypnosis'">hipnoza</a>
     </div>
     <div class="link">
-      <a href="/blog">blog</a>
+      <a href="/blog" [class.active]="generalService.currentLink=='blog'">blog</a>
     </div>
     <div class="link">
-        <a href="/contact">kontakt</a>
+        <a href="/contact" [class.active]="generalService.currentLink=='contact'">kontakt</a>
     </div>
+
+
   <!--
     <div class="link">
       <a href="#"><fa name="facebook"></fa></a>
@@ -27,4 +42,8 @@
     </div>
   -->
   </div>
+
+  <div class="nav-mobile-icon" (click)="toggleMobileNavigation()">
+      <img class="nav-icon" src="assets/images/menu-icon.svg"/>
+    </div>
 </div>

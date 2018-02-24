@@ -22,6 +22,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { ContactService } from './contact/contact.service';
 import { RecordingsComponent } from './recordings/recordings.component';
 import { BlogpostComponent } from './blogpost/blogpost.component';
+import { GeneralService } from './core/service/general.service';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { BlogpostComponent } from './blogpost/blogpost.component';
   ],
   providers: [
     ContactService,
+    GeneralService
   ],
   bootstrap: [AppComponent]
 })

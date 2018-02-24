@@ -89,15 +89,29 @@
             .title {
                 margin-top: $space-between-elements;
                 color: $black;
+
+                @include breakpoint-960 {
+                    margin-bottom: 50px;
+                }
             }
 
             .blog-home-content{
                 display: flex;
                 justify-content: space-between;
 
+                @include breakpoint-960 {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
                 .blog-home-element {
                     width: 30%;
                     padding: 20px;
+
+                    @include breakpoint-960 {
+                        width: 80%;
+                    }
+
                     a {
                         cursor: pointer;
                     }
@@ -129,6 +143,10 @@
                             object-fit: cover;
                             overflow: hidden;
                             border: 1px solid $black;
+
+                            @include breakpoint-960 {
+                                height: 280px;
+                            }
                         }
                     }
 

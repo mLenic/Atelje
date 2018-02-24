@@ -172,3 +172,20 @@ a {
     background-image: url("/assets/images/deltoid-dark-green-light-bg.svg");
 }
 //----------
+
+//---------- GRADIENT LINES
+.gradient-line-right {
+    height: 3px;
+    width: 100%;
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(to right, #8AC4EB , #9FBC7B); /* Standard syntax (must be last) */
+}
+
+.gradient-line-left {
+    height: 3px;
+    width: 100%;
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(to left, red , yellow); /* Standard syntax (must be last) */
+}
+
+//----------

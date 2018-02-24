@@ -1,54 +1,66 @@
-<div class="contact-wrapper">
-  <div class="contact-form-wrapper">
-    <div class="contact-form-title title-small">
-      Pošlji sporočilo
-    </div>
-    <form name="contactform" [formGroup]="contactForm" (ngSubmit)="sendMail()">
-        <div class="form-field">
-          <!--<label for="name" class="label">Ime:</label>-->
-          <input type="text" id="name" class="input underlined-input" name="fname" [formControl]="name" placeholder="Ime">
-          <div *ngIf="formErrors.name" class="help-block alert alert-danger">{{ formErrors.name }}</div>
-        </div>
-        <br/>
-        <div class="form-field">
-          <!--<label for="email" class="label">E-mail:</label>-->
-          <input type="text" id="email" class ="input underlined-input" name="fname" [formControl]="email" placeholder="E-mail">
-          <div *ngIf="formErrors.email" class="help-block alert alert-danger">{{ formErrors.email }}</div>
-        </div>
-        <br/>
-        <div class="form-field">
-          <label class="label message-label">Sporočilo</label>
-          <textarea class="message input message-textarea" [formControl]="message"></textarea>
-          <div *ngIf="formErrors.message" class="help-block alert alert-danger">{{ formErrors.message }}</div>
-        </div>
-        <br/>
-        <div class="send-button-wrapper">
-          <button class="message input button-dark" style="cursor: pointer">Pošlji</button>
-        </div>
-        <div *ngIf="response.status">{{response.message}}</div>
-    </form>
+<div class="bg-img-div">
+    <img class="bg-img" src="assets/images/sea_blur.jpg">
   </div>
-  <div class="contact-information-wrapper">
-    <div class="contact-information-title title-small">
-      Podatki
-    </div>
-    <div class="contact-information-content">
-      <div class="contact-information-element">
-        <div class="contact-information-label">
-          E-mail
+<div class="contact-wrapper">
+  <div class="contact-inner-wrapper">
+    <div class="contact-content-wrapper">
+      <div class="contact-form-wrapper">
+        <div class="contact-form-title title-small">
+          Pošlji sporočilo
         </div>
-        <div class="contact-information-text">
-          spela@terapevtski-atelje.si
+        <form name="contactform" [formGroup]="contactForm" (ngSubmit)="sendMail()">
+            <div class="form-field">
+              <!--<label for="name" class="label">Ime:</label>-->
+              <input type="text" id="name" class="input underlined-input" name="fname" [formControl]="name" placeholder="Ime">
+              <div *ngIf="formErrors.name" class="help-block alert alert-danger">{{ formErrors.name }}</div>
+            </div>
+            <br/>
+            <div class="form-field">
+              <!--<label for="email" class="label">E-mail:</label>-->
+              <input type="text" id="email" class ="input underlined-input" name="fname" [formControl]="email" placeholder="E-mail">
+              <div *ngIf="formErrors.email" class="help-block alert alert-danger">{{ formErrors.email }}</div>
+            </div>
+            <br/>
+            <div class="form-field">
+              <label class="label message-label">Sporočilo</label>
+              <textarea class="message input message-textarea" [formControl]="message"></textarea>
+              <div *ngIf="formErrors.message" class="help-block alert alert-danger">{{ formErrors.message }}</div>
+            </div>
+            <br/>
+            <div class="send-button-wrapper">
+              <button class="message input button-dark" style="cursor: pointer">Pošlji</button>
+            </div>
+            <div *ngIf="response.status">{{response.message}}</div>
+        </form>
+      </div>
+      <div class="gradient-line-right contact-line">
+      </div>
+      <div class="contact-information-wrapper">
+        <div class="contact-information-title title-small">
+          Podatki
+        </div>
+        <div class="contact-information-content">
+          <div class="contact-information-element">
+            <div class="contact-information-label">
+              E-mail
+            </div>
+            <div class="contact-information-text">
+              spela@terapevtski-atelje.si
+            </div>
+          </div>
+          <div class="contact-information-element">
+            <div class="contact-information-label">
+              SOCIALNA OMREŽJA
+            </div>
+            <div class="contact-information-text">
+              <a href="#"><fa name="facebook"></fa></a>
+              <a href="#"><fa name="instagram"></fa></a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="contact-information-element">
-        <div class="contact-information-label">
-          Facebook
-        </div>
-        <div class="contact-information-text">
-          IKONA
-        </div>
-      </div>
     </div>
+  </div>
+  <div class="empty-contact-div">
   </div>
 </div>

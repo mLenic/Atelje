@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
+import { GeneralService } from '../core/service/general.service';
+
 declare var SC: any;
 
 @Component({
@@ -40,7 +42,7 @@ export class AboutComponent implements OnInit {
     }
   ];
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor(@Inject(DOCUMENT) private document: Document, private generalService: GeneralService) { }
 
   elementClicked(element) {
     //if any other question was shown close it
@@ -54,6 +56,9 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.windowHeight = window.innerHeight;
+
+    this.generalService.currentLink = 'hypnosis';
+    this.generalService.printCurrentLink();
   }
 
   @HostListener("window:scroll", [])

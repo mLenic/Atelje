@@ -69,15 +69,25 @@ $blogpost-header-height: 50vh;
 
         .blogpost-quote {
             width: 50%;
-            margin: 50px auto;
+            margin: 80px auto;
+
+            .quote-line {
+                margin: 40px 0;
+                //width: 70%;
+            }
             
             .quote-text {
                 text-align: center;
+                font-size: 18px;
             }
 
             .quote-author {
-                margin-top: 20px;
+                margin-top: 25px;
                 text-align: right;
+                color: $gray;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 14px;
             }
         }
 

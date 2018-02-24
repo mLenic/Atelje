@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GeneralService } from '../core/service/general.service';
+
 @Component({
   selector: 'app-blogpost',
   templateUrl: './blogpost.component.html',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogpostComponent implements OnInit {
 
-  constructor() { }
+  constructor(private generalService: GeneralService) { }
 
   ngOnInit() {
+    this.generalService.currentLink = 'blogpost';
   }
 
 }

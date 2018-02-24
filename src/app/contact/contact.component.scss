@@ -2,67 +2,106 @@
 
 .contact-wrapper {
     padding-top: $nav-height;
-    width: $narrow-width;
-    margin: auto;
-    display: flex;
-    //align-items: center;
+    .contact-inner-wrapper {
+        background-color: $white;
+        width: 100%;
 
-    .contact-information-wrapper {
-        width: 30%;
+        .contact-content-wrapper {
+            width: $narrow-width;
+            padding: $content-padding 0;
+            margin: auto;
+            display: flex;
 
-        .contact-information-title {
-            width: 100%;
-            padding-bottom: 30px;
-            text-align: center;
-        }
+            @include breakpoint-960 {
+                flex-direction: column;
+            }
 
-        .contact-information-content {
-            text-align: center;
+            .contact-information-wrapper {
+                width: 30%;
 
-            .contact-information-element  {
-                margin-bottom: 30px; 
+                @include breakpoint-960 {
+                    width: 100%;
+                }
 
-                .contact-information-label {
-                    margin-bottom: 10px;
+                .contact-information-title {
+                    width: 100%;
+                    padding-bottom: 30px;
+                    text-align: center;
+                }
+
+                .contact-information-content {
+                    text-align: center;
+
+                    .contact-information-element  {
+                        margin-bottom: 30px; 
+
+                        .contact-information-label {
+                            margin-bottom: 10px;
+                            color: $black;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            .contact-form-wrapper {
+                width: 70%;
+
+                @include breakpoint-960 {
+                    width: 100%;
+                }
+
+                .contact-form-title {
+                    width: 100%;
+                    text-align: left;
+                    padding-bottom: 30px;
+
+                    @include breakpoint-960 {
+                        text-align: center;
+                    }
+                }
+
+                .form-field {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                .message-label {
+                    padding: 10px;
                     color: $black;
                     text-transform: uppercase;
                     letter-spacing: 2px;
                     font-size: 14px;
                 }
+
+                .message-textarea {
+                    height: 300px;
+                }
+
+                .send-button-wrapper {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .contact-line {
+                display: none;
+            }
+
+            @include breakpoint-960 {
+                .contact-line {
+                    display: block;
+                    margin: 70px auto;
+                    //height: 2px;
+                }
             }
         }
     }
-
-    .contact-form-wrapper {
-        width: 70%;
-
-        .contact-form-title {
-            width: 100%;
-            text-align: left;
-            padding-bottom: 30px;
-        }
-
-        .form-field {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .message-label {
-            padding: 10px;
-            color: $black;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 14px;
-        }
-
-        .message-textarea {
-            height: 300px;
-        }
-
-        .send-button-wrapper {
-            width: 100%;
-            text-align: center;
-        }
+    .empty-contact-div {
+        height: 70vh;
+        width: 100%;
     }
 }

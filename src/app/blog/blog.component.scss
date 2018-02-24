@@ -37,8 +37,16 @@ p {
                     font-size: 20px;
                     transition: width 0.3s;
 
+                    @include breakpoint-960 {
+                        width: 60%;
+                    }
+
                     &:focus {
-                        width: 50%;
+                        width: 40%;
+
+                        @include breakpoint-960 {
+                            width: 90%;
+                        }
                     }
 
                     &::placeholder {
@@ -58,6 +66,10 @@ p {
                     text-transform: uppercase;
                     letter-spacing: 2px;
                     text-align: center;
+
+                    @include breakpoint-960 {
+                        text-align: center;
+                    }
                 }
 
                 .category-checkboxes {
@@ -66,6 +78,13 @@ p {
                     justify-content: center;
                     align-items: center;
                     padding: 20px 0;
+
+                    @include breakpoint-960 {
+                        //flex-wrap: wrap;
+                        flex-direction: column;
+                        align-items: left;
+                        margin-left: 25vw;
+                    }
 
                     /* Customize the label (the container) */
                     .checkbox-container {
@@ -145,8 +164,17 @@ p {
                 margin-top: 30px;
                 width: 100%;
                 text-align: center;
+
+                @include breakpoint-960 {
+                    margin-bottom: 100px;
+                }
             }
 
+        }
+
+        .blog-line {
+            width: $narrow-width;
+            margin: 60px auto;
         }
 
         .blog-posts-wrapper {
@@ -160,6 +188,11 @@ p {
                 width: 30%;
                 padding: 20px;
                 text-align: center;
+
+                @include breakpoint-960 {
+                    width: 100%;
+                }
+                
 
                 a {
                     cursor: pointer;
@@ -192,6 +225,16 @@ p {
                         object-fit: cover;
                         overflow: hidden;
                         border: 1px solid $black;
+
+                        @include breakpoint-960 {
+                            width: 70%;
+                            height: 280px;
+                        }
+
+                        @include breakpoint-768 {
+                            width: 90%;
+                            height: 250px;
+                        }
                     }
                 }
 

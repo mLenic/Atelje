@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
 
 import { ContactService } from './contact.service';
+import { GeneralService } from '../core/service/general.service';
 
 @Component({
   selector: 'app-contact',
@@ -19,10 +20,13 @@ export class ContactComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private contactService: ContactService,
+    private generalService: GeneralService
   ) {}
 
   ngOnInit() {
     this.buildForm();
+    this.generalService.currentLink = 'contact';
+    this.generalService.printCurrentLink();
   }
 
   public response = {
