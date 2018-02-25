@@ -58,6 +58,7 @@ export class AboutComponent implements OnInit {
     this.windowHeight = window.innerHeight;
 
     this.generalService.currentLink = 'hypnosis';
+    this.generalService.currentHypnosisSublink = 'about-hypnosis';
     this.generalService.printCurrentLink();
   }
 

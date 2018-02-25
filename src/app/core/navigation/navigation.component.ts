@@ -33,7 +33,7 @@ export class NavigationComponent implements OnInit {
     console.log(this.windowHeight)
     
     //if currentLink is blog, home or hypnosis, nav bg becomes white at 1/4 of window height
-    if(this.generalService.currentLink == 'blog' || this.generalService.currentLink == 'home' || this.generalService.currentLink == 'hypnosis') 
+    if(this.generalService.currentLink == 'blog' || this.generalService.currentLink == 'home' || this.generalService.currentHypnosisSublink == 'about-hypnosis') 
     {
       if(scrollTop > (this.windowHeight / 4))
       {

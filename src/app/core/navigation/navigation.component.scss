@@ -14,7 +14,6 @@
             //transition: background-color 0.3s;
         }
     }
-    
 
     &.white {
         background-color: $white;
@@ -105,6 +104,53 @@
             display: block;
             //right: 10px;
             //top: 10px;
+        }
+    }
+
+    .hypnosis-subnavigation {
+        display: none;
+        position: fixed;
+        top: $nav-height;
+        right: 0;
+        padding-right: calc(#{$nav-height} - 80px);
+        padding-bottom: 20px;
+        width: 100%;
+        height: $subnav-height;
+
+        &.visible-hypnosis-subnavigation {
+            display: inline;
+        }
+
+        &.white {
+            background-color: $white;
+        }
+    
+        &.transition {
+            transition: background-color 0.3s;
+            @include breakpoint-768 {
+                transition: background-color 0s;
+            }
+        }
+
+        .subnavigation-links-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            letter-spacing: 1px;
+            //text-transform: uppercase;
+            padding: 0 5px;
+
+            .subnavigation-link {
+                margin-left: 30px;
+                
+                @include breakpoint-768 {
+                    margin-left: 0;
+                }
+    
+                a {
+                    font-size: 16px;
+                }
+            }
         }
     }
 }

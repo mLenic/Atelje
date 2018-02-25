@@ -1,7 +1,8 @@
 @import '../../variables.scss';
 
 .recordings-wrapper {
-
+    //padding-top: calc(#{$nav-height} + #{$subnav-height});
+    padding-top: $nav-height;
     background-color: $white;
     display: flex;
     flex-direction: column;
@@ -10,5 +11,47 @@
 
     .recordings-content {
         width: $narrow-width;
+        min-height: 90vh;
+        padding-top: 100px;
+
+        .recordings-elements-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include breakpoint-768 {
+                flex-direction: column;
+            }
+
+            .recordings-element {
+                width: 200px;
+                height: 150px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                //border: 1px solid $black;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: border-width 0.3s;
+                //background: linear-gradient(to bottom right, #8AC4EB , $white);
+
+                @include breakpoint-768 {
+                    margin-bottom: 50px;
+                }
+
+                &:hover {
+                    border: 1px solid $black;
+                }
+
+                .recordings-element-title {
+                    //font-family: PlayfairDisplay-Regular;
+                    font-family: OpenSans-Semibold;
+                    //font-family: OpenSans-Regular;
+                    font-size: 18px;
+                }
+            }
+        }
     }
 }

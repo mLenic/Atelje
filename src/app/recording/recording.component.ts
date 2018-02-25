@@ -3,17 +3,17 @@ import { Component, OnInit } from '@angular/core';
 import { GeneralService } from '../core/service/general.service';
 
 @Component({
-  selector: 'app-recordings',
-  templateUrl: './recordings.component.html',
-  styleUrls: ['./recordings.component.scss']
+  selector: 'app-recording',
+  templateUrl: './recording.component.html',
+  styleUrls: ['./recording.component.scss']
 })
-export class RecordingsComponent implements OnInit {
+export class RecordingComponent implements OnInit {
 
   constructor(private generalService: GeneralService) { }
 
   ngOnInit() {
     this.generalService.currentLink = 'hypnosis';
-    this.generalService.currentHypnosisSublink = 'recordings';
+    this.generalService.currentHypnosisSublink = 'recording';
   }
 
 }

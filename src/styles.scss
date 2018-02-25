@@ -178,7 +178,14 @@ a {
     height: 3px;
     width: 100%;
     background: red; /* For browsers that do not support gradients */
-    background: linear-gradient(to right, #8AC4EB , #9FBC7B); /* Standard syntax (must be last) */
+    background: linear-gradient(to right, #8AC4EB , #9FBC7B, #8AC4EB); /* Standard syntax (must be last) */
+}
+
+.gradient-line {
+    height: 3px;
+    width: 100%;
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(to right, $white, #8AC4EB, $white); /* Standard syntax (must be last) */
 }
 
 .gradient-line-left {

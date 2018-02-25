@@ -23,6 +23,7 @@ import { ContactService } from './contact/contact.service';
 import { RecordingsComponent } from './recordings/recordings.component';
 import { BlogpostComponent } from './blogpost/blogpost.component';
 import { GeneralService } from './core/service/general.service';
+import { RecordingComponent } from './recording/recording.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { GeneralService } from './core/service/general.service';
     BlogComponent,
     RecordingsComponent,
     BlogpostComponent,
+    RecordingComponent,
   ],
   imports: [
     BrowserModule,

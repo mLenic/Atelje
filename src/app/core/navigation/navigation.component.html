@@ -44,6 +44,20 @@
   </div>
 
   <div class="nav-mobile-icon" (click)="toggleMobileNavigation()">
-      <img class="nav-icon" src="assets/images/menu-icon.svg"/>
+    <img class="nav-icon" src="assets/images/menu-icon.svg"/>
+  </div>
+
+  <div class="hypnosis-subnavigation" [class.white]="whiteNavBg" [class.transition]="bgTransition" [class.visible-hypnosis-subnavigation]="generalService.currentLink=='hypnosis'">
+    <div class="subnavigation-links-wrapper" [class.visible-navigation]="mobileNavigation">
+      <div class="subnavigation-link">
+        <a href="/about" [class.active]="generalService.currentHypnosisSublink=='about-hypnosis'">o hipnozi</a>
+      </div>
+      <div class="subnavigation-link">
+        <a href="/about" [class.active]="generalService.currentLink=='home'">o posnetkih</a>
+      </div>
+      <div class="subnavigation-link">
+        <a href="/recordings" [class.active]="generalService.currentHypnosisSublink=='recordings'">posnetki</a>
+      </div>
     </div>
+  </div>
 </div>
