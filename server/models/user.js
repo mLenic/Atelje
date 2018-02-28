@@ -14,7 +14,7 @@ var userSchema = new Schema({
 
 
 var User = mongoose.model('User', userSchema);
-/*
+
 var initUsers = function(db) {
 
   db.collection('user', function (err, collection) {
@@ -32,20 +32,21 @@ var initUsers = function(db) {
           updated_at: new Date(),
       });
 
-      collection.save(user, function (err) {
+      console.log('Inserting user into db.')
+      collection.insert(user, function (err) {
           if (err) {
           console.error('Error when saving user: ' + err);
           }
 
-          console.log('Initial user saved successfully!');
+          console.log('User saved successfully!');
       });
   
   });
-}*/
+}
 
 
 // make this available to our users in our Node applications
 module.exports =  {
   User: User,
-  //initUsers: initUsers,
+  initUsers: initUsers,
 }

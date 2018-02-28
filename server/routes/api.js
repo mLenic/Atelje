@@ -1,26 +1,27 @@
+//Imported modules
 const express = require('express');
-const router = express.Router();
-
-const axios = require('axios');
-
-var user = require('../models/user');
-var blog = require('../models/blog');
-
-var mailer = require('../mailing/contact');
-
 var mongoose = require('mongoose');
-const mongodbUrl = 'mongodb://localhost:27017/AteljePsihoterapije'
-
 var MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectID;
-
-var app = express();
-
 const cors = require('cors');
 var md5 = require('md5');
+
+//Custom modules
+var globals = require('../../globals');
+var user = require('../models/user');
+var blog = require('../models/blog');
+var mailer = require('../mailing/contact');
+
+var app = express();
+const router = express.Router();
+const mongoUser = globals.umongodb;
+const mongoPass = globals.pmongodb;
+var mongoDBuri = 'mongodb://' + mongoUser + ':' + mongoPass + '@ds151908.mlab.com:51908/atelje';
+
 // Connect to the db
-/*MongoClient.connect(mongodbUrl, function (err, db) {
+MongoClient.connect(mongoDBuri, function (err, db) {
   if (err) {
+    console.log(mongoDBuri);
     throw err;
   }
 
@@ -28,8 +29,7 @@ var md5 = require('md5');
 
   // set db variable
   this.db = db;
-});*/
-
+});
 
 getDatabase = function() {
   return this.db;
@@ -37,15 +37,25 @@ getDatabase = function() {
 
 app.set('port', process.env.PORT || 3000)
 
-router.get('/init', function (req, res) {
+router.get('/init/users', function (req, res) {
   console.log('Initalizing database, adding users...');
 
-  //user.initUsers(db);
+  user.initUsers(db);
 
   res.json({
     message: 'success'
   });
 });
+
+router.get('/init/blogs', function (req, res) {
+  console.log('Initalizing database, adding blogs...');
+  blog.initBlog(db);
+
+  res.json({
+    message: 'success'
+  });
+});
+
 
 /* GET api listing. */
 router.get('/', (req, res) => {
