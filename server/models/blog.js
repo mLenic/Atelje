@@ -12,11 +12,29 @@ var blogSchema = new Schema({
     color: String,
     datePosted: Date,
     type: String,
-    //pictures: [{type: String}]
+    pictures: [{type: String}]
 });
 
 
 var Blog = mongoose.model('Blog', blogSchema);
+
+var fetchBlogposts = function(db){
+    let blogsArray = null;
+    this.db.collection('blog', function (err, collection) {
+        if (err) {
+          console.error('Error accessing blog collection: ' + err);
+        }
+    
+        collection.find().toArray(function (err, blogs) {
+          if (err) {
+            console.error('Error fetching blogs collection ' + err);
+          }
+            blogsArray = blogs;
+        });
+    });
+
+    return blogsArray;
+}
 
 var initBlog = function(db){
 
@@ -29,7 +47,7 @@ var initBlog = function(db){
         color: 'red',
         datePosted: new Date(),
         type: 'neki',
-        //pictures: ['https://aaa.aa.com', 'https://bbb.bb.com']
+        pictures: ['https://aaa.aa.com', 'https://bbb.bb.com']
     });
     
     console.log('Inserting blog to db.');
@@ -60,4 +78,5 @@ var initBlog = function(db){
 module.exports = {
     Blog: Blog,
     initBlog: initBlog,
+    fetchBlogposts: fetchBlogposts,
 }

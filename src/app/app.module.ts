@@ -17,13 +17,14 @@ import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { RecordingsComponent } from './recordings/recordings.component';
+import { BlogpostComponent } from './blogpost/blogpost.component';
+import { RecordingComponent } from './recording/recording.component';
 
 //Custom Services
 import { ContactService } from './contact/contact.service';
-import { RecordingsComponent } from './recordings/recordings.component';
-import { BlogpostComponent } from './blogpost/blogpost.component';
 import { GeneralService } from './core/service/general.service';
-import { RecordingComponent } from './recording/recording.component';
+import { BlogService } from './core/service/blog.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { RecordingComponent } from './recording/recording.component';
   ],
   providers: [
     ContactService,
-    GeneralService
+    GeneralService,
+    BlogService
   ],
   bootstrap: [AppComponent]
 })

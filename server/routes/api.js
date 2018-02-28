@@ -36,7 +36,24 @@ getDatabase = function() {
 }
 
 app.set('port', process.env.PORT || 3000)
+/**
+ * Routes that handle blog 
+ * /blogposts - returns an array of all blog posts from database
+ * /blogpost/:id - Returns a single blogpost that matches the provided id
+ * @Input: Contact form (mail, name and message)
+ */
+router.get('/blogposts', function (req, res) {
+  console.log('Fetching blogs from DB...');
 
+  let users = blog.fetchBlogposts();
+
+  res.json({
+    users: users,
+  });
+});
+/**
+ * Routes that handle initialization of DB - Shouldn't be in production
+ */
 router.get('/init/users', function (req, res) {
   console.log('Initalizing database, adding users...');
 
@@ -81,7 +98,6 @@ router.post('/mailing/contact/new', function (req, res) {
   
 });
 
-router.get('/login', function (req, res) {res.send('get works');});
 /**
  * Route that handles login 
  * @Input: Contact form (Email and password)
