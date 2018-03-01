@@ -11,7 +11,7 @@ export class BlogService {
     ) { }
 
     public getBlogPosts(){
-        var blogApiUri = 'localhost:3000/api/blogposts';
+        var blogApiUri = 'http://localhost:3000/api/blogposts';
         return this.http
             .get(blogApiUri, {})
             .map((response: Response) => {

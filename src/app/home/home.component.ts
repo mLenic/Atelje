@@ -22,8 +22,10 @@ export class HomeComponent implements OnInit {
     //Fetch all blogs at page load - WIll have to save blogs to session storage - so they won't be loaded every time
     this.blogService.getBlogPosts()
                     .subscribe(data => {
+                      console.log("data blogposts recieved");
                       console.log(data);
                     }, error => {
+                      console.log("error blogposts recieved");
                       console.log(error);
                     })
   }

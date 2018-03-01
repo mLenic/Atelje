@@ -45,11 +45,25 @@ app.set('port', process.env.PORT || 3000)
 router.get('/blogposts', function (req, res) {
   console.log('Fetching blogs from DB...');
 
-  let users = blog.fetchBlogposts();
+  blog.fetchBlogposts(db)
+    .then((blogs) => {
+      console.log("got blogs");
+      console.log(blogs);
+      res.json({
+        message: 'success',
+        blogs: blogs,
+      })
+    }).catch((error) => {
+      res.json({
+        message: 'failure',
+        //TODO: Add reporting on failure (mail)
+      })
+    });
+});
 
-  res.json({
-    users: users,
-  });
+router.get('/blogpost/:id', function(req, res){
+  var id = req.params.id;
+  console.log(id);
 });
 /**
  * Routes that handle initialization of DB - Shouldn't be in production
