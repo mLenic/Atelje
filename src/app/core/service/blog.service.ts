@@ -8,21 +8,21 @@ export class BlogService {
 
     constructor (
         private http: Http,
-    ) { }
+    ) { 
+        console.log("Making blog service");
+    }
 
     public getBlogPosts(){
         var blogApiUri = 'http://localhost:3000/api/blogposts';
         return this.http
             .get(blogApiUri, {})
             .map((response: Response) => {
-                console.log("Response from server");
-                this._blogPosts = ["BLOG"];
                 return response;
             });
     }
 
     public getBlogPost(id: number){
-        var blogPostApiUri = '/api/blogpost/' + id;
+        var blogPostApiUri = 'http://localhost:3000/api/blogpost/' + id;
         return this.http
             .get(blogPostApiUri, {})
             .map((response: Response) => {

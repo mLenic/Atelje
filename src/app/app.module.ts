@@ -24,7 +24,7 @@ import { RecordingComponent } from './recording/recording.component';
 //Custom Services
 import { ContactService } from './contact/contact.service';
 import { GeneralService } from './core/service/general.service';
-import { BlogService } from './core/service/blog.service';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +49,6 @@ import { BlogService } from './core/service/blog.service';
   providers: [
     ContactService,
     GeneralService,
-    BlogService
   ],
   bootstrap: [AppComponent]
 })

@@ -23,7 +23,8 @@ export class HomeComponent implements OnInit {
     this.blogService.getBlogPosts()
                     .subscribe(data => {
                       console.log("data blogposts recieved");
-                      console.log(data);
+                      var res = JSON.parse(data.text());
+                      console.log(res.blogs);
                     }, error => {
                       console.log("error blogposts recieved");
                       console.log(error);

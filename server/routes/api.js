@@ -47,8 +47,6 @@ router.get('/blogposts', function (req, res) {
 
   blog.fetchBlogposts(db)
     .then((blogs) => {
-      console.log("got blogs");
-      console.log(blogs);
       res.json({
         message: 'success',
         blogs: blogs,
@@ -62,8 +60,20 @@ router.get('/blogposts', function (req, res) {
 });
 
 router.get('/blogpost/:id', function(req, res){
-  var id = req.params.id;
-  console.log(id);
+  var id = Number(req.params.id);
+  blog.fetchBlogpost(db, id)
+        .then((blog) => {
+          console.log(blog);
+          res.json({
+            message: 'success',
+            blog: blog,
+          })
+        }).catch((error) => {
+            res.json({
+              message: 'failure',
+            })
+          })
+  console.log(id)
 });
 /**
  * Routes that handle initialization of DB - Shouldn't be in production

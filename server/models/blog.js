@@ -25,6 +25,7 @@ var fetchBlogposts = function(db){
 
 var fetchBlogpost = function(db, id){
     var query = {idvalue: id};
+    console.log(query);
     return db.collection('blog').find(query).toArray();
 }
 
@@ -58,4 +59,5 @@ module.exports = {
     Blog: Blog,
     initBlog: initBlog,
     fetchBlogposts: fetchBlogposts,
+    fetchBlogpost: fetchBlogpost,
 }
