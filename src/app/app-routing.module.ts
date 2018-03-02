@@ -19,7 +19,7 @@ const routes: Routes = [
      { path: 'about',   component: AboutComponent                       },
      { path: 'contact', component: ContactComponent                     },
      { path: 'blog',    component: BlogComponent                        },
-     { path: 'blogpost',    component: BlogpostComponent                        },
+     { path: 'blogpost/:id',    component: BlogpostComponent                        },
      { path: 'recordings',    component: RecordingsComponent                        },
      { path: 'recording',    component: RecordingComponent                        },
      { path: 'therapy',    component: TherapyComponent                        },

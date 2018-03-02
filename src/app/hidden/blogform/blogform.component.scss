@@ -12,10 +12,177 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
         }
 
         .form-field .cols {
             width: 32%;
-          }
+        }
+
+        .form-field .textfield {
+            height: 300px;
+        }
+
+        .image-pane {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-flow: row wrap;
+            align-content: flex-end;
+
+            .image-element{
+
+                height: 300px;
+                width: 300px;
+
+                .preview {
+                    display: flex;
+                    max-width: 250px;
+                    max-height: 250px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+
+                }
+    
+                .imgclear {
+                    cursor: pointer;
+                }
+                
+            }
+
+            
+        }
+        
+        .content-field {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            .textfield {
+                height: 300px;
+            }
+            .bigflex {
+                /* This will be twice as */
+                /* big as the small item. */
+                flex: 2 0 0;
+            }
+            .smallflex {
+                flex: 1 0 0;
+            }
+        }
+            
+    }
+}
+
+$blogpost-header-height: 50vh;
+
+.blogpost-wrapper {
+    min-height: 100vh;
+    padding-top: $nav-height;
+
+    .blogpost-header {
+        height: $blogpost-header-height;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .blogpost-img-div {
+            position: absolute;
+            width: 100%;
+            //position: fixed;
+            z-index: -2;
+        
+            .blogpost-img {
+                width: 100%;
+                height: $blogpost-header-height;
+                object-fit: cover;
+                overflow: hidden;
+            }
+        }
+
+        .light-bg-div {
+            height: $blogpost-header-height;
+            width: 100%;
+            position: absolute;
+            background-color: $white;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .blogpost-category {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: OpenSans-Regular;
+            font-size: 18px;
+        }
+        .blogpost-title {
+            margin: 10px 0;
+            font-family: PlayfairDisplay-Regular;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 45px;
+        }
+
+        .blogpost-date {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+    }
+
+    .blogpost-content {
+        padding: $content-padding 0;
+        width: $narrow-width;
+        margin: auto;
+
+        p {
+            text-indent: 40px;
+            text-align: justify;
+        }
+
+        .blogpost-quote {
+            width: 50%;
+            margin: 80px auto;
+
+            .quote-line {
+                margin: 40px 0;
+                //width: 70%;
+            }
+            
+            .quote-text {
+                text-align: center;
+                font-size: 18px;
+            }
+
+            .quote-author {
+                margin-top: 25px;
+                text-align: right;
+                color: $gray;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 14px;
+            }
+        }
+
+        .blogpost-gallery {
+            margin-top: $content-padding;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .gallery-img-div {
+                width: 30%;
+                margin-bottom: 50px;
+                .gallery-img {
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                    overflow: hidden;
+                }
+            }
+        }
     }
 }

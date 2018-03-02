@@ -1,26 +1,28 @@
+//Imported modules
 const express = require('express');
-const router = express.Router();
-
-const axios = require('axios');
-
-var user = require('../models/user');
-var blog = require('../models/blog');
-
-var mailer = require('../mailing/contact');
-
 var mongoose = require('mongoose');
-const mongodbUrl = 'mongodb://localhost:27017/AteljePsihoterapije'
-
 var MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectID;
-
-var app = express();
-
 const cors = require('cors');
 var md5 = require('md5');
+
+//Custom modules
+var globals = require('../../globals');
+var user = require('../models/user');
+var blog = require('../models/blog');
+var mailer = require('../mailing/contact');
+var upload = require('../upload/file-upload');
+
+var app = express();
+const router = express.Router();
+const mongoUser = globals.umongodb;
+const mongoPass = globals.pmongodb;
+var mongoDBuri = 'mongodb://' + mongoUser + ':' + mongoPass + '@ds151908.mlab.com:51908/atelje';
+
 // Connect to the db
-/*MongoClient.connect(mongodbUrl, function (err, db) {
+MongoClient.connect(mongoDBuri, function (err, db) {
   if (err) {
+    console.log(mongoDBuri);
     throw err;
   }
 
@@ -28,24 +30,98 @@ var md5 = require('md5');
 
   // set db variable
   this.db = db;
-});*/
-
+});
 
 getDatabase = function() {
   return this.db;
 }
 
 app.set('port', process.env.PORT || 3000)
+/**
+ * Routes that handle blog 
+ * /blogposts - returns an array of all blog posts from database
+ * /blogpost/:id - Returns a single blogpost that matches the provided id
+ * @Input: Contact form (mail, name and message)
+ */
+router.get('/blogposts', function (req, res) {
+  console.log('Fetching blogs from DB...');
 
-router.get('/init', function (req, res) {
+  blog.fetchBlogposts(db)
+    .then((blogs) => {
+      res.json({
+        message: 'success',
+        blogs: blogs,
+      })
+    }).catch((error) => {
+      res.json({
+        message: 'failure',
+        //TODO: Add reporting on failure (mail)
+      })
+    });
+});
+
+router.get('/blogpost/:id', function(req, res){
+  var id = Number(req.params.id);
+  blog.fetchBlogpost(db, id)
+        .then((blog) => {
+          console.log(blog);
+          res.json({
+            message: 'success',
+            blog: blog,
+          })
+        }).catch((error) => {
+            res.json({
+              message: 'failure',
+            })
+          })
+  console.log(id)
+});
+
+/**
+ * Route that handles AWS S3 file upload signatures
+ */
+router.get('/sign-s3', function(req, res){
+  
+  upload.getSignedS3Url(req, function(data) {
+    if(data.status === 'error'){
+
+      res.json({
+        message: 'error'
+      });
+    } else {
+
+      res.json({
+        message: 'success',
+        data: data.data,
+      });
+    }
+    
+  });
+
+});
+
+/**
+ * Routes that handle initialization of DB - Shouldn't be in production
+ */
+router.get('/init/users', function (req, res) {
   console.log('Initalizing database, adding users...');
 
-  //user.initUsers(db);
+  user.initUsers(db);
 
   res.json({
     message: 'success'
   });
 });
+
+router.get('/init/blogs', function (req, res) {
+  console.log('Initalizing database, adding blogs...');
+  blog.initBlog(db);
+
+  res.json({
+    message: 'success'
+  });
+});
+
 
 /* GET api listing. */
 router.get('/', (req, res) => {
@@ -71,7 +147,6 @@ router.post('/mailing/contact/new', function (req, res) {
   
 });
 
-router.get('/login', function (req, res) {res.send('get works');});
 /**
  * Route that handles login 
  * @Input: Contact form (Email and password)

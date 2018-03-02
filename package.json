@@ -26,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "angular-font-awesome": "^3.0.3",
+    "aws-sdk": "^2.205.0",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "bootstrap3": "^3.3.5",
@@ -34,7 +35,7 @@
     "font-awesome": "^4.7.0",
     "mongoose": "^4.13.8",
     "nodemailer": "^4.4.2",
-    "rxjs": "^5.1.0",
+    "rxjs": "^5.5.2",
     "ts-md5": "^1.2.4",
     "typescript": "~2.2.0",
     "zone.js": "^0.8.4"

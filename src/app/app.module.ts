@@ -17,13 +17,13 @@ import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { RecordingsComponent } from './recordings/recordings.component';
+import { BlogpostComponent } from './blogpost/blogpost.component';
+import { RecordingComponent } from './recording/recording.component';
 
 //Custom Services
 import { ContactService } from './contact/contact.service';
-import { RecordingsComponent } from './recordings/recordings.component';
-import { BlogpostComponent } from './blogpost/blogpost.component';
 import { GeneralService } from './core/service/general.service';
-import { RecordingComponent } from './recording/recording.component';
 import { TherapyComponent } from './therapy/therapy.component';
 import { AboutRecordingsComponent } from './about-recordings/about-recordings.component';
 
@@ -51,7 +51,7 @@ import { AboutRecordingsComponent } from './about-recordings/about-recordings.co
   ],
   providers: [
     ContactService,
-    GeneralService
+    GeneralService,
   ],
   bootstrap: [AppComponent]
 })

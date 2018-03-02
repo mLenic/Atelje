@@ -20,12 +20,29 @@
             <input type="text" id="description" class="input" name="description" [formControl]="description">
           </div>
           <br/>
-          <div class="form-field">
-            <label class="label">Vsebina:</label>
-            <textarea class="message input" [formControl]="message"></textarea>
+          <div class="form-field cols">
+              <label for="quoteAuthor" class="label">Ime avtorja citata</label>
+              <input type="text" id="quoteAuthor" class="input" name="quoteAuthor" [formControl]="quoteAuthor">
+            </div>
+            <br/>
+          <div class="">
+            <div class="contentContent content-field">
+                <label class="label">Vsebina:</label>
+                <button class="message input button-dark" (click)="addParagraphContentHTML()">Dodaj odstavek</button>
+                <button class="message input button-dark" (click)="addQuoteContentHTML()">Dodaj citat</button>
+                <textarea class="message input textfield" [formControl]="message"></textarea>
+                <button class="message input button-dark" (click)="reviewContentHTML()">Poglej vsebino</button>
+            </div>
+            <div class="contentElements content-field smallflex">
+                <div *ngFor="let element of blogContent.elements">
+                    {{element}}
+                </div>
+            </div>
+
+              
           </div>
           <br/>
-          <!--
+
           <div class="form-field">
             <label class="label">Kategorija:</label>
             <select type="text" class="input" [(ngModel)]="category" [ngModelOptions]="{standalone: true}">
@@ -34,7 +51,7 @@
                 <option value="rest">Ostalo</option>
               </select>
           </div>
-          -->
+          
 
           <br/>
           <div class="form-field">
@@ -46,8 +63,27 @@
               </select>
           </div>
 
+          <br/>
+          <div>
+            <input type="file" id="file-input" (change)="onFileInputChange($event.target.files)">
+            <p id="status">{{uploadStatusMessage}}</p>
+            <p id="status">Number of pictures: {{picUrls.length}}</p>
+            <div class="image-pane">
+                <div *ngFor="let pic of picUrls" class="image-element">
+                    <i class="imgclear" (click)="clearImage(pic.url)">Remove picture</i>  
+                    <img class="preview" [src]="pic.url">
+                </div>
+            </div>
+            
+          </div>
+          
           
       </form>
       
     </div>
+</div>
+<div class="blogpost-wrapper">
+  <div [innerHTML]="blogTestDisplay" style="border: 1px solid black; margin: 10px;">
+
   </div>
+</div>
