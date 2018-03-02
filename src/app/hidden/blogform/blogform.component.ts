@@ -25,7 +25,10 @@ export class BlogformComponent implements OnInit {
     public colour:          string;
 
     public uploadFile: File;
-    public picUrl;
+
+    public picUrls: Array<any> = new Array<string>();
+    
+    public uploadStatusMessage: string = "Please select a file";
 
     public response = {
         status: null,
@@ -72,15 +75,18 @@ export class BlogformComponent implements OnInit {
         
         if(this.uploadFile == null){
             console.log("No file selected");
+            this.setStatus("Please select a file");
             return;
         }
 
+        this.setStatus("Getting file signature");
         var s3Data = null;
         const awsS3Operations = this.blogService.getSignedRequest(this.uploadFile)
             .pipe(
                 mergeMap(
                     (data:Response) => {
                         s3Data = JSON.parse(data.text());
+                        this.setStatus("Success getting file signature. Uploading file");
                         if(s3Data.message === 'success'){
                             return this.blogService.uploadPicture(this.uploadFile, s3Data.data.signedRequest, s3Data.data.url);
                         } else {
@@ -91,35 +97,23 @@ export class BlogformComponent implements OnInit {
             );
 
         awsS3Operations.subscribe(data => {
-            this.picUrl = s3Data.data.url;
+            this.picUrls.push({url: s3Data.data.url});
+            this.setStatus("Successfully uploaded file. Please choose new file.");
         }, error => {
+            this.setStatus("Error occured while uploading file. Try again please");
             console.log(error);
         });
-
-        /* this.blogService.getSignedRequest(this.uploadFile)
-                            .subscribe(data => {
-                                const s3Data = JSON.parse(data.text());
-                                if(s3Data.message === 'success') {
-                                    this.blogService.uploadPicture(this.uploadFile, s3Data.data.signedRequest, s3Data.data.url)
-                                                    .subscribe( data => {
-                                                        console.log("data");
-                                                        console.log(data);
-                                                        this.picUrl = s3Data.data.url;
-                                                    }, error => {
-                                                        console.log("error");
-                                                        console.log(error);
-                                                    });
-                                } else {
-                                    console.log("Failed to get signed URL for picture");
-                                    console.log(data);
-                                }
-                                
-                            }, error => {
-                                console.log(error);
-                            }) */
 
     }
 
     submitBlog() {}
 
+    clearImage(imgUrl: string){
+        this.setStatus("Picture deleted. Please select a file.")
+        this.picUrls = this.picUrls.filter(url => url.url != imgUrl);
+    }
+
+    setStatus(msg: string){
+        this.uploadStatusMessage = msg;
+    }
 }

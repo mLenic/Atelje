@@ -18,10 +18,37 @@
             width: 32%;
         }
 
-        .preview {
+        .image-pane {
             display: flex;
-            width: 250px;
-            height: auto;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-flow: row wrap;
+            align-content: flex-end;
+
+            .image-element{
+
+                height: 300px;
+                width: 300px;
+
+                .preview {
+                    display: flex;
+                    max-width: 250px;
+                    max-height: 250px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+
+                }
+    
+                .imgclear {
+                    cursor: pointer;
+                }
+                
+            }
+
+            
         }
+        
     }
 }

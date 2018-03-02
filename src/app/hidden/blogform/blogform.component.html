@@ -47,10 +47,20 @@
           </div>
 
           <br/>
-          <input type="file" id="file-input" (change)="onFileInputChange($event.target.files)">
-              <p id="status">Please select a file</p>
-          <img *ngIf="picUrl" class="preview" [src]="picUrl">
-          <p *ngIf="!picUrl">No pic displayed yet</p>
+          <div>
+            <input type="file" id="file-input" (change)="onFileInputChange($event.target.files)">
+            <p id="status">{{uploadStatusMessage}}</p>
+            <p id="status">Number of pictures: {{picUrls.length}}</p>
+            <div class="image-pane">
+                <div *ngFor="let pic of picUrls" class="image-element">
+                    <i class="imgclear" (click)="clearImage(pic.url)">Remove picture</i>  
+                    <img class="preview" [src]="pic.url">
+                </div>
+            </div>
+            
+          </div>
+          
+          
       </form>
       
     </div>
