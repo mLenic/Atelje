@@ -24,7 +24,8 @@ import { RecordingComponent } from './recording/recording.component';
 //Custom Services
 import { ContactService } from './contact/contact.service';
 import { GeneralService } from './core/service/general.service';
-
+import { TherapyComponent } from './therapy/therapy.component';
+import { AboutRecordingsComponent } from './about-recordings/about-recordings.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,8 @@ import { GeneralService } from './core/service/general.service';
     RecordingsComponent,
     BlogpostComponent,
     RecordingComponent,
+    TherapyComponent,
+    AboutRecordingsComponent,
   ],
   imports: [
     BrowserModule,

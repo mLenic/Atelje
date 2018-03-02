@@ -67,8 +67,10 @@
                         }
                     }
                 }
+                /*
                 .hypnosis-questions-wrapper {
-                    text-align: center;
+                    //text-align: center;
+                    display: flex;
                     .hypnosis-about-element{
 
                         .hypnosis-question {
@@ -83,6 +85,48 @@
                         }
                         .hypnosis-answer{
                             margin-top: 10px;
+                        }
+                    }
+                }
+                */
+                .hypnosis-questions-wrapper {
+                    display: flex;
+                    
+                    .hypnosis-questions-list-wrapper {
+                        width: 30%;
+                        padding-right: 50px;
+
+                        .hypnosis-question {
+                            padding: 15px 15px 15px 0;
+                            border-right: 4px solid $light-gray;
+                            //text-transform: uppercase;
+                            letter-spacing: 2px;
+                            font-size: 18px;
+                            color: $gray;
+
+                        &.active  {
+                            color: $black;
+                            border-right: 4px solid $black;
+                            font-family: OpenSans-Semibold;
+                        }
+
+                        }
+                    }
+
+                    .hypnosis-answer-wrapper {
+                        width: 70%;
+                        text-align: justify;
+
+                        .hypnosis-answer-title {
+                            margin-bottom: 20px;
+                            //text-transform: uppercase;
+                            letter-spacing: 2px;
+                            font-size: 28px;
+                            font-family: PlayfairDisplay-Regular;
+                        }
+
+                        .hypnosis-answer-content {
+
                         }
                     }
                 }

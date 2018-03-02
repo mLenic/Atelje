@@ -46,6 +46,7 @@
               To je vse kar potrebujete za velike spremembe.
           </div>   
         </div>
+        <!--
         <div class="hypnosis-questions-wrapper">
           <div *ngFor='let element of about' class="hypnosis-about-element">
             <div class="hypnosis-question title-smaller" (click)="elementClicked(element)">
@@ -56,30 +57,29 @@
             </div>
           </div>
         </div>
-
-        <div class="hypnosis-recording-element">
-          <br/>
-          <br/>
-          <br/>
-          Preden začneva.. <br/>
-          <br/>
-          te prosim, da si izbereš miren in udoben prostor. Pomembno je, da se lahko sprostiš in da se ob tem počutiš varno.<br/>
-          Ne pozabi izkjučiti mobilnega telefona in drugih elektronskih naprav. <br/>
-          Njapomembnejše pa je, da hipnoze ne poslušaš medtem ko voziš oz. kadarkoli moraš ostati zbran. <br/>
-          <br/>
-          <i>Si pripravljen na velike spremembe?</i><br/>
-      
-          <br/>
-          <div class="form-field">
-            <div class="confirm"> Da </div>
-            <a class="more" href="/contact"> Dodatna vprašanja </a>
+        -->
+        <div class="hypnosis-questions-wrapper">
+          <div class="hypnosis-questions-list-wrapper">
+            <div *ngFor='let element of about' class="hypnosis-question" (click)="elementClicked(element)">
+                {{element.question}}
+            </div>
           </div>
-          <br/>
+          <div class="hypnosis-answer-wrapper">
+            <div class="hypnosis-answer-title">
+              Ali je hipnoza primerna za vse?
+            </div>
+            <div class="hypnosis-answer-content">
+              Hipnoza je primerna za skoraj vse. Ni primerna za obravnavo psihoz (npr. shizofrenije). Hipnoza prav tako ni primerna za osebe z epilepsijo. 
+              V teh primerih hipnoza ni škodljiva, vsekakor pa ni zadostna za obravnavo resnih psihičnih motenj. Kljub temu da osbtaja vedno več dokazov o učikovitosti hipnoze tudi za tovstne motnje, je le to izven obsega mojega dela. 
+              <br>
+              <br>
+              Moja etična dolžnost in odgovornost je, da v tovrstnih primerih ne dajem kakršnihkoli zdravstvenih nasvetov. V kolikor ste v dvomih me lahko knotaktirate ali pa  se posvetujte z vašim osebnim zdravnikom.	
+            </div>
+          </div>
+        </div>
           <div class="recordingframe" click>
             <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fbrianskyze%2F008-prescriptive-grammar-radio-show%2F" frameborder="0"></iframe>
           </div>
-          
-        </div>
       </div>
     </div>
   </div>

@@ -17,7 +17,7 @@ export class NavigationComponent implements OnInit {
   windowHeight = 0
   mobileNavigation: boolean = false
 
-  constructor(@Inject(DOCUMENT) private document: Document, private generalService: GeneralService) { }
+  constructor(@Inject(DOCUMENT) private document: Document, public generalService: GeneralService) { }
 
   ngOnInit() {
     this.windowHeight = window.innerHeight
@@ -33,7 +33,7 @@ export class NavigationComponent implements OnInit {
     //console.log(this.windowHeight)
     
     //if currentLink is blog, home or hypnosis, nav bg becomes white at 1/4 of window height
-    if(this.generalService.currentLink == 'blog' || this.generalService.currentLink == 'home' || this.generalService.currentHypnosisSublink == 'about-hypnosis') 
+    if(this.generalService.currentLink == 'blog' || this.generalService.currentLink == 'therapy' || this.generalService.currentLink == 'home' || this.generalService.currentHypnosisSublink == 'about-hypnosis') 
     {
       if(scrollTop > (this.windowHeight / 4))
       {
