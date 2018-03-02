@@ -10,7 +10,7 @@
     
 
     .recording-inner-wrapper{
-        margin-top: calc(#{$nav-height} + #{$subnav-height});
+        margin-top: calc(#{$nav-height} + #{$subnav-height} + #{$content-padding});
         width: 100%;
 
         .recording-header {
@@ -40,8 +40,85 @@
             width: $narrow-width;
             margin: auto;
             padding: $content-padding 0;
-            min-height: 90vh;
+            min-height: 40vh;
             text-align: justify;
+        }
+
+        .select-recording-wrapper {
+
+            .recordings-list {
+                width: $narrow-width;
+                margin: auto;
+                display: flex;
+                justify-content: center;
+
+                .recording-element {
+                    width: 230px;
+                    display: flex;
+                    flex-direction: column;
+                    //justify-content: center;
+                    align-items: center;
+                    text-align: center;   
+                    padding: 0 10px 10px 10px;
+                    border-bottom: 4px solid $light-gray; 
+                    text-transform: uppercase;
+                    cursor: pointer; 
+
+                    &.active {
+                        border-bottom: 4px solid $black;
+                    }
+                    
+                    .recording-element-icon-div {
+                        display: none;
+                        margin-bottom: 15px;
+
+                        .recording-element-icon {
+                            height: 15px;
+                            width: auto;
+                        }
+                    }
+                    
+                    .recording-element-title {
+                        //text-transform: uppercase;
+                        letter-spacing: 2px;
+                        font-size: 18px;
+                        color: $gray;
+
+                        &.active  {
+                            color: $black;
+                        }
+                    }
+                }
+            }
+            
+            .select-recording-line {
+                width: 700px;
+                margin: 20px auto;
+                background: $light-gray;
+            }  
+
+            .selected-recording-content-wrapper {
+                width: $narrower-width;
+                margin: $content-padding auto;
+
+                .selected-recording-title {
+                    margin-bottom: 20px;
+                    text-align: center;
+                    letter-spacing: 2px;
+                    font-size: 22px;
+                    text-transform: uppercase;
+                    font-family: OpenSans-Semibold;
+                }
+
+                .selected-recording-text {
+                    text-align: center;
+                }
+
+                .selected-recording-mix {
+                    margin: 30px auto;
+                    width: 500px;
+                }
+            }
         }
     }
 }

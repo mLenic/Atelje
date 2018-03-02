@@ -36,6 +36,11 @@ export class AboutComponent implements OnInit {
       "show": false
     },
     {
+      "question": "Kakšni so stranski učinki?",
+      "answer": "Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
+      "show": false
+    },
+    {
       "question": "Ali je obisk hipnoterapevta bolj koristen kot poslušanje zvočnih posnetkov?",
       "answer": "Moji zvočni posnetki so učinkovito orodje, ki vam s pomočjo vaše podzavesti pomagajo, da dosežete kar želite. Kljub temu pa je hipnoterapija veliko bolj učinkovita kadar je individualizirana. Upoštevati je potrebno edinstvene motivacije, osebnost, zanimanja in klinentova nagnjenja. Le tako lahko terapevt prilagodi sugestije in metafore.  Za več inforformacij, mi lahko pišete (kontakt).",
       "show": false
@@ -69,7 +74,7 @@ export class AboutComponent implements OnInit {
     const scrollTop = window.scrollY;
     const windowHeight = window.outerHeight;
     console.log(scrollTop);
-    
+    /*
     if(scrollTop > (this.windowHeight - 100)) //nav-height = 100px
     {
         console.log("oi");
@@ -80,6 +85,7 @@ export class AboutComponent implements OnInit {
         this.fixedSubNav = false;
         console.log(this.fixedSubNav);
     }
+    */
   }
   scrollToTop()
   {

@@ -24,6 +24,8 @@ import { RecordingsComponent } from './recordings/recordings.component';
 import { BlogpostComponent } from './blogpost/blogpost.component';
 import { GeneralService } from './core/service/general.service';
 import { RecordingComponent } from './recording/recording.component';
+import { TherapyComponent } from './therapy/therapy.component';
+import { AboutRecordingsComponent } from './about-recordings/about-recordings.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { RecordingComponent } from './recording/recording.component';
     RecordingsComponent,
     BlogpostComponent,
     RecordingComponent,
+    TherapyComponent,
+    AboutRecordingsComponent,
   ],
   imports: [
     BrowserModule,

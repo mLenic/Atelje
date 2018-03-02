@@ -1,0 +1,23 @@
+@import '../../variables.scss';
+
+.therapy-wrapper{
+    .therapy-inner-wrapper {
+
+        background-color: $white;
+        padding: $content-padding 0;
+
+        .therapy-content {
+            width: $narrower-width;
+            margin: auto;
+    
+            @include breakpoint-960 {
+                width: $narrow-width;
+            }
+
+            .therapy-text {
+                margin-bottom: 40px;
+                text-align: justify;
+            }
+        }
+    }
+}

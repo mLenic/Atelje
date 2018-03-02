@@ -59,8 +59,12 @@ $blogpost-header-height: 50vh;
 
     .blogpost-content {
         padding: $content-padding 0;
-        width: $narrow-width;
+        width: $narrower-width;
         margin: auto;
+
+        @include breakpoint-960 {
+            width: $narrow-width;
+        }
 
         p {
             text-indent: 40px;
@@ -98,7 +102,7 @@ $blogpost-header-height: 50vh;
             justify-content: space-between;
 
             .gallery-img-div {
-                width: 30%;
+                width: 48%;
                 margin-bottom: 50px;
                 .gallery-img {
                     width: 100%;

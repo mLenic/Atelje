@@ -20,10 +20,10 @@
 
   <div class="links-wrapper" [class.visible-navigation]="mobileNavigation">
     <div class="link">
-      <a href="/home" [class.active]="generalService.currentLink=='home'">domov</a>
+      <a href="/about" [class.active]="generalService.currentLink=='hypnosis'">hipnoza</a>
     </div>
     <div class="link">
-      <a href="/about" [class.active]="generalService.currentLink=='hypnosis'">hipnoza</a>
+      <a href="/therapy" [class.active]="generalService.currentLink=='therapy'">hipnoterapija</a>
     </div>
     <div class="link">
       <a href="/blog" [class.active]="generalService.currentLink=='blog'">blog</a>
@@ -49,14 +49,14 @@
 
   <div class="hypnosis-subnavigation" [class.white]="whiteNavBg" [class.transition]="bgTransition" [class.visible-hypnosis-subnavigation]="generalService.currentLink=='hypnosis'">
     <div class="subnavigation-links-wrapper" [class.visible-navigation]="mobileNavigation">
-      <div class="subnavigation-link">
-        <a href="/about" [class.active]="generalService.currentHypnosisSublink=='about-hypnosis'">o hipnozi</a>
+      <div class="subnavigation-link" [class.black]="whiteNavBg">
+        <a href="/about" [class.active]="generalService.currentHypnosisSublink=='about-hypnosis'" [class.black]="whiteNavBg">o hipnozi</a>
       </div>
-      <div class="subnavigation-link">
-        <a href="/about" [class.active]="generalService.currentLink=='home'">o posnetkih</a>
+      <div class="subnavigation-link" [class.black]="whiteNavBg">
+        <a href="/about-recordings" [class.active]="generalService.currentHypnosisSublink=='about-recordings'" [class.black]="whiteNavBg">o posnetkih</a>
       </div>
-      <div class="subnavigation-link">
-        <a href="/recordings" [class.active]="generalService.currentHypnosisSublink=='recordings'">posnetki</a>
+      <div class="subnavigation-link" [class.black]="whiteNavBg">
+        <a href="/recordings" [class.active]="generalService.currentHypnosisSublink=='recordings'" [class.black]="whiteNavBg">posnetki</a>
       </div>
     </div>
   </div>
