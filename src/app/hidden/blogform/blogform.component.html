@@ -6,38 +6,46 @@
       <form name="blogpostForm" [formGroup]="blogpostForm" (ngSubmit)="submitBlog()">
           <div class="form-field cols">
             <label for="title" class="label">Naslov</label>
-            <input type="text" id="title" class="input cols" name="title" [formControl]="title">
+            <input type="text" id="title" class="input half" name="title" [formControl]="title">
           </div>
           <br/>
 
           <div class="form-field">
             <label for="subtitle" class="label">Podnaslov</label>
-            <input type="text" id="subtitle" class="input cols" name="subtitle" [formControl]="subtitle">
+            <input type="text" id="subtitle" class="input half" name="subtitle" [formControl]="subtitle">
           </div>
           <br/>
-          <div class="form-field cols">
+          <div class="form-field">
             <label for="description" class="label">Opis</label>
-            <input type="text" id="description" class="input" name="description" [formControl]="description">
+            <input type="text" id="description" class="input half" name="description" [formControl]="description">
           </div>
           <br/>
-          <div class="form-field cols">
+          <div class="form-field">
               <label for="quoteAuthor" class="label">Ime avtorja citata</label>
-              <input type="text" id="quoteAuthor" class="input" name="quoteAuthor" [formControl]="quoteAuthor">
+              <input type="text" id="quoteAuthor" class="input half" name="quoteAuthor" [formControl]="quoteAuthor">
             </div>
             <br/>
-          <div class="">
-            <div class="contentContent content-field">
-                <label class="label">Vsebina:</label>
-                <button class="message input button-dark" (click)="addParagraphContentHTML()">Dodaj odstavek</button>
-                <button class="message input button-dark" (click)="addQuoteContentHTML()">Dodaj citat</button>
-                <textarea class="message input textfield" [formControl]="message"></textarea>
-                <button class="message input button-dark" (click)="reviewContentHTML()">Poglej vsebino</button>
-            </div>
-            <div class="contentElements content-field smallflex">
-                <div *ngFor="let element of blogContent.elements">
-                    {{element}}
+          <div class="content">
+            <div class="bigflex">
+                <div class="contentContent content-field">
+                    <label class="label">Vsebina:</label>
+                    <button class="message input button-dark" (click)="addParagraphContentHTML()">Dodaj odstavek</button>
+                    <button class="message input button-dark" (click)="addQuoteContentHTML()">Dodaj citat</button>
+                    <textarea class="message input textfield" [formControl]="message"></textarea>
+                    <button class="message input button-dark" (click)="reviewContentHTML()">Poglej vsebino</button>
                 </div>
             </div>
+            <div class="smallflex">
+              <div class="content-elements-container smallflex">
+                  <div *ngFor="let element of blogContent.elements">
+                      {{element.id + 1}}. {{element.idval}}: {{element.val | slice:0:20}} -  <a class="content-element-delete" (click)="deleteContentElement(element.id)">Izbriši element</a>
+                  </div>
+                  <div *ngIf="blogContent.elements.length == 0">
+                      Trenutno ni ničesar v blogu.
+                  </div>
+              </div>
+            </div>
+            
 
               
           </div>
@@ -45,7 +53,7 @@
 
           <div class="form-field">
             <label class="label">Kategorija:</label>
-            <select type="text" class="input" [(ngModel)]="category" [ngModelOptions]="{standalone: true}">
+            <select type="text" class="input half" [(ngModel)]="category" [ngModelOptions]="{standalone: true}">
                 <option value="personal" selected>Osebno</option>
                 <option value="hypnosis">Hipnoza</option>
                 <option value="rest">Ostalo</option>
@@ -56,7 +64,7 @@
           <br/>
           <div class="form-field">
             <label class="label">Barva:</label>
-            <select type="text" class="input" [(ngModel)]="colour" [ngModelOptions]="{standalone: true}">
+            <select type="text" class="input half" [(ngModel)]="colour" [ngModelOptions]="{standalone: true}">
                 <option style="background-color: red" value="red" selected>Rdeča</option>
                 <option style="background-color: green" value="green" >Zelena</option>
                 <option style="background-color: blue" value="blue" >Modra</option>

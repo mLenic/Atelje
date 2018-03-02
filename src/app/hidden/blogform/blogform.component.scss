@@ -19,6 +19,10 @@
             width: 32%;
         }
 
+        .form-field .half {
+            width: 50%;
+        }
+
         .form-field .textfield {
             height: 300px;
         }
@@ -54,24 +58,39 @@
 
             
         }
-        
-        .content-field {
+        .content {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            
-            .textfield {
-                height: 300px;
-            }
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
             .bigflex {
-                /* This will be twice as */
-                /* big as the small item. */
                 flex: 2 0 0;
+
+                .content-field {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    
+                    .textfield {
+                        height: 300px;
+                    }
+                }
             }
             .smallflex {
                 flex: 1 0 0;
+
+                .content-elements-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                 }
+                .content-element-delete {
+                    cursor: pointer;
+                }
             }
         }
+        
             
     }
 }

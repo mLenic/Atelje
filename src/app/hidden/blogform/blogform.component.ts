@@ -39,9 +39,15 @@ export class BlogformComponent implements OnInit {
     }
     public blogTestDisplay: string = ""; //For displaying how blog will look like
 
+
+    /**
+     * Elements is an array of values and their idvalues element e.g. 
+     *          {idval: 'p', val: 'opis......'}, {idval: 'quote', val: 'Nek citat pravi...', author: 'John'}
+     */
     public blogContent = {
         content: "",
-        elements: ["1", "2", "3"],
+        elements: [],
+        counter: 0,
     }
 
     constructor(
@@ -147,40 +153,78 @@ export class BlogformComponent implements OnInit {
 
     addParagraphContentHTML(){
         var contentEl = this.message.value;
-        this.blogContent.content = this.blogContent.content.concat(
-            '<p>' + contentEl + '</p>'
-        );
+        let el = {id: this.blogContent.counter, idval: 'Paragraph', val: contentEl, author: null};
+        
+        this.blogContent.counter += 1;
+        this.blogContent.elements.push(el);
+        
+        this.clearContent(false);
         console.log(this.blogContent.content);
     }
 
     addQuoteContentHTML(){
+        
         var contentEl = this.message.value;
         var contentAuthor = this.quoteAuthor.value;
 
-        this.blogContent.content = this.blogContent.content.concat(
-            '<div class="blogpost-quote">'
-             + '<div class="gradient-line-right quote-line"></div>'
-              + '<div class="quote-text">'
-               + contentEl
-              + '</div>'
-              + '<div class="quote-author"> - '
-               + contentAuthor
-              + '</div>'
-             + '<div class="gradient-line-right quote-line"></div>'
-            + '</div>'
+        let el = {id: this.blogContent.counter, idval: 'Quote', val: contentEl, author: contentAuthor};
 
-        );
+        this.blogContent.counter += 1;
+        this.blogContent.elements.push(el);
+
+        
+        this.clearContent(true);
         console.log(this.blogContent.content);
     }
 
-    clearContent(){
+    clearContent(delAuthor: boolean){
         this.message.setValue("");
+        if(delAuthor) this.quoteAuthor.setValue("");
+    }
+    deleteContentElement(elementId: number){
+        var idx = null;
+        for(var i = 0; i < this.blogContent.elements.length; i++){
+            if(this.blogContent.elements[i].id == elementId){
+                idx = i;
+            }
+        }
+
+        this.blogContent.elements.splice(idx, 1);
     }
 
     reviewContentHTML(){
-        var finalContent = this.blogContent.content.concat(
-            '</div>'
-        );
-        this.blogTestDisplay = finalContent;
+        this.blogContent.content = "";
+        this.createContentHTMLFromElements();
+        this.blogTestDisplay = this.blogContent.content;
+
+        this.clearContent(true);
+    }
+
+    createContentHTMLFromElements(){
+        this.initializeContentHTML();
+
+        this.blogContent.elements.forEach(element => {
+            if(element.idval === 'Paragraph'){
+                this.blogContent.content = this.blogContent.content.concat(
+                    '<p>' + element.val + '</p>'
+                );
+            } else if(element.idval === 'Quote'){
+                this.blogContent.content = this.blogContent.content.concat(
+                    '<div class="blogpost-quote">'
+                        + '<div class="gradient-line-right quote-line"></div>'
+                        + '<div class="quote-text">'
+                            + element.val
+                        + '</div>'
+                        + '<div class="quote-author"> - '
+                            + element.author
+                        + '</div>'
+                        + '<div class="gradient-line-right quote-line"></div>'
+                    + '</div>'
+
+        ); 
+            }
+        });
+
+        this.finalizeContentHTML();
     }
 }
