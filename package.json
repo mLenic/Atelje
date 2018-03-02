@@ -26,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "angular-font-awesome": "^3.0.3",
+    "aws-sdk": "^2.205.0",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "bootstrap3": "^3.3.5",

@@ -29,21 +29,21 @@ export class NavigationComponent implements OnInit {
     
     const scrollTop = window.scrollY
     const windowHeight = window.outerHeight
-    console.log(scrollTop)
-    console.log(this.windowHeight)
+    //console.log(scrollTop)
+    //console.log(this.windowHeight)
     
     //if currentLink is blog, home or hypnosis, nav bg becomes white at 1/4 of window height
     if(this.generalService.currentLink == 'blog' || this.generalService.currentLink == 'home' || this.generalService.currentHypnosisSublink == 'about-hypnosis') 
     {
       if(scrollTop > (this.windowHeight / 4))
       {
-          console.log("oi")
+          //console.log("oi")
           this.whiteNavBg = true
-          console.log(this.whiteNavBg)
+          //console.log(this.whiteNavBg)
       }
       else {
           this.whiteNavBg = false
-          console.log(this.whiteNavBg)
+          //console.log(this.whiteNavBg)
       }
     }
     //for other links nav bg becomes white at scroll
@@ -54,11 +54,11 @@ export class NavigationComponent implements OnInit {
       if(scrollTop > 1)
       {
           this.whiteNavBg = true
-          console.log(this.whiteNavBg)
+          //console.log(this.whiteNavBg)
       }
       else {
           this.whiteNavBg = false
-          console.log(this.whiteNavBg)
+          //console.log(this.whiteNavBg)
       }
     }
   }

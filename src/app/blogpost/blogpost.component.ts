@@ -13,6 +13,8 @@ export class BlogpostComponent implements OnInit {
 
   public  currentBlog: any = null;
   private _routeId: number = null;
+
+
   constructor(
     private route: ActivatedRoute,
     private generalService: GeneralService,
@@ -38,7 +40,6 @@ export class BlogpostComponent implements OnInit {
     //Fetch blog based on ID from URL
     
   }
-
 
   fetchBlogpost(){
     this.blogService.getBlogPost(this._routeId)

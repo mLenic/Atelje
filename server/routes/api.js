@@ -11,6 +11,7 @@ var globals = require('../../globals');
 var user = require('../models/user');
 var blog = require('../models/blog');
 var mailer = require('../mailing/contact');
+var upload = require('../upload/file-upload');
 
 var app = express();
 const router = express.Router();
@@ -75,6 +76,32 @@ router.get('/blogpost/:id', function(req, res){
           })
   console.log(id)
 });
+
+/**
+ * Route that handles AWS S3 file upload signatures
+ */
+router.get('/sign-s3', function(req, res){
+  
+  upload.getSignedS3Url(req, function(data) {
+    if(data.status === 'error'){
+      console.log("error reached");
+      console.log(err);
+      res.json({
+        message: 'error'
+      });
+    } else {
+      console.log("Data returned");
+      console.log(data);
+      res.json({
+        message: 'success',
+        data: data.data,
+      });
+    }
+    
+  });
+
+});
+
 /**
  * Routes that handle initialization of DB - Shouldn't be in production
  */

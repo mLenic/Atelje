@@ -46,6 +46,11 @@
               </select>
           </div>
 
+          <br/>
+          <input type="file" id="file-input" (change)="onFileInputChange($event.target.files)">
+              <p id="status">Please select a file</p>
+          <img *ngIf="picUrl" class="preview" [src]="picUrl">
+          <p *ngIf="!picUrl">No pic displayed yet</p>
       </form>
       
     </div>
