@@ -51,8 +51,6 @@ export class BlogService {
     }
 
     uploadPicture(file: File, signedRequest, url){
-        console.log("Iploading picture");
-        debugger;
         return this.http
                     .put(signedRequest, file, {})
                     .map((response: Response) => {

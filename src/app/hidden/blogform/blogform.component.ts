@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
+import { mergeMap } from 'rxjs/operators';
+import { Response } from '@angular/http';
+import { Observable } from 'rxjs/Rx'
 
 import { HiddenService } from '../service/hidden.service';
 import { BlogService } from '../../core/service/blog.service';
+
 
 @Component({
     selector: 'app-blogform',
@@ -65,12 +69,34 @@ export class BlogformComponent implements OnInit {
     
     onFileInputChange(files: FileList){
         this.uploadFile = files.item(0);
-        if(this.uploadFile == null){
-        console.log("No file selected");
-        }
         
+        if(this.uploadFile == null){
+            console.log("No file selected");
+            return;
+        }
 
-        this.blogService.getSignedRequest(this.uploadFile)
+        var s3Data = null;
+        const awsS3Operations = this.blogService.getSignedRequest(this.uploadFile)
+            .pipe(
+                mergeMap(
+                    (data:Response) => {
+                        s3Data = JSON.parse(data.text());
+                        if(s3Data.message === 'success'){
+                            return this.blogService.uploadPicture(this.uploadFile, s3Data.data.signedRequest, s3Data.data.url);
+                        } else {
+                            throw Observable.throw("Error in getting signed request."); 
+                        }
+                    }
+                )
+            );
+
+        awsS3Operations.subscribe(data => {
+            this.picUrl = s3Data.data.url;
+        }, error => {
+            console.log(error);
+        });
+
+        /* this.blogService.getSignedRequest(this.uploadFile)
                             .subscribe(data => {
                                 const s3Data = JSON.parse(data.text());
                                 if(s3Data.message === 'success') {
@@ -90,7 +116,7 @@ export class BlogformComponent implements OnInit {
                                 
                             }, error => {
                                 console.log(error);
-                            })
+                            }) */
 
     }
 

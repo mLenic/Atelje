@@ -31,11 +31,11 @@ var getSignedS3Url = function(req, callback){
 
     s3.getSignedUrl('putObject', s3Params, (err, data) => {
         const retData = {status: '', data: null};
-        if(err){
 
+        if(err){
             retData.status = 'error';
             callback(retData);
-        //return res.end();
+
         } else {
             const returnData = {
                 signedRequest: data,
@@ -46,7 +46,6 @@ var getSignedS3Url = function(req, callback){
             retData.data = returnData;
             callback(retData);
         }
-        
     });
 }
 

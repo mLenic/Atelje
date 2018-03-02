@@ -84,14 +84,12 @@ router.get('/sign-s3', function(req, res){
   
   upload.getSignedS3Url(req, function(data) {
     if(data.status === 'error'){
-      console.log("error reached");
-      console.log(err);
+
       res.json({
         message: 'error'
       });
     } else {
-      console.log("Data returned");
-      console.log(data);
+
       res.json({
         message: 'success',
         data: data.data,
