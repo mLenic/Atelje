@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { GeneralService } from '../core/service/general.service';
 import { BlogService } from '../core/service/blog.service';
@@ -16,6 +17,15 @@ export class BlogComponent implements OnInit {
   ) { }
 
   public arrBlogs: Array<any>;
+  public arrShownBlogs: Array<any>;
+
+  public searchTerm: string = "";
+  public searchCategory = {
+    hypnosis: true,
+    two: true,
+    three: true,
+    four: true
+  };
 
   posts: any[] = [
     {
@@ -114,8 +124,42 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
     this.generalService.currentLink = 'blog';
     this.generalService.printCurrentLink();
+
+    this.fetchBlogPosts();
+  }  
+
+  /**
+   * Search field logic: For searching Media and Formats
+   * 
+   * 
+   * @param term - string Term - that the array is being searched for
+   */
+  filterBlogs(){
+    
+    var tmpArray = new Array<any>();  
+    console.log(this.searchTerm);
+    
+    if(this.searchTerm === ""){
+      tmpArray = this.arrBlogs;
+    } else {
+      console.log(tmpArray);
+      //Filter for text - searching title and subtitle
+      if(this.arrBlogs == null || this.arrBlogs.length > 0){
+          this.arrBlogs.forEach(blog => {
+              if((blog.title.toLowerCase()).indexOf(this.searchTerm.toLowerCase()) != -1 ||  (blog.subTitle.toLowerCase()).indexOf(this.searchTerm.toLowerCase()) != -1  ){
+                  tmpArray.push(blog);
+              }
+          });
+      } 
+    }
+    
+    console.log(tmpArray);
+    //TODO: filter for categories
+
+    this.arrShownBlogs = tmpArray;
   }
 
+  //Initially show all blogs
   fetchBlogPosts(){
     var jsonBlogs = this.blogService.getBlogPostsFromStorage();
     if(jsonBlogs == null){
@@ -125,12 +169,16 @@ export class BlogComponent implements OnInit {
                       var res = JSON.parse(data.text());
                       this.blogService.saveBlogPostsToStorage(res.blogs);
                       this.arrBlogs = res.blogs;
+                      this.arrShownBlogs = res.blogs;
                     }, error => {
                       console.log("error blogposts recieved");
                       console.log(error);
                     })
     } else {
       this.arrBlogs = jsonBlogs;
+      this.arrShownBlogs = jsonBlogs;
     }
+
+    console.log(this.arrBlogs);
   }
 }

@@ -86,4 +86,35 @@ export class BlogpostComponent implements OnInit {
         console.log(error);
       })
   }
+
+  loadNextBlogPost(previous: boolean) {
+    //Blogs should be saved in sessionStorage and ordered by Date (API sends data back sorted)
+    var jsonBlogs = this.blogService.getBlogPostsFromStorage();
+    var currIdx = -1;
+    
+    for(var i = 0; i < jsonBlogs.length; i++){
+      if(Number(this._routeId) === Number(jsonBlogs[i].idvalue)){
+        currIdx = i;
+      }
+    }
+    var idUrl = null;
+    
+    if(previous){
+      
+      if(currIdx == jsonBlogs.length -1){
+        idUrl = jsonBlogs[0].idvalue;
+      } else {
+        idUrl = jsonBlogs[currIdx+1].idvalue;
+      }
+    } else{
+      
+      if(currIdx == 0){
+        idUrl = jsonBlogs[jsonBlogs.length-1].idvalue;
+      } else {
+        idUrl = jsonBlogs[currIdx-1].idvalue;
+      }
+    }
+    
+    this.router.navigate(['/blogpost/' + idUrl]);
+  }
 }

@@ -20,7 +20,7 @@ var blogSchema = new Schema({
 var Blog = mongoose.model('Blog', blogSchema);
 
 var fetchBlogposts = function(db){
-    return db.collection('blog').find().toArray();  
+    return db.collection('blog').find().sort({datePosted: -1}).toArray();  
 }
 
 var fetchBlogpost = function(db, id){
