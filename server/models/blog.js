@@ -13,7 +13,7 @@ var blogSchema = new Schema({
     color: String,
     datePosted: Date,
     type: String,
-    pictures: [{type: String}]
+    pictures: {type: Array, "default": []}
 });
 
 
@@ -33,7 +33,7 @@ var fetchBlogpost = function(db, id){
 var initBlog = function(db){
 
     var blog = new Blog({
-        idvalue: 0,
+        idvalue: 1,
         title: 'Testni blog',
         subTitle: 'Strmeti k soncu',
         descrption: 'Strmeti k soncu pomeni iskanje sreče',
@@ -42,7 +42,7 @@ var initBlog = function(db){
         color: 'red',
         datePosted: new Date(),
         type: 'neki',
-        pictures: ['https://aaa.aa.com', 'https://bbb.bb.com']
+        pictures: [{url: 'https://aaa.aa.com'}, {url: 'https://bbb.bb.com'}]
     });
     
     console.log('Inserting blog to db.');
@@ -54,10 +54,66 @@ var initBlog = function(db){
     });
 }
 
+var saveBlogPost = function(blog, db, callback){
+    
+    //get latest blog ID:
+    console.log("Getting blogs");
+    this.fetchBlogposts(db)
+    .then((blogs) => {
+        var latestId = 0;
+        console.log("got blogs");
+        blogs.forEach(blog => {
+            console.log(blog.title);
+            if(blog.idvalue > latestId){
+                latestId = blog.idvalue;
+            }
+        });
+
+        console.log("After getting blogs, check if blog == null or latestId == -1");
+        console.log(latestId);
+        if(blog == null || latestId == -1){
+            callback(false);
+            return;
+        }
+        console.log(blog.pictures);
+        var blogPost = new Blog({
+            idvalue: latestId + 1,
+            title: blog.title,
+            subTitle: blog.subtitle,
+            descrption: blog.description,
+            content: blog.message,
+            category: blog.category,
+            color: blog.colour,
+            datePosted: new Date(),
+            pictures: blog.pictures,
+            type: '',
+            
+        });
+        console.log('Inserting new blog to db.');
+        db.collection('blog').insert(blogPost, function(err) {
+            if(err){
+                console.error('Error when saving user: ' + err);
+                callback(false);
+            }
+            console.log('Blog saved successfully!');
+            callback(true);
+        });
+
+        
+    }).catch((error) => {
+        console.log("Got error");
+        latestId = -1;
+        callback(false);
+    });
+
+    
+}
+
 // make this available to our users in our Node applications
 module.exports = {
     Blog: Blog,
     initBlog: initBlog,
     fetchBlogposts: fetchBlogposts,
     fetchBlogpost: fetchBlogpost,
+    saveBlogPost: saveBlogPost,
 }

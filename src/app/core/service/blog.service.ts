@@ -16,7 +16,15 @@ export class BlogService {
         this.uriBase = 'http://localhost:3000';
     }
 
-     
+    public saveBlogPost(json){
+        var uri = this.uriBase + "/api/blogposts/new";
+
+        return this.http
+            .post(uri, json, {})
+            .map((response: Response) => {
+                return response.status;
+            });
+    }
 
     public getBlogPosts(){
         var blogApiUri = this.uriBase + '/api/blogposts';

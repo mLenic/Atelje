@@ -77,6 +77,24 @@ router.get('/blogpost/:id', function(req, res){
   console.log(id)
 });
 
+router.post('/blogposts/new', function (req, res) {
+
+  blog.saveBlogPost(req.body, db, function(status) {
+    if(status){
+      res.status(200);
+      res.json({
+        message: 'success',
+      })
+    } else {
+      res.status(400);
+      res.json({
+        message: 'failure',
+      })
+    }
+  });
+  
+});
+
 /**
  * Route that handles AWS S3 file upload signatures
  */

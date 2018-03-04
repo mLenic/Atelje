@@ -59,7 +59,6 @@ export class BlogformComponent implements OnInit {
 
     ngOnInit() {
         this.buildForm();
-        this.initializeContentHTML();
     }
 
     private buildForm() {
@@ -80,9 +79,9 @@ export class BlogformComponent implements OnInit {
     }
 
     initializeForm(){
-        this.blogpostForm.controls['title'].setValue("");
-        this.blogpostForm.controls['subtitle'].setValue("");
-        this.blogpostForm.controls['description'].setValue("");
+        this.blogpostForm.controls['title'].setValue("Naslov");
+        this.blogpostForm.controls['subtitle'].setValue("Podnaslov");
+        this.blogpostForm.controls['description'].setValue("Opis");
         this.blogpostForm.controls['message'].setValue("");
         this.blogpostForm.controls['quoteAuthor'].setValue("");
 
@@ -125,7 +124,31 @@ export class BlogformComponent implements OnInit {
 
     }
 
-    submitBlog() {}
+    //Submits blog to server
+    submitBlog() {
+        //Creates HTML inside this.blogContent.content variable
+        this.createContentHTMLFromElements();
+
+        var form = {
+            title: this.blogpostForm.controls['title'].value,
+            subtitle: this.blogpostForm.controls['subtitle'].value,
+            description: this.blogpostForm.controls['description'].value,
+            message: this.blogContent.content,
+            category: this.category,
+            colour: this.colour,
+            pictures: this.picUrls,
+        }
+        console.log(form);
+
+        this.blogService.saveBlogPost(form)
+                        .subscribe(data => {
+                            console.log("data");
+                            console.log(data);
+                        }, error => {
+                            console.log("error");
+                            console.log(error);
+                        })
+    }
 
     clearImage(imgUrl: string){
         this.setStatus("Picture deleted. Please select a file.")
@@ -221,7 +244,7 @@ export class BlogformComponent implements OnInit {
                         + '<div class="gradient-line-right quote-line"></div>'
                     + '</div>'
 
-        ); 
+                ); 
             }
         });
 
