@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GeneralService } from '../core/service/general.service';
+import { BlogService } from '../core/service/blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -9,7 +10,12 @@ import { GeneralService } from '../core/service/general.service';
 })
 export class BlogComponent implements OnInit {
 
-  constructor(private generalService: GeneralService) { }
+  constructor(
+    private generalService: GeneralService,
+    private blogService: BlogService,
+  ) { }
+
+  public arrBlogs: Array<any>;
 
   posts: any[] = [
     {
@@ -110,4 +116,21 @@ export class BlogComponent implements OnInit {
     this.generalService.printCurrentLink();
   }
 
+  fetchBlogPosts(){
+    var jsonBlogs = this.blogService.getBlogPostsFromStorage();
+    if(jsonBlogs == null){
+      this.blogService.getBlogPosts()
+                    .subscribe(data => {
+                      console.log("data blogposts recieved");
+                      var res = JSON.parse(data.text());
+                      this.blogService.saveBlogPostsToStorage(res.blogs);
+                      this.arrBlogs = res.blogs;
+                    }, error => {
+                      console.log("error blogposts recieved");
+                      console.log(error);
+                    })
+    } else {
+      this.arrBlogs = jsonBlogs;
+    }
+  }
 }

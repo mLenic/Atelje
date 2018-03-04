@@ -142,11 +142,11 @@ export class BlogformComponent implements OnInit {
 
         this.blogService.saveBlogPost(form)
                         .subscribe(data => {
-                            console.log("data");
-                            console.log(data);
+                            this.response.status = 200;
+                            this.response.message = "Uspešen vnos bloga."
                         }, error => {
-                            console.log("error");
-                            console.log(error);
+                            this.response.status = 400;
+                            this.response.message = "Neuspešen vnos bloga."
                         })
     }
 

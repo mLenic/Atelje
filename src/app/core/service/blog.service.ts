@@ -74,5 +74,26 @@ export class BlogService {
         this._blogPosts = blogposts;
     }
 
+    /**
+     * Localstorage items
+     */
 
+     saveBlogPostsToStorage(blogs){
+        var strBlogs = JSON.stringify(blogs);
+        sessionStorage.setItem("blogs", strBlogs);
+     }
+
+     getBlogPostsFromStorage(){
+         var strBlogs = sessionStorage.getItem("blogs");
+         var jsonBlogs = null;
+
+         if(strBlogs != null){
+             console.log("should return blog");
+             jsonBlogs = JSON.parse(strBlogs);
+             return jsonBlogs;
+         } else {
+             console.log("Blogs aren't here, load them anew!")
+             return jsonBlogs
+         }
+     }
 }

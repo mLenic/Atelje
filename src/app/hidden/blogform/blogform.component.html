@@ -87,7 +87,7 @@
           <br/>
           <hr/>
           <button (click)="submitBlog()" class="message input button-dark" >Dodaj blog</button>
-          
+          <div *ngIf="response.status">{{response.message}}</div>
       </form>
       
     </div>
