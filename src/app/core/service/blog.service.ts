@@ -13,7 +13,7 @@ export class BlogService {
         console.log("Making blog service");
 
         //TODO: Change for production
-        this.uriBase = 'http://localhost:3000';
+        this.uriBase =  process.env.herokuAdd || 'http://localhost:3000';
     }
 
     public saveBlogPost(json){

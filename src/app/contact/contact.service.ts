@@ -9,7 +9,8 @@ export class ContactService {
 
     sendContactMail(msgJson){
 
-        var url="http://localhost:3000/api/mailing/contact/new"
+        var url= process.env.herokuAdd || "http://localhost:3000";
+        url += "/api/mailing/contact/new";
         
         return this.http
             .post(url, msgJson, {})

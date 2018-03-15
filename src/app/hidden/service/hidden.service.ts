@@ -9,7 +9,8 @@ export class HiddenService {
 
     sendContactMail(msgJson){
 
-        var url = "http://localhost:3000/api/mailing/contact/new";
+        var url= process.env.herokuAdd || "http://localhost:3000";
+        url += "/api/mailing/contact/new";
         
         return this.http
             .post(url, msgJson, {})
@@ -19,7 +20,8 @@ export class HiddenService {
     }
 
     login(msgJson){
-        var url = "http://localhost:3000/api/login";
+        var url= process.env.herokuAdd || "http://localhost:3000";
+        url += "/api/login";
         console.log("Sending to API");
         return this.http
             .post(url, msgJson, {})

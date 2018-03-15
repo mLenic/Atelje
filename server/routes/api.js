@@ -15,8 +15,9 @@ var upload = require('../upload/file-upload');
 
 var app = express();
 const router = express.Router();
-const mongoUser = globals.umongodb;
-const mongoPass = globals.pmongodb;
+
+const mongoUser = process.env.umongodb || globals.umongodb;
+const mongoPass = process.env.pmongodb || globals.pmongodb;
 var mongoDBuri = 'mongodb://' + mongoUser + ':' + mongoPass + '@ds151908.mlab.com:51908/atelje';
 
 // Connect to the db
