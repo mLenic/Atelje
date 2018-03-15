@@ -64,17 +64,45 @@ router.get('/blogpost/:id', function(req, res){
   var id = Number(req.params.id);
   blog.fetchBlogpost(db, id)
         .then((blog) => {
-          console.log(blog);
-          res.json({
-            message: 'success',
-            blog: blog,
-          })
-        }).catch((error) => {
+          console.log(blog.length);
+          if(blog.length == 0){
+            res.status(400);
             res.json({
+              message: 'failure',
+            })
+          } else {
+            res.status(200);
+            res.json({
+              message: 'success',
+              blog: blog,
+            })
+          }
+          
+        }).catch((error) => {
+          res.status(400);  
+          res.json({
               message: 'failure',
             })
           })
   console.log(id)
+});
+
+router.post('/blogposts/new', function (req, res) {
+
+  blog.saveBlogPost(req.body, db, function(status) {
+    if(status){
+      res.status(200);
+      res.json({
+        message: 'success',
+      })
+    } else {
+      res.status(400);
+      res.json({
+        message: 'failure',
+      })
+    }
+  });
+  
 });
 
 /**

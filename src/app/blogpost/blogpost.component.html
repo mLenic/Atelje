@@ -9,7 +9,6 @@
         22. februar 2018 | hipnoza
       </div>
       <div class="blogpost-title text">
-          <div class="fadingEffect"></div>
         Kaj je hipnoza
       </div>
       <div class="blogpost-subtitle subtitle-small">
@@ -30,6 +29,7 @@
             
             Their cou
       </p>
+
       <p>
           As it so contrasted oh estimating instrument. Size like body some one had. Are conduct viewing boy minutes warrant expense. Tolerably behaviour may admitting daughters offending her ask own. Praise effect wishes change way and any wanted. Lively use looked latter regard had. Do he it part more last in. Merits ye if mr narrow points. Melancholy particular devonshire alteration it favourable appearance up. 
           
@@ -104,10 +104,10 @@
       </div>
       <div class="blogpost-next-previous-wrapper">
           <div class="next-previous-button-div">
-              <button class="button-gradient">PREJŠNJI</button>
+              <button class="button-gradient" (click)="loadNextBlogPost(true)">PREJŠNJI</button>
           </div>
           <div class="next-previous-button-div">
-              <button class="button-gradient">NASLEDNJI</button>
+              <button class="button-gradient" (click)="loadNextBlogPost(false)">NASLEDNJI</button>
           </div>
       </div>
     </div>

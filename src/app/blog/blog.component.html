@@ -15,34 +15,34 @@
   <div class="blog-content">
     <div class="blog-filter">
         <div class="blog-search">
-          <input class="input blog-input" placeholder="Iskanje" />
+          <input class="input blog-input" placeholder="Iskanje" [(ngModel)]="searchTerm"/>
         </div>
         <div class="blog-category-search">
           <div class="category-label">Kategorije</div>
           <div class="category-checkboxes">
             <label class="checkbox-container">Hipnoza
-                <input type="checkbox" checked="checked">
+                <input type="checkbox" checked="checked" [(ngModel)]="searchCategory.hypnosis">
                 <span class="checkmark"></span>
               </label>
               
               <label class="checkbox-container">Two
-                <input type="checkbox">
+                <input type="checkbox"  [(ngModel)]="searchCategory.two">
                 <span class="checkmark"></span>
               </label>
               
               <label class="checkbox-container">Three
-                <input type="checkbox">
+                <input type="checkbox"  [(ngModel)]="searchCategory.three">
                 <span class="checkmark"></span>
               </label>
               
               <label class="checkbox-container">Four
-                <input type="checkbox">
+                <input type="checkbox"  [(ngModel)]="searchCategory.four">
                 <span class="checkmark"></span>
               </label>
             </div>
         </div>
         <div class="blog-search-button">
-          <button class="button-dark">Išči</button>
+          <button class="button-dark" (click)="filterBlogs()">Išči</button>
         </div>
     </div>
     <div class="gradient-line-right blog-line">

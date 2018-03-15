@@ -3,7 +3,7 @@
       Dodajanje novega vpisa za blog
       <hr>
       <br/>
-      <form name="blogpostForm" [formGroup]="blogpostForm" (ngSubmit)="submitBlog()">
+      <form name="blogpostForm" [formGroup]="blogpostForm">
           <div class="form-field cols">
             <label for="title" class="label">Naslov</label>
             <input type="text" id="title" class="input half" name="title" [formControl]="title">
@@ -84,8 +84,10 @@
             </div>
             
           </div>
-          
-          
+          <br/>
+          <hr/>
+          <button (click)="submitBlog()" class="message input button-dark" >Dodaj blog</button>
+          <div *ngIf="response.status">{{response.message}}</div>
       </form>
       
     </div>

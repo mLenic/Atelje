@@ -16,7 +16,15 @@ export class BlogService {
         this.uriBase = 'http://localhost:3000';
     }
 
-     
+    public saveBlogPost(json){
+        var uri = this.uriBase + "/api/blogposts/new";
+
+        return this.http
+            .post(uri, json, {})
+            .map((response: Response) => {
+                return response.status;
+            });
+    }
 
     public getBlogPosts(){
         var blogApiUri = this.uriBase + '/api/blogposts';
@@ -66,5 +74,26 @@ export class BlogService {
         this._blogPosts = blogposts;
     }
 
+    /**
+     * Localstorage items
+     */
 
+     saveBlogPostsToStorage(blogs){
+        var strBlogs = JSON.stringify(blogs);
+        sessionStorage.setItem("blogs", strBlogs);
+     }
+
+     getBlogPostsFromStorage(){
+         var strBlogs = sessionStorage.getItem("blogs");
+         var jsonBlogs = null;
+
+         if(strBlogs != null){
+             console.log("should return blog");
+             jsonBlogs = JSON.parse(strBlogs);
+             return jsonBlogs;
+         } else {
+             console.log("Blogs aren't here, load them anew!")
+             return jsonBlogs
+         }
+     }
 }

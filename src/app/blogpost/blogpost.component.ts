@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, HostListener } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { GeneralService } from '../core/service/general.service';
 import { BlogService } from '../core/service/blog.service';
@@ -20,6 +20,7 @@ export class BlogpostComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private generalService: GeneralService,
     private blogService: BlogService,
     @Inject(DOCUMENT) private document: Document
@@ -27,7 +28,7 @@ export class BlogpostComponent implements OnInit {
 
   ngOnInit() {
     this.generalService.currentLink = 'blogpost';
-    this.currentBlog = this.blogService.blogPosts;
+    
     console.log(this.currentBlog);
 
     this.route.params.subscribe(params => {
@@ -39,6 +40,7 @@ export class BlogpostComponent implements OnInit {
         this.fetchBlogpost();
       }
     });
+
     console.log("Testing if service is singleton");
     console.log(this.blogService.blogPosts);
     //Fetch blog based on ID from URL
@@ -69,17 +71,85 @@ export class BlogpostComponent implements OnInit {
   {
     this.document.body.scrollTop = 0;
   }
+    
+  
 
   fetchBlogpost(){
+
+    var jsonBlogs = this.blogService.getBlogPostsFromStorage();
+    
+    if(jsonBlogs != null){
+      jsonBlogs.forEach(blog => {
+        if(blog.idvalue == this._routeId){
+          this.currentBlog = blog;
+        }
+      });
+    }
+    
+    if(this.currentBlog != null){
+      console.log("Blog found in sessionStorage");
+      console.log(this.currentBlog);
+      return;
+    }
+
+    console.log("Blog not found in session storage, fetch it from database");
     this.blogService.getBlogPost(this._routeId)
           .subscribe((data) => {
             console.log("Got blog post data");
             var res = JSON.parse(data.text());
-            console.log(res.blog);
+            this.currentBlog = res.blog;
+            console.log(this.currentBlog);
+            //once firt blogpost is successfully received, fetch all blogs so that user has them saved in sessionstorage
+            this.fetchBlogPosts();
           }, (error) => {
             console.log("Error getting blog post data");
             console.log(error);
+            this.router.navigate(['/blog']);
           });
   }
+  
+  fetchBlogPosts(){
+    //Fetching all blogs from db
+    this.blogService.getBlogPosts()
+      .subscribe(data => {
+        console.log("data blogposts recieved - saving to localstorage");
+        var res = JSON.parse(data.text());
+        this.blogService.saveBlogPostsToStorage(res.blogs);
+      }, error => {
+        console.log("error blogposts recieved");
+        console.log(error);
+      })
+  }
+  
 
+  loadNextBlogPost(previous: boolean) {
+    //Blogs should be saved in sessionStorage and ordered by Date (API sends data back sorted)
+    var jsonBlogs = this.blogService.getBlogPostsFromStorage();
+    var currIdx = -1;
+    
+    for(var i = 0; i < jsonBlogs.length; i++){
+      if(Number(this._routeId) === Number(jsonBlogs[i].idvalue)){
+        currIdx = i;
+      }
+    }
+    var idUrl = null;
+    
+    if(previous){
+      
+      if(currIdx == jsonBlogs.length -1){
+        idUrl = jsonBlogs[0].idvalue;
+      } else {
+        idUrl = jsonBlogs[currIdx+1].idvalue;
+      }
+    } else{
+      
+      if(currIdx == 0){
+        idUrl = jsonBlogs[jsonBlogs.length-1].idvalue;
+      } else {
+        idUrl = jsonBlogs[currIdx-1].idvalue;
+      }
+    }
+    
+    this.router.navigate(['/blogpost/' + idUrl]);
+  }
 }
