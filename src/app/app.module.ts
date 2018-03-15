@@ -31,6 +31,8 @@ import { GeneralService } from './core/service/general.service';
 import { TherapyComponent } from './therapy/therapy.component';
 import { AboutRecordingsComponent } from './about-recordings/about-recordings.component';
 
+import { Globals } from '../../globals';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +61,7 @@ import { AboutRecordingsComponent } from './about-recordings/about-recordings.co
   providers: [
     ContactService,
     GeneralService,
+    Globals,
   ],
   bootstrap: [AppComponent]
 })
