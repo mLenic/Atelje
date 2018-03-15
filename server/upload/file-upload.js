@@ -2,9 +2,9 @@ const aws = require('aws-sdk');
 var globals = require('../../globals');
 
 
-const bucket        = globals.S3Bucket;
-const accessKey     = globals.S3AccessKey;
-const secAccesKey   = globals.S3SecAccessKey;
+const bucket        = process.env.S3Bucket          || globals.S3Bucket;
+const accessKey     = process.env.S3AccessKey       || globals.S3AccessKey;
+const secAccesKey   = process.env.S3SecAccessKey    || globals.S3SecAccessKey;
 
 /**
  * Function responsible for contacting S3 and creating signed URL for file upload

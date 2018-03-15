@@ -1,6 +1,8 @@
 import { Injectable, OnInit } from "@angular/core";
 import { Http, Response } from '@angular/http';
 
+import { Globals } from '../../../../globals';
+
 @Injectable()
 export class BlogService {
 
@@ -9,11 +11,12 @@ export class BlogService {
 
     constructor (
         private http: Http,
+        private globals: Globals,
     ) { 
         console.log("Making blog service");
 
         //TODO: Change for production
-        this.uriBase = 'http://localhost:3000';
+        this.uriBase =  this.globals.HTTP_GLOBAL_ADDRESS || 'http://localhost:3000';
     }
 
     public saveBlogPost(json){

@@ -34,7 +34,6 @@
     "cors": "^2.8.4",
     "express": "^4.15.3",
     "font-awesome": "^4.7.0",
-    "globals": "^11.3.0",
     "md5": "^2.2.1",
     "mongoose": "^4.13.8",
     "nodemailer": "^4.4.2",

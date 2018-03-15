@@ -1,9 +1,9 @@
 var nodemailer = require('nodemailer');
 var globals = require('../../globals');
 
-var username = globals.u;
-var password = globals.p;
-var mailTo   = globals.to;
+var username = process.env.u || globals.u;
+var password = process.env.p || globals.p;
+var mailTo   = process.env.to || globals.to;
 
 module.exports = function(msg, callback) {
 
