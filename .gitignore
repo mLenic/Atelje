@@ -47,3 +47,4 @@ debug.log
 .vscode/*
 
 #Credentials
+globals.js
