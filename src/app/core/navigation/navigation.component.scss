@@ -43,7 +43,7 @@
         .logo-img {
             height: calc(#{$nav-height} - 40px);
             //height: calc(#{$nav-height} - 15px);
-            width: auto;
+            width: 58.08px; //Was auto - quick fix for safari
         }
 
     }
