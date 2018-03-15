@@ -17,9 +17,13 @@ import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { QuestionsAnswersRowComponent } from './core/questions-answers-row/questions-answers-row.component';
 import { RecordingsComponent } from './recordings/recordings.component';
 import { BlogpostComponent } from './blogpost/blogpost.component';
 import { RecordingComponent } from './recording/recording.component';
+import { SelfConfidenceComponent } from './recordings/all-recordings/self-confidence/self-confidence.component';
+import { MeComponent } from './recordings/all-recordings/me/me.component';
+import { MyBodyComponent } from './recordings/all-recordings/my-body/my-body.component';
 
 //Custom Services
 import { ContactService } from './contact/contact.service';
@@ -39,6 +43,9 @@ import { AboutRecordingsComponent } from './about-recordings/about-recordings.co
     RecordingComponent,
     TherapyComponent,
     AboutRecordingsComponent,
+    SelfConfidenceComponent,
+    MeComponent,
+    MyBodyComponent
   ],
   imports: [
     BrowserModule,

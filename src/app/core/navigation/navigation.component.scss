@@ -7,8 +7,9 @@
     height: $nav-height;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
 
-    @include breakpoint-768 {
+    @include breakpoint-960 {
         &.white-bg-mobile {
             background-color: $white;
             //transition: background-color 0.3s;
@@ -21,7 +22,7 @@
 
     &.transition {
         transition: background-color 0.3s;
-        @include breakpoint-768 {
+        @include breakpoint-960 {
             transition: background-color 0s;
         }
     }
@@ -29,18 +30,19 @@
     .name-wrapper {
         padding-left: calc(#{$nav-height} - 80px);
         font-family: OpenSans-Regular;
-        font-size: 20px;
+        font-size: $nav-font-size;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-weight: 570;
+        font-family : Raleway-Regular;
     }
 
     .logo-wrapper {
         display: flex;
         align-items: center;
         .logo-img {
-            //height: calc(#{$nav-height} - 40px);
-            height: calc(#{$nav-height} - 15px);
+            height: calc(#{$nav-height} - 40px);
+            //height: calc(#{$nav-height} - 15px);
             width: auto;
         }
 
@@ -56,12 +58,12 @@
         .link {
             margin-left: 40px;
 
-            @include breakpoint-768 {
+            @include breakpoint-960 {
                 margin-left: 0;
             }
 
             a {
-                font-size: 18px;
+                font-size: $nav-font-size;
 
                 &.active {
                     padding: 5px;
@@ -74,7 +76,7 @@
             }
         }
 
-        @include breakpoint-768 {
+        @include breakpoint-960 {
             visibility: hidden;
             width: 0;
             overflow: hidden;
@@ -103,7 +105,7 @@
     .nav-mobile-icon {
         display: none;
     
-        @include breakpoint-768 {
+        @include breakpoint-960 {
             cursor: pointer;
             //position: fixed;
             display: block;
@@ -122,27 +124,15 @@
         width: 100%;
         height: $subnav-height;
 
-        @include breakpoint-768 {
+        @include breakpoint-960 {
             padding-right: 0;
+            margin: 0;
         }           
 
 
         &.visible-hypnosis-subnavigation {
             display: inline;
         }
-        /*
-        &.white {
-            background-color: $white;
-        }
-        
-    
-        &.transition {
-            transition: background-color 0.3s;
-            @include breakpoint-768 {
-                transition: background-color 0s;
-            }
-        }
-        */
 
         .subnavigation-links-wrapper {
             margin-top: 10px;
@@ -154,38 +144,51 @@
             padding: 0 5px; 
 
             @include breakpoint-768 {
-                width: 80%;
-                margin: auto;
-                margin-top: 10px;
+                margin: 10px 1px 0 1px;
                 justify-content: space-between;
+                padding: 0 8px;
             }           
 
             .subnavigation-link {
                 margin-left: 10px;
-                padding: 5px;
-                transition: background-color 0.3s;
-
+                padding: 2px 5px;
+                transition: background-color 0.3s, outline-color 0.3s, border-color 0.1s;
+                border: 1px solid transparent;
+                outline: 3px solid transparent;
                 cursor: pointer;
-                
+
                 @include breakpoint-768 {
+                    padding: 1px 4px;
                     margin-left: 0;
                 }
 
                 &.black {
                     background-color: $black;
+                    border: 1px solid $black;
+                    outline: 3px solid $black;
+                    
+
+                    &.active {
+                        border: 1px solid $white;
+                        transition: border 0.3s;
+                    }
+                }
+
+                &.active {
+                    border: 1px solid $black;
                 }
     
                 a {
-                    font-size: 16px;
+                    font-size: $nav-font-size;
                     color: $black;
                     transition: color 0.3s;
 
+                    @include breakpoint-768 {
+                        font-size: $smaller-font;
+                    }  
+
                     &.black {
                         color: $white;
-                    }
-
-                    &.active {
-                        text-decoration: underline overline;
                     }
                 }
             }

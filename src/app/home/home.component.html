@@ -15,28 +15,31 @@
   </div>
   <div class="about-home-wrapper full-screen">
     <div class="about-home">
-      <div class="title-small">
+      <div class="about-title title-small">
         Pozdravljeni, soustvarjalci
-        <fa name="cog" animation="spin"></fa>
-        <div class="link">
-          <a href="#"><fa name="facebook"></fa></a>
-        </div>
-        <div class="link">
-          <a href="#"><fa name="instagram"></fa></a>
-        </div>
+      </div>
+      <div class="gradient-line about-line">
       </div>
       <div class="main-text">
-          V lanskemletu me je navdihnilamočhipnoze, kisemjoimelapriložnostspoznati v sklopuizobraževanjaza medicinsko hipnozopod vodstvomprof. dr. Marjana Pajntarja, ki me je navdušils primeri iz svoje klinične prakse ter mi podal vero v moč te čudovite psihoterapevtske tehnike, ki ponuja neskončne možnosti za raziskovanje človekove duševnosti.Takosemlanipridobilakardvanaziva; diplomiranabiopsihologinja in terapevtkamedicinskehipnoze. 
-          
-          S to spletnostranjovamželimpodaritidelčekznanja o hipnozi in z vamipodelitinekajkonkretnihzvočnihposnetkovhipnotičnihsugestij, kispodbujajoskrite potenciale ter odpirajo nove načine razmišljanja in vedenja.Poleg tega bom z vami delila svoja znanja in razmišljanja, ki jih trenutno pridobivam na magisterskem študiju klinične psihologije v Italiji. 
-          
-          
-          Nekočsemprebrala, da vsakažalost v sebinosidarilo, a šelesedaj, nekaj let kasneje, sem v tem našlasvojoresnico. Danes vem, da življenjelahkorazumemokotzaporedjenekihdogodkov… ali pa, kotpopolnososkladjedolgodivščin, kiskupajtvorijosimfonijonašegaživljenjapričimer je pomembnapravvsakanota.
-          
-          Paulo Coelho je zapisal, da je vsakčlovekdrugačen in to je pravica, kijomoramoizkoristiti z vsemiposledicami, kijih to prinaša.Da pa bo to čimboljlahkotno, najvam ta spletnastranslužikotpovabilo k spremembi, k usklajenosti s sabo in svetom, k polnejšem in srečnejšemuživljenju. 	
-          
-          Vabljeni, da se skupaj, vsakdanznova, vprašamo, kakoje lahkonašeživljenješeboljmelodičnoin počakamo, da namzaigrasvojočudovitosimfonijo.
-          
+        <p>
+          V preteklosti me je navdihnila  moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.  Navdušil me je s primeri iz svoje klinične prakse ter mi podal znanje in zaupanje v moč te čudovite, tisočletja znane terapevtske tehnike. Tehnike, ki je v zahodnem svetu končno le priznana kot medicinska in terapevtksa metoda, ki ponuja neskončne možnosti za raziskovanje človekove duševnosti.
+          Tako sem lani pridobila kar dva naziva; diplomirana biopsihologinja in terapevtka medicinske hipnoze. 
+        </p>
+        <p>
+          Želim vam podariti delček znanja o hipnozi in z vami deliti zvočne posnetke hipnotskih seans. Zvočni posnetki so razdeljeni na več kategorij; Samozavest, Jaz in Moje telo. Vsi spodbujajo naše skrite potenciale, nove načine razmišljanja in vedenja. 
+        </p>
+        <p>
+          V blogu z vami delilm svoja znanja in razmišljanja, ki jih trenutno pridobivam na magistrskem študiju klinične psihologije v Italiji.
+        </p>
+        <p>
+          Življenje je samo po sebi čarobna umetnost in Terapevtski atelje je prostor, ki predstavlja povabilo k spremembi, k usklajenosti s seboj in svetom, k polnemu in srečnemu življenju.
+        </p>
+        <p class="important-text">
+          Vabljeni, da skupaj ustvarjamo, stremimo k soncu in praznujemo vse dni našega življenja.
+        </p>
+      </div>
+      <div class="about-signature">
+        Špela
       </div>
     </div>
   </div>
@@ -72,74 +75,33 @@
         <div class="title">
           Blog
         </div>
-        <div class="blog-home-content">
-          <div class="blog-home-element">
-            <a>
-            <div class="blog-element-category">
-              hipnoza
-            </div>
-            <div class="blog-element-title">
-              Kaj je hipnoza?
-            </div>
-            <div class="blog-element-date">
-              18. MAREC 2018
-            </div>
-            <div class="blog-element-img-div">
-              <img class="blog-element-img" src="assets/images/forest_blur.jpg">
-            </div>
-            <div class="blog-element-description">
-              <p>
-                usklajenosti s sabo in svetom, k polnejšem in srečnejšemuživljenju. Vabljeni, da se skupaj, vsakdanznova, vprašamo, kakoje lahkonašeživljenješeboljmelodičnoin počakamo, da namzaigrasvojočudovitosimfonijo. usklajenosti s sabo in svetom, k polnejšem in srečnejšemuživljenju. Vabljeni, da se skupaj, vsakdanznova, vprašamo, kakoje lahkonašeživljenješeboljmelodičnoin počakamo, da namzaigrasvojočudovitosimf
-              </p>
-            </div>
-            </a>
+        <div class="blog-posts-wrapper">
+            <div *ngFor='let element of posts' class="blog-element">
+                  <div class="blog-element-img-div">
+                    <img class="blog-element-img" src="assets/images/forest_blur.jpg">
+                  </div>
+                  <div class="blog-element-category">
+                    {{element.category}}
+                  </div>
+                  <div class="blog-element-title">
+                    {{element.title}}
+                  </div>
+                  <div class="blog-element-date">
+                    18. MAREC 2018
+                  </div>
+                  <div class="thin-black-line">
+                  </div>
+                  <div class="blog-element-description">
+                        {{element.subtitle}} 
+                  </div>
+              </div>
           </div>
-          <!--second blog element -->
-          <div class="blog-home-element">
-              <div class="blog-element-category">
-                hipnoza
-              </div>
-              <div class="blog-element-title">
-                Kaj je hipnoza?
-              </div>
-              <div class="blog-element-date">
-                18. MAREC 2018
-              </div>
-              <div class="blog-element-img-div">
-                <img class="blog-element-img" src="assets/images/forest_blur.jpg">
-              </div>
-              <div class="blog-element-description">
-                  <p>
-                    usklajenosti s sabo in svetom, k polnejšem in srečnejšemuživljenju. Vabljeni, da se skupaj, vsakdanznova, vprašamo, kakoje lahkonašeživljenješeboljmelodičnoin počakamo, da namzaigrasvojočudovitosimfonijo. usklajenosti s sabo in svetom, k polnejšem in srečnejšemuživljenju. Vabljeni, da se skupaj, vsakdanznova, vprašamo, kakoje lahkonašeživljenješeboljmelodičnoin počakamo, da namzaigrasvojočudovitosimf
-                  </p>
-              </div>
-            </div>
-            <!-- // second blog element -->
-            <!--third blog element -->
-          
-          <div class="blog-home-element">
-              <a>
-              <div class="blog-element-category">
-                UMETNOST
-              </div>
-              <div class="blog-element-title">
-                Kaj je hipnoza in zakaj hipnoza?
-              </div>
-              <div class="blog-element-date">
-                18. MAREC 2018
-              </div>
-              <div class="blog-element-img-div">
-                <img class="blog-element-img" src="assets/images/logo.svg">
-              </div>
-              <div class="blog-element-description">
-                <p>
-                  usklajenosti s osimf sklajenosti s osimfsklajenosti s osimfsklajenosti s osimf sklajenosti s osimfsklajenosti s osimfsklajenosti s osimf
-                </p>
-              </div>
-            </a>
-            </div>
-            
-            <!-- // third blog element -->
+        <div class="blog-link-button-div">
+          <a href="/blog">
+          <button class="button-dark">
+            VSI VPISI
+          </button>
+          </a>
         </div>
       </div>
     </div>

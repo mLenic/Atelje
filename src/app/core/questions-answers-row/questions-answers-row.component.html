@@ -1,0 +1,24 @@
+<div class="questions-answers-row">
+    <div class="questions-list-wrapper">
+        <div *ngFor='let element of content' class="question" [class.active]="element.show" (click)="elementClicked(element)">
+        <div class="question-text" [innerHTML]="element.question">  
+            
+        </div>
+        <div *ngIf='element.show' class="answer-content-mobile">
+            <p>
+            {{element.answer}}
+            </p>
+        </div>
+        </div>
+    </div>
+    <div class="answer-wrapper">
+        <div class="answer-title">
+        {{currentlyShownElement.question}}
+        </div>
+        <div class="answer-content">
+        <p>
+        {{currentlyShownElement.answer}}
+        </p>
+        </div>
+    </div>
+</div>

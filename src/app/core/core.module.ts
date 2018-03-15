@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NavigationComponent }  from './navigation/navigation.component';
 import { FooterComponent }  from './footer/footer.component';
+import { QuestionsAnswersRowComponent }  from './questions-answers-row/questions-answers-row.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BlogService } from './service/blog.service';
@@ -15,11 +16,13 @@ import { BlogService } from './service/blog.service';
   ],
   declarations: [
     NavigationComponent,
-    FooterComponent
+    FooterComponent,
+    QuestionsAnswersRowComponent
   ],
   exports: [
     NavigationComponent,
     FooterComponent,
+    QuestionsAnswersRowComponent,
     FormsModule,
     ReactiveFormsModule
   ],

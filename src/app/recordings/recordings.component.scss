@@ -1,7 +1,6 @@
 @import '../../variables.scss';
 
 .recordings-wrapper {
-    //padding-top: calc(#{$nav-height} + #{$subnav-height});
     padding-top: $nav-height;
     background-color: $white;
     display: flex;
@@ -13,6 +12,12 @@
         width: $narrow-width;
         min-height: 90vh;
         padding-top: 100px;
+
+        .recordings-title {
+            margin-bottom: 50px;
+            width: 100%;
+            text-align: center;
+        }
 
         .recordings-elements-wrapper {
             display: flex;
@@ -27,31 +32,37 @@
                 width: 200px;
                 height: 150px;
                 text-transform: uppercase;
-                letter-spacing: 2px;
-                //border: 1px solid $black;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
                 transition: border-width 0.3s;
-                //background: linear-gradient(to bottom right, #8AC4EB , $white);
 
                 @include breakpoint-768 {
                     margin-bottom: 50px;
                 }
 
                 &:hover {
-                    border: 1px solid $black;
+                    .icon-svg {
+                        stroke: $black;
+                    }
                 }
 
                 .recordings-element-title {
-                    //font-family: PlayfairDisplay-Regular;
                     font-family: OpenSans-Semibold;
-                    //font-family: OpenSans-Regular;
-                    font-size: 18px;
+                    font-size: $small-font;
+                    letter-spacing: 1px;
                 }
             }
         }
+    }
+}
+
+.icon-svg {
+    stroke: url(#MyGradient);
+
+    &.me {
+        stroke: url(#MyGradientMe);
     }
 }

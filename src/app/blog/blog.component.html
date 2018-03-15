@@ -1,6 +1,6 @@
 <div class="blog-wrapper">
   <div class="bg-img-div">
-    <img class="bg-img" src="assets/images/sea_blur.jpg">
+    <img class="bg-img" src="assets/images/flowers_blur.jpg">
   </div>
   <div class="home-cover-text page-title-div">
     <div class="title">
@@ -9,7 +9,7 @@
     <div class="title-line">
     </div>
     <div class="subtitle">
-      To je blog...
+      Moji zapisi in razmišljanja
     </div>
   </div>
   <div class="blog-content">
@@ -49,6 +49,9 @@
     </div>
     <div class="blog-posts-wrapper">
       <div *ngFor='let element of posts' class="blog-element">
+            <div class="blog-element-img-div">
+              <img class="blog-element-img" src="assets/images/forest_blur.jpg">
+            </div>
             <div class="blog-element-category">
               {{element.category}}
             </div>
@@ -58,13 +61,10 @@
             <div class="blog-element-date">
               18. MAREC 2018
             </div>
-            <div class="blog-element-img-div">
-              <img class="blog-element-img" src="assets/images/forest_blur.jpg">
+            <div class="thin-black-line">
             </div>
             <div class="blog-element-description">
-                <p>
-                  usklajenosti s sabo in svetom, k polnejšem in srečnejšemuživljenju. Vabljeni, da se skupaj, vsakdanznova, vprašamo, kakoje lahkonašeživljenješeboljmelodičnoin počakamo, da namzaigrasvojočudovitosimfonijo. usklajenosti s sabo in svetom, k polnejšem in srečnejšemuživljenju. Vabljeni, da se skupaj, vsakdanznova, vprašamo, kakoje lahkonašeživljenješeboljmelodičnoin počakamo, da namzaigrasvojočudovitosimf
-                </p>
+                  {{element.subtitle}} 
             </div>
         </div>
     </div>

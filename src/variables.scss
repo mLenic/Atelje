@@ -53,6 +53,12 @@
     src         : url("/assets/fonts/Avenir-Light.woff") format("woff");
 }
 
+@font-face {
+    font-family : Raleway-Regular;
+    src         : url("/assets/fonts/Raleway-Regular.woff2") format("woff2");
+}
+
+
 $black: #000000;
 $white: #ffffff;
 $gray: #7f7f7f;
@@ -61,6 +67,11 @@ $very-dark-green: #535c43;
 $dark-green: #7d9162;
 $light-green: #aabf8d;
 $very-light-green: #dceabc;
+
+$pastel-pink: #ddb4d4;
+$pastel-purple: #c1c3e2;
+$pastel-blue: #b8e0d0;
+$pastel-green: #aad6a7;
 
 $nav-height: 100px;
 $subnav-height: 50px;
@@ -71,7 +82,13 @@ $narrower-width: 60vw;
 $content-padding: 50px;
 $space-between-elements: 30px;
 
-$regular-font-size: 14px;
+$bigger-font: 20px;
+$big-font: 18px;
+$regular-font-size: 16px;
+$small-font: 14px;
+$smaller-font: 12px;
+$extra-small-font: 11px;
+$nav-font-size: 14px;
 
 
 @mixin breakpoint-2560 {

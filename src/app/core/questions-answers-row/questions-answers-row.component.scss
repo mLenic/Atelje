@@ -1,0 +1,101 @@
+@import '../../../variables.scss';
+
+.questions-answers-row {
+    display: flex;
+    
+    .questions-list-wrapper {
+        width: 30%;
+        padding-right: 50px;
+
+        
+        @include breakpoint-960 {
+            width: 100%;
+            padding: 0;
+        }
+
+        .question {
+            padding: 15px 15px 15px 0;
+            //border-right: 4px solid $light-gray;
+            //text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: $regular-font-size;
+            color: $black;
+            border-right: 6px solid transparent;
+            //border-image: linear-gradient(to bottom, $pastel-purple 0%, $pastel-blue 40%, $pastel-green 80%, $pastel-purple 100%);
+            border-image: linear-gradient(to bottom, $pastel-pink 0%, $pastel-purple 10%, $pastel-blue 30%, $pastel-green 50%, $pastel-blue 70%, $pastel-purple 90%, $pastel-pink 100%);
+            border-image-slice: 1;
+            cursor: pointer; 
+            
+            @include breakpoint-960 {
+                border-right: none;
+                border-left: 6px solid transparent;
+                padding: 30px 15px 30px 20px;
+                text-transform: none;
+
+                .question-text {
+                    font-size: 18px;
+                }
+            }
+
+            &.active  {
+                color: $black;
+                border-right: 6px solid $black;
+                border-image: none;
+
+                @include breakpoint-960 {
+                    border-right: none;
+                    border-left: 6px solid $black;
+
+                    .question-text {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            &:hover  {
+                color: $black;
+                border-right: 6px solid $black;
+                border-image: none;
+                //font-family: OpenSans-Semibold;
+
+                
+                @include breakpoint-960 {
+                    border-right: none;
+                    border-left: 6px solid $black;
+                }
+            }
+
+            .answer-content-mobile {
+                display: none;
+
+                @include breakpoint-960 {
+                    display: flex;
+                    text-transform: none;
+                    letter-spacing: 0;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+
+    .answer-wrapper {
+        width: 70%;
+        text-align: justify;
+
+        
+        @include breakpoint-960 {
+            display: none;
+        }
+
+        .answer-title {
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            font-size: $big-font;
+            text-transform: uppercase;
+            font-family: OpenSans-Semibold;
+        }
+
+        .answer-content {
+
+        }
+    }
+}

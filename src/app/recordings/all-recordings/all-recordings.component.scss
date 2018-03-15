@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import '../../../variables.scss';
 
 .recording-wrapper {
     
@@ -28,20 +28,22 @@
             }
 
             .recordings-header-text {
-                //font-family: PlayfairDisplay-Regular;
                 font-family: OpenSans-Semibold;
-                //font-family: OpenSans-Regular;
                 font-size: 20px;
                 text-transform: uppercase;
             }
         }
 
         .recording-content {
-            width: $narrow-width;
+            width: $narrower-width;
             margin: auto;
             padding: $content-padding 0;
-            //min-height: 40vh;
             text-align: justify;
+
+            @include breakpoint-960 {
+                width: 100%;
+                padding: $content-padding;
+            }
         }
 
         .select-recording-wrapper {
@@ -52,15 +54,18 @@
                 display: flex;
                 justify-content: center;
 
+                @include breakpoint-960 {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
                 .recording-element {
                     width: 230px;
                     display: flex;
                     flex-direction: column;
-                    //justify-content: center;
                     align-items: center;
                     text-align: center;   
                     padding: 0 10px 10px 10px;
-                    //border-bottom: 4px solid $light-gray; 
                     text-transform: uppercase;
                     cursor: pointer; 
 
@@ -68,35 +73,43 @@
                     border-image: linear-gradient(to right, $pastel-pink 0%, $pastel-purple 20%, $pastel-blue 40%, $pastel-green 60%, $pastel-blue 80%, $pastel-purple 95%, $pastel-pink 100%);
                     border-image-slice: 1;
 
+                    @include breakpoint-960 {
+                        border-left: 6px solid transparent;
+                        border-right: 6px solid transparent;
+                        border-image: linear-gradient(to bottom, $pastel-pink 0%, $pastel-purple 20%, $pastel-blue 40%, $pastel-green 60%, $pastel-blue 80%, $pastel-purple 95%, $pastel-pink 100%);
+                        border-image-slice: 1;
+                        border-bottom: none;
+                        padding: 20px 0;
+                    }
+
                     &.active {
                         border-bottom: 6px solid $black;
                         border-image: none;
+
+                        @include breakpoint-960 {
+                            border-left: 6px solid $black;
+                            border-right: 6px solid $black;
+                            border-bottom: none;
+                        }
                     }
 
                     &:hover {
                         border-bottom: 6px solid $black;
                         border-image: none;
-                    }
-                    
-                    .recording-element-icon-div {
-                        display: none;
-                        margin-bottom: 15px;
 
-                        .recording-element-icon {
-                            height: 15px;
-                            width: auto;
+                        @include breakpoint-960 {
+                            border-left: 6px solid $black;
+                            border-right: 6px solid $black;
+                            border-bottom: none;
                         }
                     }
                     
                     .recording-element-title {
-                        //text-transform: uppercase;
                         letter-spacing: 2px;
-                        font-size: 18px;
-                        //color: $gray;
+                        font-size: $small-font;
 
                         &.active  {
                             color: $black;
-                            //font-family: OpenSans-Semibold;
                         }
                     }
                 }
@@ -115,13 +128,14 @@
                 @include breakpoint-960 {
                     width: 100%;
                     padding: $content-padding;
+                    margin: 0 auto;
                 }
 
                 .selected-recording-title {
                     margin-bottom: 20px;
                     text-align: center;
                     letter-spacing: 2px;
-                    font-size: 22px;
+                    font-size: $big-font;
                     text-transform: uppercase;
                     font-family: OpenSans-Semibold;
                 }

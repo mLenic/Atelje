@@ -1,22 +1,70 @@
 @import '../../variables.scss';
 
 .therapy-wrapper{
-    .therapy-inner-wrapper {
+    .title {
+        @include breakpoint-768 {
+            font-size: 40px;
+        }
+    }
 
+    .title-line {
+        width: 430px;
+
+        @include breakpoint-768 {
+            width: 350px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .therapy-inner-wrapper {
         background-color: $white;
-        padding: $content-padding 0;
+        padding: 100px 0;
 
         .therapy-content {
             width: $narrower-width;
             margin: auto;
     
             @include breakpoint-960 {
-                width: $narrow-width;
+                width: 100%;
+                padding: $content-padding;
+            }
+
+            .therapy-line {
+                margin-top: 100px;
+            }
+
+            .therapy-title {
+                margin: 100px 0 30px 0;
+                text-align: center;
+            }
+
+            .border-div {
+                width: 50%;
+                margin: auto;
+                margin-top: 100px;
+                padding: 30px;
+                text-align: center;
+
+                @include breakpoint-960 {
+                    width: 90%;
+                }
+
+                @include breakpoint-768 {
+                    width: 100%;
+                }
+
+                .border-div-button {
+                    margin-top: 30px;
+                }
             }
 
             .therapy-text {
-                margin-bottom: 40px;
+                margin-bottom: 20px;
                 text-align: justify;
+
+                &.important-text {
+                    text-align: center;
+                }
             }
         }
     }

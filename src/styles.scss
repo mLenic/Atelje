@@ -4,19 +4,24 @@
 	box-sizing: border-box;
     -webkit-appearance: none;
     color: $black;
-    //font-family: OpenSans-Light;
     font-family: OpenSans-Regular;
-    font-size: 20px;
+    font-size: $regular-font-size;
     margin: 0;
 }
 
 p {
-    line-height: 32px;
+    line-height: 28px;
 }
 
 .indent {
     text-indent: 40px;
     text-align: justify;
+}
+
+.important-text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: $small-font;
 }
 
 a {
@@ -25,22 +30,59 @@ a {
 
 .title {
     font-family: PlayfairDisplay-Regular;
-    font-size: 60px;
+    font-size: 50px;
     text-transform: uppercase;
     letter-spacing: 3px;
+    text-align: center;
+
+    @include breakpoint-768 {
+        font-size: 44px;
+    }
 }
 
 .subtitle {
     font-family: OpenSans-Light;
-    font-size: 30px;
+    font-size: 24px;
     letter-spacing: 3px;
+    text-align: center;
+
+    @include breakpoint-768 {
+        font-size: 20px;
+        padding: 0 $content-padding;
+    }
+}
+
+.subtitle-small {
+    font-family: OpenSans-Light;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-align: center;
+
+    @include breakpoint-768 {
+        font-size: 20px;
+    }
+}
+
+.title-medium {
+    font-family: PlayfairDisplay-Regular;
+    font-size: 44px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    @include breakpoint-768 {
+        font-size: 35px;
+    }
 }
 
 .title-small {
     font-family: PlayfairDisplay-Regular;
-    font-size: 40px;
+    font-size: 35px;
     text-transform: uppercase;
     letter-spacing: 3px;
+
+    @include breakpoint-768 {
+        font-size: 30px;
+    }
 }
 
 .title-smaller {
@@ -64,25 +106,80 @@ a {
     background-color: $black;
 }
 
-//---------- BUTTONS, INPUT FIELDS, LABELS
-.button-dark {
-    padding: 10px 20px;
-    //min-width: 100px;
-    border: 1px solid $white;
-    //border: none;
-    outline: 6px solid $black;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    //background-color: $white;
-    background-color: $black;
-    color: $white;
-    transition: 0.2s;
-    font-family: OpenSans-Regular;
-    font-size: 16px;
+.text-link {
+    margin: 0 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, $pastel-pink 0%, $pastel-purple 20%, $pastel-blue 80%, $pastel-green 100%);
+    border-image-slice: 1;
 
     &:hover {
-        //letter-spacing: 5px;
+        border-bottom: 3px solid $black;
+        border-image: none;
+    }
+}
+
+//---------- BUTTONS, INPUT FIELDS, LABELS
+.button-dark {
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: OpenSans-Semibold !important;
+    background-color: $black;
+    color: $white;
+    transition: background-color 0.5s;
+    font-family: OpenSans-Regular;
+    font-size: $small-font;
+
+    &:hover {
         cursor: pointer;
+        background: linear-gradient(to right, $pastel-purple, $pastel-blue, $pastel-green);
+    }
+}
+
+.button-gradient-large {
+    padding: 30px 50px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: OpenSans-Semibold !important;
+    color: $black;
+    background-color: $white;
+    transition: background-color 0.5s;
+    font-family: OpenSans-Regular;
+    font-size: 20px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-image: linear-gradient(to right, $pastel-purple 0%, $pastel-blue 80%, $pastel-green 100%);
+    border-image-slice: 1;
+
+    &:hover {
+        background: linear-gradient(to right, $pastel-purple, $pastel-blue, $pastel-green);
+    }
+}
+
+.button-gradient {
+    padding: 7px 15px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $black;
+    background-color: $white;
+    transition: background-color 0.5s;
+    font-family: OpenSans-Regular;
+    font-size: $smaller-font;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, $pastel-purple 0%, $pastel-blue 80%, $pastel-green 100%);
+    border-image-slice: 1;
+
+    &:hover {
+        background: linear-gradient(to right, $pastel-purple, $pastel-blue, $pastel-green);
     }
 }
 
@@ -92,21 +189,15 @@ a {
     outline: none; 
 
     &:focus {
-        //border: 1px solid $light-green;
-        /*background-color: $very-light-green;*/
         outline: none;
     }
-}
-
-.label {
-    
 }
 
 .underlined-input {
     padding: 10px;
     border: none;
     border-bottom: 1px solid $black;
-    font-size: 20px;
+    font-size: $regular-font-size;
     transition: width 0.3s;
 
     &:hover {
@@ -120,7 +211,7 @@ a {
         color: $gray;
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-size: 14px;
+        font-size: $smaller-font;
       }
 }
 //----------
@@ -156,48 +247,124 @@ a {
     justify-content: center;
 }
 
+.nav-subnav-height-div {
+    height: calc(#{$nav-height} + #{$subnav-height});
+}
+
+.nav-height-div {
+    height: $nav-height;
+}
+
 .quote {
     letter-spacing: 2px;
 }
 
-//---------- DELTOID LINE
-
-.deltoid-line-dark-green {
-    height: 13px;
-    background-image: url("/assets/images/deltoid-dark-green.svg");
-}
-
-.deltoid-line-light-green {
-    height: 13px;
-    background-image: url("/assets/images/deltoid-light-green.svg");
-}
-
-.deltoid-line-dark-green-light-bg {
-    height: 13px;
-    background-image: url("/assets/images/deltoid-dark-green-light-bg.svg");
-}
-//----------
-
 //---------- GRADIENT LINES
 .gradient-line-right {
-    height: 3px;
+    height: 2px;
     width: 100%;
     background: red; /* For browsers that do not support gradients */
-    background: linear-gradient(to right, #8AC4EB , #9FBC7B, #8AC4EB); /* Standard syntax (must be last) */
+    background: linear-gradient(to right, $pastel-pink, $pastel-purple, $pastel-blue, $pastel-green); /* Standard syntax (must be last) */
 }
 
 .gradient-line {
-    height: 3px;
+    height: 2px;
     width: 100%;
     background: red; /* For browsers that do not support gradients */
-    background: linear-gradient(to right, $white, #8AC4EB, $white); /* Standard syntax (must be last) */
+    background: linear-gradient(to right, $pastel-pink, $pastel-purple, $pastel-blue, $pastel-green); /* Standard syntax (must be last) */
 }
 
-.gradient-line-left {
-    height: 3px;
+.border-line {
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, $pastel-pink 0%, $pastel-purple 20%, $pastel-blue 80%, $pastel-green 100%);
+    border-image-slice: 1;
+    margin: 50px 0;
+}
+
+.thin-black-line {
+    height: 1px;
     width: 100%;
-    background: red; /* For browsers that do not support gradients */
-    background: linear-gradient(to left, red , yellow); /* Standard syntax (must be last) */
+    background-color: $black;
 }
 
 //----------
+
+//---------- BLOG POSTS ----------
+
+.blog-posts-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: $narrow-width;
+    margin: auto;
+
+    .blog-element {
+        width: 30%;
+        padding: 20px;
+        text-align: center;
+
+        @include breakpoint-960 {
+            width: 100%;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        .blog-element-category {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: $smaller-font;
+        }
+
+        .blog-element-title {
+            margin: 10px 0;
+            font-family: PlayfairDisplay-Regular;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 30px;
+        }
+
+        .blog-element-date {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: $smaller-font;
+            margin-bottom: 20px;
+        }
+
+        .thin-black-line {
+            margin-bottom: 20px;
+        }
+
+        .blog-element-img-div {
+            margin: 20px 0;
+
+            .blog-element-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                overflow: hidden;
+                border: 1px solid $black;
+
+                @include breakpoint-960 {
+                    width: 70%;
+                    height: 300px;
+                }
+
+                @include breakpoint-768 {
+                    width: 100%;
+                    height: 200px;
+                }
+            }
+        }
+
+        .blog-element-description {
+            width: 100%;
+            text-align: center;
+            font-size: $small-font;
+            line-height: 22px;
+        }
+    }
+}
+
+//--------------------

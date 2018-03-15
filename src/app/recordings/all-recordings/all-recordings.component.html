@@ -1,0 +1,95 @@
+<div class="recording-wrapper">
+    <div class="recording-inner-wrapper">
+      <!--
+      <div class="gradient-line-right recording-line">
+      </div>
+      -->
+      <div class="recording-header">
+  
+        <div class="recording-header-icon-div">
+          <!--<img class="recording-header-icon" src="assets/images/icon-me4.svg">-->
+          <!--
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+          <path class="icon-svg me" fill="none" stroke-width="3" stroke-miterlimit="10" d="M50,21.833c0,0-28.167-0.478-28.167,26.522
+            S50,78.167,50,78.167s28.168-2.812,28.168-29.812S50,21.833,50,21.833z"/>
+          -->
+            <!--my-body  svg -->
+            <svg *ngIf="recordingTitle=='Moje telo'" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+            <path class="icon-svg me" fill="#FFFFFF" stroke-width="3" d="M81.492,37.399C81.492,54.791,50,76.412,50,76.412S18.508,54.791,18.508,37.399c0-14.704,14.621-19.506,31.491-2.636
+              C68.057,16.707,81.492,22.695,81.492,37.399z"/>
+              <defs>
+                  <linearGradient id="MyGradientMe">
+                      <stop offset="0%" stop-color="#c1c3e2" ></stop>
+                      <stop offset="80%" stop-color="#ddb4d4" ></stop>
+                  </linearGradient>
+              </defs>
+            </svg>
+            <!--end my-body  svg -->
+          <!--me svg -->
+          <svg *ngIf="recordingTitle=='Jaz'" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+          <circle class="icon-svg me" fill="#FFFFFF" stroke-width="0" stroke-miterlimit="10" cx="50" cy="50" r="29.867"/>
+            <defs>
+                <linearGradient id="MyGradientMe">
+                    <stop offset="0%" stop-color="#c1c3e2" ></stop>
+                    <stop offset="80%" stop-color="#ddb4d4" ></stop>
+                </linearGradient>
+            </defs>
+          </svg>
+          <!--end me  svg -->
+          <!--self-confidence  svg -->
+          <svg *ngIf="recordingTitle=='Samozavest'"version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+          <polygon class="icon-svg" fill="#FFFFFF" stroke-width="3" points="50,19.625 59.87,39.623 81.938,42.83 65.97,58.396 69.74,80.375 50,69.998 30.262,80.375 34.032,58.396 
+            18.063,42.83 40.131,39.623 "/>
+            <defs>
+                <linearGradient id="MyGradient">
+                    <stop offset="0%" stop-color="#aad6a7" ></stop>
+                    <stop offset="80%" stop-color="#ddb4d4" ></stop>
+                </linearGradient>
+            </defs>
+          </svg>
+          <!--end self-confidence  svg -->
+        </div>
+        <div class="recording-header-text title-medium">
+          {{recordingTitle}}
+        </div>
+      </div>
+      <!--
+      <div class="gradient-line-right recording-line">
+      </div>
+      -->
+      <div class="recording-content">
+        <p *ngFor='let element of recordingDescription'>
+            {{element.text}}
+        </p>
+      </div>
+  
+      <div class="select-recording-wrapper">
+        <div class="recordings-list">
+          <div *ngFor='let element of recordings' class="recording-element" [class.active]="element.show" (click)="elementClicked(element)">
+            <div class="recording-element-title">
+              {{element.title}}
+            </div>
+          </div>
+        </div>
+        <div class="selected-recording-content-wrapper">
+          <div class="selected-recording-title">
+            {{currentlyShownElement.title}}
+          </div>
+          <div class="selected-recording-text">
+            <p>
+            {{currentlyShownElement.description}}
+            </p>   
+          </div>
+          <div class="selected-recording-mix">
+            <div class="recordingframe" click>
+              <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fbrianskyze%2F008-prescriptive-grammar-radio-show%2F" frameborder="0"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

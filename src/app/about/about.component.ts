@@ -12,13 +12,12 @@ declare var SC: any;
 })
 export class AboutComponent implements OnInit {
   currentlyShownElement = null;
-  fixedSubNav: boolean = false;
   windowHeight = 0;
-  about: any[] = [
+  content: any[] = [
     {
       "question": "Kaj je hipnoza?",
-      "answer": "Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
-      "show": false
+      "answer": "Hipnoza je vsakdanji psihološki pojav,enjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
+      "show": true
     },
     {
       "question": "Na katerih področjih lahko uporabljamo hipnozo?",
@@ -60,8 +59,8 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.currentlyShownElement = this.content[0];
     this.windowHeight = window.innerHeight;
-
     this.generalService.currentLink = 'hypnosis';
     this.generalService.currentHypnosisSublink = 'about-hypnosis';
     this.generalService.printCurrentLink();
@@ -90,6 +89,10 @@ export class AboutComponent implements OnInit {
   scrollToTop()
   {
     this.document.body.scrollTop = 0;
+  }
+
+  aboutHypnosisClicked() {
+    
   }
 
 }

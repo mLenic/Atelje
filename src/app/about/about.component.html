@@ -12,78 +12,94 @@
       Posnetki hipnoze
     </div>
   </div>
-  <div class="hypnosis-inner-wrapper full-screen" [class.fixed-subnav-change]="fixedSubNav">
+  <div class="hypnosis-inner-wrapper">
     <div class="hypnosis">
-      <div class="empty-div" [class.empty-div]="fixedSubNav">
-      </div>
-      <!--
-      <div class="hypnosis-sub-navigation" [class.fixed]="fixedSubNav">
-        <div class="hypnosis-sub-navigation-link">
-          O hipnozi
-        </div>
-        <div class="hypnosis-sub-navigation-link">
-          O posnetkih
-        </div>
-        <div class="hypnosis-sub-navigation-link">
-            <a [routerLink]="['/recordings']">
-              Posnetki
-            </a>
-        </div>
-      </div>
-    -->
-      <div class="hypnosis-content" [class.fixed-subnav-change]="fixedSubNav">
-        <div class="introduction full-screen">
-          <div class="introduction-element title-small">
-              Rasti & strmeti k soncu s hipnozo?
-          </div>
-          <div class="introduction-element highlighted">
-              Hipnoza je stanje globoke sproščenosti, usmerjene pozornosti in sprejemljivosti za sugestije. Vsaka oseba, ki je zmožna razumeti hipnoterapevtove besede je zmožna vstopiti v hipnotizirano stanje. Seveda, če si to želi in je primerno motivirana.
-          </div>
-          <div class="introduction-element">
-              Če čutite, da bi bil to lahko doprinos k vašemu življenju - vabljeni k poslušanju.
-          </div>
-          <div class="introduction-element">
-              To je vse kar potrebujete za velike spremembe.
-          </div>   
-        </div>
-        <!--
-        <div class="hypnosis-questions-wrapper">
-          <div *ngFor='let element of about' class="hypnosis-about-element">
-            <div class="hypnosis-question title-smaller" (click)="elementClicked(element)">
-              {{element.question}}
-            </div>  
-            <div class="hypnosis-answer" *ngIf="element.show">
-              {{element.answer}}
+      <div class="hypnosis-content">
+        <div class="introduction-wrapper full-screen">
+          <div class="introduction">
+            <div class="introduction-element title-small">
+                Rasti & strmeti k soncu s hipnozo
+            </div>
+            <div class="introduction-element">
+              <p>
+                  Hipnoza je stanje globoke sproščenosti, usmerjene pozornosti in povečane sprejemljivosti za sugestije. Vsaka oseba, ki je zmožna razumeti hipnoterapevtove besede je zmožna vstopiti v hipnotizirano stanje. Seveda, če si to želi in je primerno motivirana.                  
+              </p>
+            </div>
+            <div class="introduction-element">
+              <p>
+                  Hipnoza je primerna za vse, ki bi radi nekaj spremenili.
+              </p>                  
+            </div>
+            <div class="introduction-element">
+              <p>
+                  Na tej strani boste našli zvočne posnetke hipnotskih seans. Svetujem, da si pred poslušanje preberete <span class="text-link" (click)="aboutHypnosisClicked()">o hipnozi</span> in <a href="/about-recordings"><span class="text-link">o posnetkih</span></a>. 
+              </p>
             </div>
           </div>
         </div>
-        -->
-        <div class="hypnosis-questions-wrapper">
-          <div class="hypnosis-questions-list-wrapper">
-            <div *ngFor='let element of about' class="hypnosis-question" (click)="elementClicked(element)">
-                {{element.question}}
+        <div class="hypnosis-empty-div">
+        </div>
+        <div class="hypnosis-questions-wrapper full-screen">
+          <div class="hypnosis-questions-inner-wrapper">
+            <div class="about-hypnosis-questions-title title-medium">
+              o hipnozi
             </div>
+            <app-questions-answers-row [content]="content"></app-questions-answers-row>
+            <!--questions-answers-row-element
+            <div class="questions-answers-row">
+              <div class="questions-list-wrapper">
+                <div *ngFor='let element of about' class="question" [class.active]="element.show" (click)="elementClicked(element)">
+                  <div class="question-text" [innerHTML]="element.question">  
+                    
+                  </div>
+                  <div *ngIf='element.show' class="answer-content-mobile">
+                    <p>
+                    {{element.answer}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="answer-wrapper">
+                <div class="answer-title">
+                  {{currentlyShownElement.question}}
+                </div>
+                <div class="answer-content">
+                  <p>
+                  {{currentlyShownElement.answer}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <end questions-answers-row-element-->
           </div>
-          <div class="hypnosis-answer-wrapper">
-            <div class="hypnosis-answer-title">
-              Ali je hipnoza primerna za vse?
-            </div>
-            <div class="hypnosis-answer-content">
-              Hipnoza je primerna za skoraj vse. Ni primerna za obravnavo psihoz (npr. shizofrenije). Hipnoza prav tako ni primerna za osebe z epilepsijo. 
-              V teh primerih hipnoza ni škodljiva, vsekakor pa ni zadostna za obravnavo resnih psihičnih motenj. Kljub temu da osbtaja vedno več dokazov o učikovitosti hipnoze tudi za tovstne motnje, je le to izven obsega mojega dela. 
-              <br>
-              <br>
-              Moja etična dolžnost in odgovornost je, da v tovrstnih primerih ne dajem kakršnihkoli zdravstvenih nasvetov. V kolikor ste v dvomih me lahko knotaktirate ali pa  se posvetujte z vašim osebnim zdravnikom.	
+        </div>
+        <div class="hypnosis-empty-div">
+        </div>
+        <div class="hypnosis-invitation-wrapper">
+          <div class="hypnosis-invitation full-screen">
+            <div class="invitation-div border-line">
+              <p class="invitation-div-text important-text">
+                Bi bil to doprinos k vašemu življenju? 
+              </p>
+              <p class="invitation-div-text important-text">
+                - Vabljeni k poslušanju.
+              </p>
+              <p class="invitation-div-text important-text">
+                Morda je pa to vse kar potrebujete za velike spremembe.
+              </p>
+              <div class="invitation-buttons-div">
+                <a href="/about-recordings">
+                  <button class="button-dark recordings-button">o posnetkih</button>
+                </a>
+                <a href="/recordings">
+                <button class="button-dark recordings-button">posnetki</button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-          <div class="recordingframe" click>
-            <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fbrianskyze%2F008-prescriptive-grammar-radio-show%2F" frameborder="0"></iframe>
-          </div>
       </div>
     </div>
   </div>
-
   <!-- hypnosis-inner-wrapper -->
-
 </div>

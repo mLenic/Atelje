@@ -10,6 +10,30 @@ import { BlogService } from '../core/service/blog.service';
 })
 export class HomeComponent implements OnInit {
 
+  posts: any[] = [
+    {
+      "title": "Kaj je hipnoza? Kaj je hipnoza",
+      "subtitle": "V preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.",
+      "date": "7.12.2017",
+      "category": "hipnoza",
+      "color": "#8C7BAD"
+    },
+    {
+      "title": "Kaj je hipnoza?",
+      "subtitle": "V preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.",
+      "date": "7.12.2017",
+      "category": "hipnoza",
+      "color": "#8C7BAD"
+    },
+    {
+      "title": "Kaj je hipnoza?",
+      "subtitle": "V preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medsti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Micinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.",
+      "date": "7.12.2017",
+      "category": "hipnoza",
+      "color": "#8C7BAD"
+    }
+  ]
+
   constructor(
     private generalService: GeneralService,
     private blogService: BlogService,

@@ -1,0 +1,77 @@
+@import '../../variables.scss';
+.about-recordings-wrapper {
+    .about-recordings-questions-wrapper {
+        //padding-top: $nav-height;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: $content-padding;
+        
+        .about-recordings-questions-inner-wrapper{  
+            width: 100%;
+
+            .about-recordings-content {
+                width: $narrow-width;
+                margin: auto;
+                padding-top: 100px;
+
+                .about-recordings-title {
+                    margin-bottom: 100px;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .empty-div {
+        height: 100px;
+        width: 100%;
+    }
+
+    .next-div-wrapper {
+        background-color: $white;
+
+        .next-div-inner-wrapper {
+            width: $narrow-width;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .next-div {
+                width: 70%;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                
+                @include breakpoint-960 {
+                    width: 100%;
+                }
+
+                .next-div-text {
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+
+                .next-buttons-div {
+                    display: flex;
+
+                    @include breakpoint-768 {
+                        flex-direction: column;
+                    }
+
+                    .next-button {
+                        margin: 30px 20px 0 20px;
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 @import '../../variables.scss';
 
-$blogpost-header-height: 50vh;
+$blogpost-header-height: 70vh;
 
 .blogpost-wrapper {
     min-height: 100vh;
@@ -18,6 +18,7 @@ $blogpost-header-height: 50vh;
             width: 100%;
             //position: fixed;
             z-index: -2;
+            opacity: 0.75;
         
             .blogpost-img {
                 width: 100%;
@@ -28,6 +29,7 @@ $blogpost-header-height: 50vh;
         }
 
         .light-bg-div {
+            display: none;
             height: $blogpost-header-height;
             width: 100%;
             position: absolute;
@@ -40,20 +42,20 @@ $blogpost-header-height: 50vh;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-family: OpenSans-Regular;
-            font-size: 18px;
+            font-size: $small-font;
         }
         .blogpost-title {
             margin: 10px 0;
             font-family: PlayfairDisplay-Regular;
             text-transform: uppercase;
             letter-spacing: 4px;
-            font-size: 45px;
+            font-size: 38px;
         }
 
         .blogpost-date {
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 14px;
+            font-size: $small-font;
         }
     }
 
@@ -75,14 +77,26 @@ $blogpost-header-height: 50vh;
             width: 50%;
             margin: 80px auto;
 
+            @include breakpoint-960 {
+                width: 100%;
+            }
+
             .quote-line {
                 margin: 40px 0;
-                //width: 70%;
+                
+                &.quote-line-top {
+                    opacity: 0;
+                }
+                &.quote-line-bottom {
+                    opacity: 0;
+                }
             }
             
             .quote-text {
                 text-align: center;
-                font-size: 18px;
+                font-size: $regular-font-size;
+                opacity: 0;
+                transform: translateX(-150px);
             }
 
             .quote-author {
@@ -92,6 +106,8 @@ $blogpost-header-height: 50vh;
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 font-size: 14px;
+                opacity: 0;
+                transform: translateX(150px);
             }
         }
 
@@ -100,17 +116,59 @@ $blogpost-header-height: 50vh;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            align-items: center;
+            width: 100%;
 
             .gallery-img-div {
-                width: 48%;
-                margin-bottom: 50px;
-                .gallery-img {
+                width: 100%; //49%
+                margin-bottom: 30px;
+                text-align: center;
+
+                @include breakpoint-960 {
                     width: 100%;
-                    height: 300px;
+                }
+
+                .gallery-img {
+                    width: 80%;
+                    //height: 300px;
+                    height: auto;
                     object-fit: cover;
                     overflow: hidden;
+
+                    @include breakpoint-960 {
+                        width: 100%;
+                    }
                 }
             }
         }
+
+        .blogpost-next-previous-wrapper {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+
+            .next-previous-button-div {
+                button {
+                    width: 175px;
+                }
+            }
+        }
+    }
+}
+
+.quote-animation {
+    animation: quote 1.2s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.quote-animation-line {
+    animation: quote 2s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes quote {
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

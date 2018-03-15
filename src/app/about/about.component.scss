@@ -1,132 +1,133 @@
 @import '../../variables.scss';
 
 .hypnosis-wrapper {
+    .title-line {
+        width: 250px;
+
+        @include breakpoint-768 {
+            width: 220px;
+            margin-bottom: 5px;
+        }
+    }
 
     .hypnosis-inner-wrapper {
-        background-color: $white;
-        display: flex;
-        padding: $content-padding 0;
-
         .hypnosis {
-            width: $narrow-width;
-            margin: auto;
-
             .empty-div {
                 height: calc(100px + $content-padding + $regular-font-size);
                 width: 100%;
             }
 
-            .hypnosis-sub-navigation {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 100px;
-                z-index: 2;
-
-                &.fixed {
-                    position: fixed;
-                    top: $nav-height;
-                    left: 0;
-                    padding: 20px;
-                    //padding-top: 50px;
-                    text-align: center;
-                    width: 100vw;
-                    background-color: $white;
-                    margin-bottom: 0;
-                }
-
-                .hypnosis-sub-navigation-link {
-                    margin: 0 20px;
-                    cursor: pointer;
-                    font-size: 20px;
-                    letter-spacing: 2px;
-                    text-transform: uppercase;
-
-                }
-            }
-
             .hypnosis-content { 
                 margin-top: 20px;
 
-                &.fixed-subnav-change {
-                    margin-top: 130px;
-                }
-
-                .introduction {
-                    margin-bottom: 40px;
-
-                    .introduction-element {
-                        margin-bottom: 30px;
-                        text-align: center;
-
-                        &.highlighted {
-                            font-size: 24px;
-                            //font-style: italic;
-                            //text-transform: uppercase;
-                            letter-spacing: 2px;
-                        }
-                    }
-                }
-                /*
-                .hypnosis-questions-wrapper {
-                    //text-align: center;
+                .introduction-wrapper {
+                    background-color: $white;
+                    padding: $content-padding 0;
                     display: flex;
-                    .hypnosis-about-element{
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
 
-                        .hypnosis-question {
-                            cursor: pointer;
-                            margin-top: 30px;
-                            transition: 0.3s;
+                    .introduction {
+                        margin: auto;
+                        width: $narrow-width;
 
-                            &:hover {
-                                letter-spacing: 3px;
+                        .introduction-element {
+                            margin-bottom: 30px;
+                            text-align: center;
+
+                            &.title-small {
+                                margin-bottom: 80px;
                             }
-                            
-                        }
-                        .hypnosis-answer{
-                            margin-top: 10px;
+
+                            &.highlighted {
+                                font-size: 24px;
+
+                                p {
+                                    font-family: PlayfairDisplay-Regular;
+                                    text-transform: uppercase;
+                                }
+                            }
                         }
                     }
                 }
-                */
+
+                .hypnosis-empty-div {
+                    width: 10vw;
+                    height: 100px;
+                    background-color: transparent;
+                }
+
                 .hypnosis-questions-wrapper {
+                    background-color: $white;
+                    padding: $content-padding;
                     display: flex;
-                    
-                    .hypnosis-questions-list-wrapper {
-                        width: 30%;
-                        padding-right: 50px;
+                    flex-direction: column;
+                    justify-content: center;
 
-                        .hypnosis-question {
-                            padding: 15px 15px 15px 0;
-                            border-right: 4px solid $light-gray;
-                            //text-transform: uppercase;
-                            letter-spacing: 2px;
-                            font-size: 18px;
-                            color: $gray;
+                    .hypnosis-questions-inner-wrapper {
+                        width: $narrow-width;
+                        margin: auto;
 
-                        &.active  {
-                            color: $black;
-                            border-right: 4px solid $black;
-                            font-family: OpenSans-Semibold;
+                        @include breakpoint-960 {
+                            width: 100%;
                         }
 
+                        .about-hypnosis-questions-title {
+                            margin-bottom: 70px;
+                            text-align: center;
                         }
                     }
+                }
+                /* --------- end hypnosis-questions ---------*/
+                .hypnosis-invitation-wrapper {
+                    background-color: $white;
+                    padding: $content-padding;
 
-                    .hypnosis-answer-wrapper {
-                        width: 70%;
-                        text-align: justify;
+                    .hypnosis-invitation {
+                        width: $narrow-width;
+                        margin: auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
 
-                        .hypnosis-answer-title {
-                            margin-bottom: 20px;
-                            //text-transform: uppercase;
-                            letter-spacing: 2px;
-                            font-size: 28px;
-                            font-family: PlayfairDisplay-Regular;
+                        @include breakpoint-960 {
+                            width: 100%;
                         }
 
-                        .hypnosis-answer-content {
+                        .invitation-div {
+                            width: 70%;
+                            padding: 40px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
 
+                            @include breakpoint-960 {
+                                width: 100%;
+                            }
+
+                            .invitation-div-text {
+                                margin-bottom: 20px;
+                                text-align: center;
+                            }
+
+                            .invitation-buttons-div {
+                                display: flex;
+
+                                @include breakpoint-768 {
+                                    flex-direction: column;
+                                }
+
+                                .recordings-button {
+                                    margin: 30px 20px 0 20px;
+                                    width: 200px;
+
+                                    @include breakpoint-768 {
+                                        margin: 30px 0 0 0;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
