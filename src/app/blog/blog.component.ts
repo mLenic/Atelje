@@ -22,9 +22,9 @@ export class BlogComponent implements OnInit {
   public searchTerm: string = "";
   public searchCategory = {
     hypnosis: true,
-    two: true,
-    three: true,
-    four: true
+    creative: true,
+    personal: true,
+    rest: true
   };
 
   posts: any[] = [

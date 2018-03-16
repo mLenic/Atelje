@@ -80,7 +80,7 @@ var saveBlogPost = function(blog, db, callback){
             idvalue: latestId + 1,
             title: blog.title,
             subTitle: blog.subtitle,
-            descrption: blog.description,
+            description: blog.description,
             content: blog.message,
             category: blog.category,
             color: blog.colour,
