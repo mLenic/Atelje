@@ -126,6 +126,8 @@ export class BlogformComponent implements OnInit {
 
     //Submits blog to server
     submitBlog() {
+        this.blogContent.content = "";
+
         //Creates HTML inside this.blogContent.content variable
         this.createContentHTMLFromElements();
 
@@ -229,25 +231,73 @@ export class BlogformComponent implements OnInit {
         this.blogContent.elements.forEach(element => {
             if(element.idval === 'Paragraph'){
                 this.blogContent.content = this.blogContent.content.concat(
-                    '<p>' + element.val + '</p>'
+                    '<p>' + element.val + '</p></br>'
                 );
             } else if(element.idval === 'Quote'){
                 this.blogContent.content = this.blogContent.content.concat(
                     '<div class="blogpost-quote">'
-                        + '<div class="gradient-line-right quote-line"></div>'
-                        + '<div class="quote-text">'
+                        + '<div class="gradient-line-right quote-line quote-line-top" [class.quote-animation-line]="animateText"></div>'
+                        + '<div class="quote-text" [class.quote-animation]="animateText">'
                             + element.val
                         + '</div>'
-                        + '<div class="quote-author"> - '
+                        + '<div class="quote-author" [class.quote-animation]="animateAuthor"> - '
                             + element.author
                         + '</div>'
-                        + '<div class="gradient-line-right quote-line"></div>'
+                        + '<div class="gradient-line-right quote-line quote-line-bottom" [class.quote-animation-line]="animateAuthor"></div>'
                     + '</div>'
 
                 ); 
             }
         });
-
+        this.createGallery();
+        this.createButtons();
         this.finalizeContentHTML();
+    }
+
+    createGallery(){
+        this.blogContent.content = this.blogContent.content.concat(
+            '<div class="blogpost-gallery">'
+        );
+        this.picUrls.forEach(url => {
+            this.blogContent.content = this.blogContent.content.concat(
+                '<div class="gallery-img-div">'
+            );
+
+            this.blogContent.content = this.blogContent.content.concat(
+                '<img class="gallery-img" src="' + url.url + '">'
+                
+            );
+
+            this.blogContent.content = this.blogContent.content.concat(
+                '</div>'
+            );
+        });
+
+
+        this.blogContent.content = this.blogContent.content.concat(
+            '</div>'
+        );
+    }
+
+    createButtons(){
+        this.blogContent.content = this.blogContent.content.concat(
+            '<div class="blogpost-next-previous-wrapper">'
+             + '<div class="next-previous-button-div">'
+              + '<button class="button-gradient" (click)="loadNextBlogPost(true)">PREJŠNJI</button>'
+             + '</div>'
+             + '<div class="next-previous-button-div">'
+              + '<button class="button-gradient" (click)="loadNextBlogPost(false)">NASLEDNJI</button>'
+             + '</div>'
+            + '</div>'
+            
+        );
+        /* <div class="blogpost-next-previous-wrapper">
+          <div class="next-previous-button-div">
+              <button class="button-gradient" (click)="loadNextBlogPost(true)">PREJŠNJI</button>
+          </div>
+          <div class="next-previous-button-div">
+              <button class="button-gradient" (click)="loadNextBlogPost(false)">NASLEDNJI</button>
+          </div>
+      </div> */
     }
 }

@@ -54,8 +54,9 @@
           <div class="form-field">
             <label class="label">Kategorija:</label>
             <select type="text" class="input half" [(ngModel)]="category" [ngModelOptions]="{standalone: true}">
-                <option value="personal" selected>Osebno</option>
-                <option value="hypnosis">Hipnoza</option>
+                <option value="hypnosis" selected>Zapisi o hipnozi</option>
+                <option value="creative">Kreativne terapevtske tehnike</option>
+                <option value="personal">Moja razmišljanja</option>
                 <option value="rest">Ostalo</option>
               </select>
           </div>
@@ -65,9 +66,9 @@
           <div class="form-field">
             <label class="label">Barva:</label>
             <select type="text" class="input half" [(ngModel)]="colour" [ngModelOptions]="{standalone: true}">
-                <option style="background-color: red" value="red" selected>Rdeča</option>
-                <option style="background-color: green" value="green" >Zelena</option>
-                <option style="background-color: blue" value="blue" >Modra</option>
+                <option style="background-color: #D33F49" value="red" selected>Rdeča</option>
+                <option style="background-color: #77BA99" value="green" >Zelena</option>
+                <option style="background-color: #011936" value="blue" >Modra</option>
               </select>
           </div>
 

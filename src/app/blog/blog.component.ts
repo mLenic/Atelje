@@ -22,104 +22,10 @@ export class BlogComponent implements OnInit {
   public searchTerm: string = "";
   public searchCategory = {
     hypnosis: true,
-    two: true,
-    three: true,
-    four: true
+    creative: true,
+    personal: true,
+    rest: true
   };
-
-  posts: any[] = [
-    {
-      "title": "Kaj je hipnoza?",
-      "subtitle": "V preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza?",
-      "subtitle": "V preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza?",
-      "subtitle": "V preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza?",
-      "subtitle": "Hjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza in kaj je hipnoza?",
-      "subtitle": "Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza in kaj in zakaj je hipnoza?",
-      "subtitle": "Hipnozah som niti ne poimenujemo1oza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza in kaj in zakaj je hipnoza?",
-      "subtitle": "Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza?",
-      "subtitle": "Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza in kaj in zakaj je hipnoza?",
-      "subtitle": "Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza?",
-      "subtitle": "Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza?",
-      "subtitle": "Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza?",
-      "subtitle": "Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza?",
-      "subtitle": "Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    }
-  ];
 
   ngOnInit() {
     this.generalService.currentLink = 'blog';
@@ -138,36 +44,50 @@ export class BlogComponent implements OnInit {
     
     var tmpArray = new Array<any>();  
     console.log(this.searchTerm);
-    
+    debugger;
     if(this.searchTerm === ""){
-      tmpArray = this.arrBlogs;
+      
+      for(let i = 0; i < this.arrBlogs.length; i++){
+          //Filter for categories  
+          if(this.searchCategory.hypnosis == false && this.arrBlogs[i].category == "hypnosis") continue;
+          if(this.searchCategory.creative == false && this.arrBlogs[i].category == "creative") continue;
+          if(this.searchCategory.personal == false && this.arrBlogs[i].category == "personal") continue;
+          if(this.searchCategory.rest     == false && this.arrBlogs[i].category == "rest"    ) continue;
+          tmpArray.push(this.arrBlogs[i]);
+    
+      }
     } else {
       console.log(tmpArray);
-      //Filter for text - searching title and subtitle
+      //Filter for text and categories - searching title and description
+      
       if(this.arrBlogs == null || this.arrBlogs.length > 0){
-          this.arrBlogs.forEach(blog => {
-              if((blog.title.toLowerCase()).indexOf(this.searchTerm.toLowerCase()) != -1 ||  (blog.subTitle.toLowerCase()).indexOf(this.searchTerm.toLowerCase()) != -1  ){
-                  tmpArray.push(blog);
-              }
-          });
+          for(let i = 0; i < this.arrBlogs.length; i++){
+            if((this.arrBlogs[i].title.toLowerCase()).indexOf(this.searchTerm.toLowerCase()) != -1 ||  (this.arrBlogs[i].description.toLowerCase()).indexOf(this.searchTerm.toLowerCase()) != -1  ){
+              //Filter for categories  
+              if(this.searchCategory.hypnosis == false && this.arrBlogs[i].category == "hypnosis") continue;
+              if(this.searchCategory.creative == false && this.arrBlogs[i].category == "creative") continue;
+              if(this.searchCategory.personal == false && this.arrBlogs[i].category == "personal") continue;
+              if(this.searchCategory.rest     == false && this.arrBlogs[i].category == "rest"    ) continue;
+              tmpArray.push(this.arrBlogs[i]);
+            }
+          }
       } 
     }
     
     console.log(tmpArray);
-    //TODO: filter for categories
-
     this.arrShownBlogs = tmpArray;
   }
 
   //Initially show all blogs
   fetchBlogPosts(){
-    var jsonBlogs = this.blogService.getBlogPostsFromStorage();
+    //var jsonBlogs = this.blogService.getBlogPostsFromStorage();
+    var jsonBlogs = null;
     if(jsonBlogs == null){
       this.blogService.getBlogPosts()
                     .subscribe(data => {
                       console.log("data blogposts recieved");
                       var res = JSON.parse(data.text());
-                      this.blogService.saveBlogPostsToStorage(res.blogs);
+                      //this.blogService.saveBlogPostsToStorage(res.blogs);
                       this.arrBlogs = res.blogs;
                       this.arrShownBlogs = res.blogs;
                     }, error => {
@@ -178,7 +98,5 @@ export class BlogComponent implements OnInit {
       this.arrBlogs = jsonBlogs;
       this.arrShownBlogs = jsonBlogs;
     }
-
-    console.log(this.arrBlogs);
   }
 }

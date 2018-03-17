@@ -75,7 +75,7 @@ $blogpost-header-height: 70vh;
         }
 
         p {
-            text-indent: 40px;
+            //text-indent: 40px;
             text-align: justify;
         }
 
@@ -90,19 +90,19 @@ $blogpost-header-height: 70vh;
             .quote-line {
                 margin: 40px 0;
                 
-                &.quote-line-top {
+               /*  &.quote-line-top {
                     opacity: 0;
                 }
                 &.quote-line-bottom {
                     opacity: 0;
-                }
+                } */
             }
             
             .quote-text {
                 text-align: center;
                 font-size: $regular-font-size;
-                opacity: 0;
-                transform: translateX(-150px);
+                /* opacity: 0;
+                transform: translateX(-150px); */
             }
 
             .quote-author {
@@ -112,8 +112,8 @@ $blogpost-header-height: 70vh;
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 font-size: 14px;
-                opacity: 0;
-                transform: translateX(150px);
+                /* opacity: 0;
+                transform: translateX(150px); */
             }
         }
 
@@ -162,7 +162,7 @@ $blogpost-header-height: 70vh;
     }
 }
 
-.quote-animation {
+/* .quote-animation {
     animation: quote 1.2s ease-out;
     animation-fill-mode: forwards;
 }
@@ -177,4 +177,4 @@ $blogpost-header-height: 70vh;
         opacity: 1;
         transform: translateX(0);
     }
-}
+} */

@@ -131,7 +131,7 @@ router.get('/sign-s3', function(req, res){
 
 /**
  * Routes that handle initialization of DB - Shouldn't be in production
- */
+  - Still here for debugging purposes
 router.get('/init/users', function (req, res) {
   console.log('Initalizing database, adding users...');
 
@@ -150,7 +150,7 @@ router.get('/init/blogs', function (req, res) {
     message: 'success'
   });
 });
-
+*/
 
 /* GET api listing. */
 router.get('/', (req, res) => {

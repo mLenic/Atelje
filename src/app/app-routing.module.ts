@@ -17,22 +17,22 @@ import { MeComponent } from './recordings/all-recordings/me/me.component';
 import { MyBodyComponent } from './recordings/all-recordings/my-body/my-body.component';
 
 const routes: Routes = [
-     { path: '',        redirectTo: '/domov',        pathMatch: 'full'   },
-     { path: 'domov',    component: HomeComponent                        },
-     { path: 'about',   component: AboutComponent                       },
-     { path: 'contact', component: ContactComponent                     },
-     { path: 'blog',    component: BlogComponent                        },
-     { path: 'blogpost/:id',    component: BlogpostComponent                        },
-     { path: 'blogpost',    component: BlogpostComponent                        },
-     { path: 'recordings',    component: RecordingsComponent                        },
-     { path: 'recording',    component: RecordingComponent                        },
-     { path: 'therapy',    component: TherapyComponent                        },
-     { path: 'about-recordings',    component: AboutRecordingsComponent                        },
-     { path: 'recordings/self-confidence',    component: SelfConfidenceComponent                        },
-     { path: 'recordings/my-body',    component: MyBodyComponent                        },
-     { path: 'recordings/me',    component: MeComponent                        },
-     { path: 'hidden',          loadChildren: './hidden/hidden.module#HiddenModule' },
-     { path: '**',      component: HomeComponent                        }
+     { path: '',                                redirectTo: '/domov',        pathMatch: 'full'      },
+     { path: 'domov',                           component: HomeComponent                            },
+     { path: 'about',                           component: AboutComponent                           },
+     { path: 'contact',                         component: ContactComponent                         },
+     { path: 'blog',                            component: BlogComponent                            },
+     { path: 'blogpost/:id',                    component: BlogpostComponent                        },
+     { path: 'blogpost',                        component: BlogpostComponent                        },
+     { path: 'recordings',                      component: RecordingsComponent                      },
+     { path: 'recording',                       component: RecordingComponent                       },
+     { path: 'therapy',                         component: TherapyComponent                         },
+     { path: 'about-recordings',                component: AboutRecordingsComponent                 },
+     { path: 'recordings/self-confidence',      component: SelfConfidenceComponent                  },
+     { path: 'recordings/my-body',              component: MyBodyComponent                          },
+     { path: 'recordings/me',                   component: MeComponent                              },
+     { path: 'hidden',                          loadChildren: './hidden/hidden.module#HiddenModule' },
+     { path: '**',                              component: HomeComponent                            }
 ];
 
 @NgModule({
