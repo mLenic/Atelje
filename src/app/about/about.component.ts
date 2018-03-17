@@ -91,8 +91,9 @@ export class AboutComponent implements OnInit {
     this.document.body.scrollTop = 0;
   }
 
-  aboutHypnosisClicked() {
-    
+  aboutHypnosisClicked(el) {
+    //Scroll to bottom
+    el.scrollIntoView();
   }
 
 }

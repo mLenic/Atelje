@@ -4,7 +4,7 @@
     terapevtski atelje
   </div>
   -->
-  <a href="/home">
+  <a href="/domov">
     <div class="logo-wrapper">
     
                   <!--<img class="logo-img" src="assets/images/logo7.svg"/>-->
@@ -181,16 +181,16 @@
 
   <div class="links-wrapper" [class.visible-navigation]="mobileNavigation">
     <div class="link">
-      <a href="/about" [class.active]="generalService.currentLink=='hypnosis'">hipnoza</a>
+      <a href="/hipnoza" [class.active]="generalService.currentLink=='hypnosis'">hipnoza</a>
     </div>
     <div class="link">
-      <a href="/therapy" [class.active]="generalService.currentLink=='therapy'">hipnoterapija</a>
+      <a href="/hipnoterapija" [class.active]="generalService.currentLink=='therapy'">hipnoterapija</a>
     </div>
     <div class="link">
       <a href="/blog" [class.active]="generalService.currentLink=='blog'">blog</a>
     </div>
     <div class="link">
-        <a href="/contact" [class.active]="generalService.currentLink=='contact'">kontakt</a>
+        <a href="/kontakt" [class.active]="generalService.currentLink=='contact'">kontakt</a>
     </div>
   </div>
   <div class="nav-mobile-icon" (click)="toggleMobileNavigation()">
@@ -199,13 +199,13 @@
   <div class="hypnosis-subnavigation" [class.white]="whiteNavBg" [class.transition]="bgTransition" [class.visible-hypnosis-subnavigation]="generalService.currentLink=='hypnosis'">
     <div class="subnavigation-links-wrapper" [class.visible-navigation]="mobileNavigation">
       <div class="subnavigation-link" [class.black]="whiteNavBg" [class.active]="generalService.currentHypnosisSublink=='about-hypnosis'">
-        <a href="/about" [class.active]="generalService.currentHypnosisSublink=='about-hypnosis'" [class.black]="whiteNavBg">o hipnozi</a>
+        <a href="/hipnoza" [class.active]="generalService.currentHypnosisSublink=='about-hypnosis'" [class.black]="whiteNavBg">o hipnozi</a>
       </div>
       <div class="subnavigation-link" [class.black]="whiteNavBg" [class.active]="generalService.currentHypnosisSublink=='about-recordings'">
-        <a href="/about-recordings" [class.active]="generalService.currentHypnosisSublink=='about-recordings'" [class.black]="whiteNavBg">o posnetkih</a>
+        <a href="/oposnetkih" [class.active]="generalService.currentHypnosisSublink=='about-recordings'" [class.black]="whiteNavBg">o posnetkih</a>
       </div>
       <div class="subnavigation-link" [class.black]="whiteNavBg" [class.active]="generalService.currentHypnosisSublink=='recordings'">
-        <a href="/recordings" [class.active]="generalService.currentHypnosisSublink=='recordings'" [class.black]="whiteNavBg">posnetki</a>
+        <a href="/zvocniposnetki" [class.active]="generalService.currentHypnosisSublink=='recordings'" [class.black]="whiteNavBg">posnetki</a>
       </div>
     </div>
   </div>

@@ -33,7 +33,9 @@
             </div>
             <div class="introduction-element">
               <p>
-                  Na tej strani boste našli zvočne posnetke hipnotskih seans. Svetujem, da si pred poslušanje preberete <span class="text-link" (click)="aboutHypnosisClicked()">o hipnozi</span> in <a href="/about-recordings"><span class="text-link">o posnetkih</span></a>. 
+                  Na tej strani boste našli zvočne posnetke hipnotskih seans. Svetujem, da si pred poslušanje preberete 
+                  <span class="text-link" (click)="aboutHypnosisClicked(hypnosis)">o hipnozi</span> in <a href="/oposnetkih">
+                    <span class="text-link">o posnetkih</span></a>. 
               </p>
             </div>
           </div>
@@ -41,7 +43,7 @@
         <div class="hypnosis-empty-div">
         </div>
         <div class="hypnosis-questions-wrapper full-screen">
-          <div class="hypnosis-questions-inner-wrapper">
+          <div class="hypnosis-questions-inner-wrapper" #hypnosis>
             <div class="about-hypnosis-questions-title title-medium">
               o hipnozi
             </div>
@@ -89,10 +91,10 @@
                 Morda je pa to vse kar potrebujete za velike spremembe.
               </p>
               <div class="invitation-buttons-div">
-                <a href="/about-recordings">
+                <a href="/oposnetkih">
                   <button class="button-dark recordings-button">o posnetkih</button>
                 </a>
-                <a href="/recordings">
+                <a href="/zvocniposnetki">
                 <button class="button-dark recordings-button">posnetki</button>
                 </a>
               </div>
