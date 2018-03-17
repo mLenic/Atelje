@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     private blogService:    BlogService,
   ) { }
 
-  public homeBlogs: Array<any>;
+  public homeBlogs: Array<any> = new Array<any>();
 
   ngOnInit() {
     this.generalService.currentLink = 'home';

@@ -9,6 +9,7 @@ var md5 = require('md5');
 //Custom modules
 var globals = require('../../globals');
 var user = require('../models/user');
+var log = require('../models/log');
 var blog = require('../models/blog');
 var mailer = require('../mailing/contact');
 var upload = require('../upload/file-upload');
@@ -47,6 +48,8 @@ app.set('port', process.env.PORT || 3000)
 router.get('/blogposts', function (req, res) {
   console.log('Fetching blogs from DB...');
 
+  log.saveLog("Fetch: blogposts", db, req);
+
   blog.fetchBlogposts(db)
     .then((blogs) => {
       res.json({
@@ -62,7 +65,12 @@ router.get('/blogposts', function (req, res) {
 });
 
 router.get('/blogpost/:id', function(req, res){
+
+
   var id = Number(req.params.id);
+
+  log.saveLog("Fetch: blogpost " + id, db, req);
+
   blog.fetchBlogpost(db, id)
         .then((blog) => {
           console.log(blog.length);
@@ -188,7 +196,9 @@ router.get('/', (req, res) => {
  * @Input: Contact form (mail, name and message)
  */
 router.post('/mailing/contact/new', function (req, res) {
-
+  
+  log.saveLog("Mail: Send mail.", db, req);
+  
   mailer(req.body, function(status) {
       if(status){
         res.status(200);
