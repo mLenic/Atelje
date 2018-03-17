@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GeneralService } from '../../../core/service/general.service';
-
+import { DomSanitizer} from '@angular/platform-browser';
 @Component({
   selector: 'app-recordings-my-body',
   templateUrl: '../all-recordings.component.html',
@@ -13,21 +13,13 @@ export class MyBodyComponent implements OnInit {
   currentlyShownElement = null;
   recordings: any[] = [
     {
-      "title": "Grajska pot",
-      "description": "Ta kategorijitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
-      "url": "https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fbrianskyze%2F008-prescriptive-grammar-radio-show%2F",
-      "show": true
-    },
-    {
       "title": "Brez hrepenenj",
       "description": "Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
-      "url": "https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fbrianskyze%2F008-prescriptive-grammar-radio-show%2F",
       "show": false
     },
     {
       "title": "Prehranjevanje je umetnost",
       "description": "Ta kategorija zajema tehnike za večanje samozavestbe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
-      "url": "https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fbrianskyze%2F008-prescriptive-grammar-radio-show%2F",
       "show": false
     }
   ]
@@ -37,11 +29,20 @@ export class MyBodyComponent implements OnInit {
     }
   ]
 
-  constructor(private generalService: GeneralService) { }
+  constructor(
+    private generalService: GeneralService,
+    private sanitizer:      DomSanitizer,) { }
 
   ngOnInit() {
     this.generalService.currentLink = 'hypnosis';
     this.currentlyShownElement = this.recordings[0];
+  }
+  
+  sanitizedUrl(url){
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+  getUrl(html){
+    return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
   elementClicked(element) {

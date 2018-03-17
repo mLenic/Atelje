@@ -47,7 +47,7 @@
     <div class="gradient-line-right blog-line">
     </div>
     <div class="blog-posts-wrapper">
-      <div *ngFor='let blog of arrShownBlogs' class="blog-element">
+      <div *ngFor='let blog of arrShownBlogs' class="blog-element" (click)="redirectToBlogPost(blog)">
             <div class="blog-element-img-div">
               <img *ngIf="blog.pictures.length == 0" class="blog-element-img" src="assets/images/forest_blur.jpg">
               <img *ngIf="blog.pictures.length > 0"  class="blog-element-img" [src]="blog.pictures[0].url">

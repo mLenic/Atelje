@@ -47,14 +47,14 @@ export class BlogService {
             });
     }
 
-    public getSignedRequest(file){
+    public getSignedRequest(file, json){
         const fileName = encodeURIComponent(file.name);
         const fileType = file.type; 
 
         var fileSignatureUri = this.uriBase + '/api/sign-s3?file-name=' + fileName + '&file-type=' + fileType;
 
         return this.http
-                .get(fileSignatureUri, {})
+                .post(fileSignatureUri, json, {})
                 .map((response: Response) => {
                     return response;
                 });

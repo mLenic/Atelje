@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
                     if(data == 200){
                       this.response.status = 200;
                       this.response.message = "Uspešen vpis."
-                      //localStorage.setItem("pwd", form.password);
+                      localStorage.setItem("pwd", form.password);
                       this.router.navigate(['/hidden/blogpost']);
                     } else {
                       this.response.status = 400;

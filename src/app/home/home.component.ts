@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { GeneralService } from '../core/service/general.service';
 import { BlogService } from '../core/service/blog.service';
@@ -11,8 +12,9 @@ import { BlogService } from '../core/service/blog.service';
 export class HomeComponent implements OnInit {
 
   constructor(
-    public generalService: GeneralService,
-    private blogService: BlogService,
+    private router:         Router,
+    public  generalService: GeneralService,
+    private blogService:    BlogService,
   ) { }
 
   public homeBlogs: Array<any>;
@@ -40,4 +42,11 @@ export class HomeComponent implements OnInit {
       this.homeBlogs = jsonBlogs;
     }
   }
+
+  redirectToBlogPost(blog){
+    console.log(blog);
+    debugger;
+    this.router.navigate(['blog/' + blog.idvalue]);
+  }
+
 }

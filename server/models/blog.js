@@ -26,7 +26,7 @@ var fetchBlogposts = function(db){
 var fetchBlogpost = function(db, id){
     var query = {idvalue: id};
     console.log(query);
-    return db.collection('blog').find(query).toArray();
+    return db.collection('blog').find({ "idvalue" : { $in: [id, id+1, id-1]}}).toArray();
 }
 
 
@@ -55,6 +55,7 @@ var initBlog = function(db){
 }
 
 var saveBlogPost = function(blog, db, callback){
+    //Check for md5 in request
     
     //get latest blog ID:
     console.log("Getting blogs");

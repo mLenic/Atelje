@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-
+import { Router } from '@angular/router';
 import { GeneralService } from '../core/service/general.service';
 import { BlogService } from '../core/service/blog.service';
 
@@ -12,8 +12,9 @@ import { BlogService } from '../core/service/blog.service';
 export class BlogComponent implements OnInit {
 
   constructor(
+    private router:         Router,
     private generalService: GeneralService,
-    private blogService: BlogService,
+    private blogService:    BlogService,
   ) { }
 
   public arrBlogs: Array<any>;
@@ -98,5 +99,11 @@ export class BlogComponent implements OnInit {
       this.arrBlogs = jsonBlogs;
       this.arrShownBlogs = jsonBlogs;
     }
+  }
+
+  redirectToBlogPost(blog){
+    console.log(blog);
+    debugger;
+    this.router.navigate(['blog/' + blog.idvalue]);
   }
 }

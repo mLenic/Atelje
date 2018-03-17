@@ -113,11 +113,20 @@ export class BlogpostComponent implements OnInit {
           .subscribe((data) => {
             console.log("Got blog post data");
             var res = JSON.parse(data.text());
-            debugger;
-            this.currentBlog = res.blog[0];
+            var found = false;
+            res.blog.forEach(blog => {
+              if(blog.idvalue == this._routeId){
+                this.currentBlog = blog;  
+                found = true;
+              }
+              
+            });
+            if(!found){
+              this.router.navigate(['/blog']);
+            }
             console.log(this.currentBlog);
-            //once firt blogpost is successfully received, fetch all blogs so that user has them saved in sessionstorage
-            this.fetchBlogPosts();
+            //once firt blogpost is successfully received, fetch all blogs so that user has them saved in sessionstorage - Disable session storage for now
+            //this.fetchBlogPosts();
 
             //this.initQuoteAnimation();
           }, (error) => {
@@ -166,6 +175,7 @@ export class BlogpostComponent implements OnInit {
   
 
   loadNextBlogPost(previous: boolean) {
+    console.log("called");
     //Blogs should be saved in sessionStorage and ordered by Date (API sends data back sorted)
     var jsonBlogs = this.blogService.getBlogPostsFromStorage();
     var currIdx = -1;

@@ -96,10 +96,19 @@ export class BlogformComponent implements OnInit {
             this.setStatus("Please select a file");
             return;
         }
-
+        debugger;
+        var pwd = localStorage.getItem('pwd');
+        
+        if(pwd == null){
+            this.response.status = 500;
+            this.response.message = "Neuspešen prenos slike. Ponovno se vpiši."
+        }
+        var form = {
+            pwd: pwd,
+        }
         this.setStatus("Getting file signature");
         var s3Data = null;
-        const awsS3Operations = this.blogService.getSignedRequest(this.uploadFile)
+        const awsS3Operations = this.blogService.getSignedRequest(this.uploadFile, form)
             .pipe(
                 mergeMap(
                     (data:Response) => {
@@ -128,6 +137,12 @@ export class BlogformComponent implements OnInit {
     submitBlog() {
         this.blogContent.content = "";
 
+        var pwd = localStorage.getItem('pwd');
+        
+        if(pwd == null){
+            this.response.status = 500;
+            this.response.message = "Neuspešen vnos bloga. Ponovno se vpiši."
+        }
         //Creates HTML inside this.blogContent.content variable
         this.createContentHTMLFromElements();
 
@@ -139,6 +154,7 @@ export class BlogformComponent implements OnInit {
             category: this.category,
             colour: this.colour,
             pictures: this.picUrls,
+            pwd: pwd,
         }
         console.log(form);
 

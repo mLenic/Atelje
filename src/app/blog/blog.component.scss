@@ -184,5 +184,10 @@ p {
             width: $narrow-width;
             margin: 60px auto;
         }
+        .blog-posts-wrapper{
+            .blog-element{
+                cursor: pointer;
+            }
+        }
     }
 }

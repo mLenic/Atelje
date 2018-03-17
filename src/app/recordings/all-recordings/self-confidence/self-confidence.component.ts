@@ -11,24 +11,17 @@ export class SelfConfidenceComponent implements OnInit {
   recordingTitle: String = 'Samozavest';
   currentlyShownElement = null;
   recordings: any[] = [
+    
     {
-      "title": "Grajska pot",
+      "title": "Veličastno Drevo",
       "description": "Ta kategorijitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
-      "url": "https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fbrianskyze%2F008-prescriptive-grammar-radio-show%2F",
       "show": true
     },
     {
-      "title": "Brez hrepenenj",
+      "title": "Varna Soba",
       "description": "Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
-      "url": "https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fbrianskyze%2F008-prescriptive-grammar-radio-show%2F",
       "show": false
     },
-    {
-      "title": "Prehranjevanje je umetnost",
-      "description": "Ta kategorija zajema tehnike za večanje samozavestbe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
-      "url": "https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fbrianskyze%2F008-prescriptive-grammar-radio-show%2F",
-      "show": false
-    }
   ]
   recordingDescription: any[] = [
     {

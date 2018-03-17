@@ -89,44 +89,69 @@ router.get('/blogpost/:id', function(req, res){
 });
 
 router.post('/blogposts/new', function (req, res) {
+  var setPassword = '65b9e48b0399b3d9010b510079560ebb';
+  console.log(req.body.pwd);
+  var password = md5(req.body.pwd);
 
-  blog.saveBlogPost(req.body, db, function(status) {
-    if(status){
-      res.status(200);
-      res.json({
-        message: 'success',
-      })
-    } else {
-      res.status(400);
-      res.json({
-        message: 'failure',
-      })
-    }
-  });
+  if(password != setPassword){
+    console.log("passwords don't match - ERROR");
+    res.status(400);
+    res.json({
+      message: 'failure',
+    })
+  } else {
+    blog.saveBlogPost(req.body, db, function(status) {
+      if(status){
+        res.status(200);
+        res.json({
+          message: 'success',
+        })
+      } else {
+        res.status(400);
+        res.json({
+          message: 'failure',
+        })
+      }
+    });
+  }
+
+  
   
 });
 
 /**
  * Route that handles AWS S3 file upload signatures
  */
-router.get('/sign-s3', function(req, res){
+router.post('/sign-s3', function(req, res){
   
-  upload.getSignedS3Url(req, function(data) {
-    if(data.status === 'error'){
 
-      res.json({
-        message: 'error'
-      });
-    } else {
+  var setPassword = '65b9e48b0399b3d9010b510079560ebb';
+  console.log(req.body.pwd);
+  var password = md5(req.body.pwd);
 
-      res.json({
-        message: 'success',
-        data: data.data,
-      });
-    }
-    
-  });
-
+  if(password != setPassword){
+    console.log("passwords don't match - ERROR");
+    res.status(400);
+    res.json({
+      message: 'failure',
+    })
+  } else {
+    upload.getSignedS3Url(req, function(data) {
+      if(data.status === 'error'){
+  
+        res.json({
+          message: 'error'
+        });
+      } else {
+  
+        res.json({
+          message: 'success',
+          data: data.data,
+        });
+      }
+      
+    });
+  } 
 });
 
 /**
