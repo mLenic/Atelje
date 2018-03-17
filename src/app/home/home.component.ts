@@ -10,32 +10,10 @@ import { BlogService } from '../core/service/blog.service';
 })
 export class HomeComponent implements OnInit {
 
-  posts: any[] = [
-    {
-      "title": "Kaj je hipnoza? Kaj je hipnoza",
-      "subtitle": "V preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza?",
-      "subtitle": "V preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    },
-    {
-      "title": "Kaj je hipnoza?",
-      "subtitle": "V preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medsti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Micinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.",
-      "date": "7.12.2017",
-      "category": "hipnoza",
-      "color": "#8C7BAD"
-    }
-  ]
+  public posts: any;
 
   constructor(
-    private generalService: GeneralService,
+    public generalService: GeneralService,
     private blogService: BlogService,
   ) { }
 
@@ -46,13 +24,15 @@ export class HomeComponent implements OnInit {
     this.generalService.printCurrentLink();
 
     //Fetch all blogs at page load - WIll have to save blogs to session storage - so they won't be loaded every time
-    var jsonBlogs = this.blogService.getBlogPostsFromStorage();
+    //Commented due to cookie use - Should it be here?
+    //var jsonBlogs = this.blogService.getBlogPostsFromStorage();
+    var jsonBlogs = null;
     if(jsonBlogs == null){
       this.blogService.getBlogPosts()
                     .subscribe(data => {
                       console.log("data blogposts recieved");
                       var res = JSON.parse(data.text());
-                      this.blogService.saveBlogPostsToStorage(res.blogs);
+                      //this.blogService.saveBlogPostsToStorage(res.blogs);
                       this.homeBlogs = res.blogs;
                     }, error => {
                       console.log("error blogposts recieved");

@@ -36,7 +36,7 @@ var initBlog = function(db){
         idvalue: 1,
         title: 'Testni blog',
         subTitle: 'Strmeti k soncu',
-        descrption: 'Strmeti k soncu pomeni iskanje sreče',
+        description: 'Strmeti k soncu pomeni iskanje sreče',
         content: 'Sreča je le začetek naše poti in vse to skupaj nas pripelje naprej v neznano.Sreča je le začetek naše poti in vse to skupaj nas pripelje naprej v neznano.Sreča je le začetek naše poti in vse to skupaj nas pripelje naprej v neznano.Sreča je le začetek naše poti in vse to skupaj nas pripelje naprej v neznano.Sreča je le začetek naše poti in vse to skupaj nas pripelje naprej v neznano.Sreča je le začetek naše poti in vse to skupaj nas pripelje naprej v neznano.Sreča je le začetek naše poti in vse to skupaj nas pripelje naprej v neznano.',
         category: 'hipnoza',
         color: 'red',

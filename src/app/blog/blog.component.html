@@ -47,23 +47,24 @@
     <div class="gradient-line-right blog-line">
     </div>
     <div class="blog-posts-wrapper">
-      <div *ngFor='let element of posts' class="blog-element">
+      <div *ngFor='let blog of arrShownBlogs' class="blog-element">
             <div class="blog-element-img-div">
-              <img class="blog-element-img" src="assets/images/forest_blur.jpg">
+              <img *ngIf="blog.pictures.length == 0" class="blog-element-img" src="assets/images/forest_blur.jpg">
+              <img *ngIf="blog.pictures.length > 0"  class="blog-element-img" [src]="blog.pictures[0].url">
             </div>
             <div class="blog-element-category">
-              {{element.category}}
+              {{generalService.getBlogCategory(blog)}}
             </div>
             <div class="blog-element-title">
-              {{element.title}}
+              {{blog.title}}
             </div>
             <div class="blog-element-date">
-              18. MAREC 2018
+              {{generalService.datePipe(blog)}}
             </div>
             <div class="thin-black-line">
             </div>
             <div class="blog-element-description">
-                  {{element.subtitle}} 
+                {{blog.description}} 
             </div>
         </div>
     </div>
