@@ -68,23 +68,34 @@
           <div class="selected-recording-mix">
             <div *ngIf="recordingTitle === 'Moje telo'" (click)="displayPopup()">
               <div *ngIf="currentlyShownElement.title === 'Grajska pot'">
+                <div class="selected-recording-popup-blocker" [class.hidden]="!blockerShown" (click)="popUpClick()">
+                  </div>
+                  <div class="selected-recordings-list">
                 <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fgrajska-pot-ona%2F" frameborder="0" ></iframe>
                 <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fgrajska-pot-on%2F" frameborder="0" ></iframe>
+                </div>
               </div>
               <div *ngIf="currentlyShownElement.title === 'Prehranjevanje je umetnost'">
+                  <div class="selected-recording-popup-blocker" [class.hidden]="!blockerShown" (click)="popUpClick()">
+                    </div>
+                    <div class="selected-recordings-list">
                 <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fprehranjevanje-je-umetnost-ona%2F" frameborder="0" ></iframe>
                 <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fprehranjevanje-je-umetnost-on%2F" frameborder="0" ></iframe>
+                </div>
               </div>
               <div *ngIf="currentlyShownElement.title === 'Brez hrepenenj'">
+                <div class="selected-recording-popup-blocker" [class.hidden]="!blockerShown" (click)="popUpClick()">
+                  </div>
+                  <div class="selected-recordings-list">
                 <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fbrez-hrepenenj-ona%2F" frameborder="0" ></iframe>
                 <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fbrez-hrepenenj-on%2F" frameborder="0" ></iframe>
+                </div>
               </div>
             </div>
 
             <div *ngIf="recordingTitle === 'Jaz'">
               <div *ngIf="currentlyShownElement.title === 'Kamenčki za spremembe'">
-                <div class="selected-recording-popup-blocker" [hidden]="currentlyShownElement.blockerShown" (click)="popUpClick()">
-                  Neki za čez
+                <div class="selected-recording-popup-blocker" [class.hidden]="!blockerShown" (click)="popUpClick()">
                 </div>
                 <div class="selected-recordings-list">
                     <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fkamencki-za-spremembe-ona%2F" frameborder="0" ></iframe>
@@ -93,28 +104,53 @@
                 
               </div>
               <div *ngIf="currentlyShownElement.title === 'Rdeč balon'">
-                <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Frde%C4%8D-balon-ona%2F" frameborder="0" ></iframe>
-                <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Frde%C4%8D-balon-on%2F" frameborder="0" ></iframe>
+                <div class="selected-recording-popup-blocker" [class.hidden]="!blockerShown" (click)="popUpClick()">
+                  </div>
+                  <div class="selected-recordings-list">
+                    <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Frde%C4%8D-balon-ona%2F" frameborder="0" ></iframe>
+                    <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Frde%C4%8D-balon-on%2F" frameborder="0" ></iframe>
+                  </div>
               </div>
-              <div *ngIf="currentlyShownElement.title === 'Kraj Vedrine'">
-                <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fkraj-vedrine-ona%2F" frameborder="0" ></iframe>
-                <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fkraj-vedrine-on%2F" frameborder="0" ></iframe>
+              <div *ngIf="currentlyShownElement.title === 'Kraj vedrine'">
+                <div class="selected-recording-popup-blocker" [class.hidden]="!blockerShown" (click)="popUpClick()">
+                  </div>
+                  <div class="selected-recordings-list">
+                  <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fkraj-vedrine-ona%2F" frameborder="0" ></iframe>
+                  <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fkraj-vedrine-on%2F" frameborder="0" ></iframe>
+                </div>
               </div>
-
             </div>
-
             <div *ngIf="recordingTitle === 'Samozavest'">
-              <div *ngIf="currentlyShownElement.title === 'Veličastno Drevo'">
-                <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fveli%C4%8Dastno-drevo-ona%2F" frameborder="0" ></iframe>
-                <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fveli%C4%8Dastno-drevo-on%2F" frameborder="0" ></iframe>
+              <div *ngIf="currentlyShownElement.title === 'Veličastno drevo'">
+                  <div class="selected-recording-popup-blocker" [class.hidden]="!blockerShown" (click)="popUpClick()">
+                    </div>
+                    <div class="selected-recordings-list">
+                  <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fveli%C4%8Dastno-drevo-ona%2F" frameborder="0" ></iframe>
+                  <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fveli%C4%8Dastno-drevo-on%2F" frameborder="0" ></iframe>
+                  </div>
               </div>
-              <div *ngIf="currentlyShownElement.title === 'Varna Soba'">
+              <div *ngIf="currentlyShownElement.title === 'Varna soba (»nočni posnetek«)'">
+                  <div class="selected-recording-popup-blocker" [class.hidden]="!blockerShown" (click)="popUpClick()">
+                    </div>
+                    <div class="selected-recordings-list">
                   <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fvarna-soba-ona%2F" frameborder="0" ></iframe>
                   <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2FTerapevtskiAtelje%2Fvarna-soba-on%2F" frameborder="0" ></iframe>
+                  </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="popup gradient-border border-line" [class.hidden]="!popupShown">
+    <div class="popup-text">
+      <div><p class="important-text">Preden začneva...</p></div>
+      <div><p class="text-margin-top">… te prosim, da si izbereš miren in udoben prostor. Pomembno je, da se lahko sprostiš in da se ob tem počutiš varno.</p></div>
+      <div><p class="text-margin-top">Ne pozabi izključiti mobilnega telefona in drugih elektronskih naprav. </p></div>
+      <div><p class="text-margin-top">Najpomembnejše pa je, da hipnoze ne poslušaš, medtem ko voziš oziroma takrat,ko moraš biti zbran.</p></div>
+      <div><p class="text-margin-top important-text">Si pripravljen/a na velike spremembe?</p></div>
+      <div><button class="button-dark" (click)="yesClick()">DA</button></div>
     </div>
   </div>

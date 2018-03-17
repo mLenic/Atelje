@@ -11,8 +11,8 @@ import { DomSanitizer} from '@angular/platform-browser';
 export class MyBodyComponent implements OnInit {
   recordingTitle: String = 'Moje telo';
   currentlyShownElement = null;
-
   blockerShown = true;
+  popupShown = false;
   recordings: any[] = [
     {
       "title": "Prehranjevanje je umetnost",
@@ -50,6 +50,16 @@ export class MyBodyComponent implements OnInit {
   }
   getUrl(html){
     return this.sanitizer.bypassSecurityTrustHtml(html);
+  }
+
+  popUpClick(){
+    console.log("aa");
+    this.popupShown = true;
+  }
+
+  yesClick() {
+    this.popupShown = false;
+    this.blockerShown = false;
   }
 
   elementClicked(element) {

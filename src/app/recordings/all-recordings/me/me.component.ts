@@ -11,8 +11,8 @@ import { GeneralService } from '../../../core/service/general.service';
 export class MeComponent implements OnInit {
   recordingTitle: String = 'Jaz';
   currentlyShownElement = null;
-
   blockerShown = true;
+  popupShown = false;
   recordings: any[] = [
     {
       "title": "Kamenčki za spremembe",
@@ -45,6 +45,12 @@ export class MeComponent implements OnInit {
 
   popUpClick(){
     console.log("aa");
+    this.popupShown = true;
+  }
+
+  yesClick() {
+    this.popupShown = false;
+    this.blockerShown = false;
   }
 
   elementClicked(element) {

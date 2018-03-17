@@ -11,8 +11,8 @@ import { GeneralService } from '../../../core/service/general.service';
 export class SelfConfidenceComponent implements OnInit {
   recordingTitle: String = 'Samozavest';
   currentlyShownElement = null;
-
   blockerShown = true;
+  popupShown = false;
   recordings: any[] = [
     
     {
@@ -49,5 +49,15 @@ export class SelfConfidenceComponent implements OnInit {
     //show or hide this element
     element.show = !element.show;
     this.currentlyShownElement = element;
+  }
+
+  popUpClick(){
+    console.log("aa");
+    this.popupShown = true;
+  }
+
+  yesClick() {
+    this.popupShown = false;
+    this.blockerShown = false;
   }
 }
