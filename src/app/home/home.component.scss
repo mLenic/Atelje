@@ -1,30 +1,14 @@
 @import '../../variables.scss';
 
 .home-wrapper {
-    
-
-
     .home-cover-text {     
-        .home-text-1 {
-            font-family: Montserrat-Regular;
-            font-size: 60px;
-            color: $white;
-        }
-
-        .home-text-2 {
-            font-family: Montserrat-Regular;
-            font-size: 40px;
-            color: $white;
-        }
-
         .title {
             @include breakpoint-768 {
-                    font-size: 30px;
+                font-size: 30px;
             }
         }
 
         .title-line {
-    
             width: 530px;
             margin: 5px 0;
     
@@ -37,12 +21,15 @@
 
     .about-home-wrapper {
         padding: $content-padding;
-        //width: $narrow-width;
         background-color: $white;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        @include breakpoint-768 {
+            padding: $content-padding $content-padding-mobile;
+        }
 
         .about-home {
             width: $narrower-width;
@@ -50,15 +37,7 @@
             @include breakpoint-768 {
                 width: 100%;
             }
-            /*
-            .about-title {
-                    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, $pastel-pink), color-stop(0.15, $pastel-purple), color-stop(0.3, $pastel-blue), color-stop(0.6, $pastel-green));
-                    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-                    color:transparent;
-                    -webkit-background-clip: text;
-                    background-clip: text;
-            }
-            */
+
             .about-title {
                 margin-bottom: 20px;
                 text-align: center;
@@ -84,10 +63,6 @@
                         border: 1px solid black;
                     }
                 }
-
-                .signature-wrapper {
-                    //margin-left: 30px;
-                }
             }
 
             .main-text {
@@ -99,7 +74,6 @@
                     &.important-text {
                         text-align: center;
                         padding-top: 20px;
-                        //font-family: OpenSans-Semibold;
                     }
                 }
             }
@@ -127,6 +101,11 @@
                 padding: $content-padding;
             }
 
+            @include breakpoint-768 {
+                padding: $content-padding $content-padding-mobile;
+            }
+    
+
             .title {
                 @include breakpoint-768 {
                     font-size: 45px;
@@ -149,8 +128,8 @@
         align-items: center;
 
         .blog-home-line {
-            //border: 1px solid $black;
-            border: 3px solid transparent;
+            border-style: solid;
+            border-width: 3px;
             border-image: linear-gradient(to right, $pastel-pink 0%, $pastel-purple 20%, $pastel-blue 80%, $pastel-green 100%);
             border-image-slice: 1;
             width: calc(100vw - 100px);

@@ -1,14 +1,12 @@
 @import '../../../variables.scss';
 
 .recording-wrapper {
-    
     background-color: $white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     
-
     .recording-inner-wrapper{
         margin-top: calc(#{$nav-height} + #{$subnav-height} + #{$content-padding});
         width: 100%;
@@ -19,13 +17,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            //background-color: #ceddef;
-            //background: linear-gradient(to right,  #ceddef, #a8f4c1, #ceddef);
-            //background: linear-gradient(to right,  $white, #ceddef, $white);
-
-            .recording-header-icon-div {
-
-            }
 
             .recordings-header-text {
                 font-family: OpenSans-Semibold;
@@ -44,6 +35,12 @@
                 width: 100%;
                 padding: $content-padding;
             }
+
+            @include breakpoint-768 {
+                width: 100%;
+                padding: $content-padding $content-padding-mobile;
+            }
+    
         }
 
         .select-recording-wrapper {
@@ -68,40 +65,26 @@
                     padding: 0 10px 10px 10px;
                     text-transform: uppercase;
                     cursor: pointer; 
-
-                    border-bottom: 6px solid transparent;
+                    border-style: solid;
+                    border-width: 0 0 6px 0;
                     border-image: linear-gradient(to right, $pastel-pink 0%, $pastel-purple 20%, $pastel-blue 40%, $pastel-green 60%, $pastel-blue 80%, $pastel-purple 95%, $pastel-pink 100%);
                     border-image-slice: 1;
 
                     @include breakpoint-960 {
-                        border-left: 6px solid transparent;
-                        border-right: 6px solid transparent;
+                        border-width: 0 6px 0 6px;
                         border-image: linear-gradient(to bottom, $pastel-pink 0%, $pastel-purple 20%, $pastel-blue 40%, $pastel-green 60%, $pastel-blue 80%, $pastel-purple 95%, $pastel-pink 100%);
                         border-image-slice: 1;
-                        border-bottom: none;
                         padding: 20px 0;
                     }
 
                     &.active {
-                        border-bottom: 6px solid $black;
+                        border-color: $black;
                         border-image: none;
-
-                        @include breakpoint-960 {
-                            border-left: 6px solid $black;
-                            border-right: 6px solid $black;
-                            border-bottom: none;
-                        }
                     }
 
                     &:hover {
-                        border-bottom: 6px solid $black;
+                        border-color: $black;
                         border-image: none;
-
-                        @include breakpoint-960 {
-                            border-left: 6px solid $black;
-                            border-right: 6px solid $black;
-                            border-bottom: none;
-                        }
                     }
                     
                     .recording-element-title {
@@ -131,6 +114,11 @@
                     margin: 0 auto;
                 }
 
+                @include breakpoint-768 {
+                    padding: $content-padding $content-padding-mobile;
+                }
+        
+
                 .selected-recording-title {
                     margin-bottom: 20px;
                     text-align: center;
@@ -158,9 +146,15 @@
 }
 
 .icon-svg {
-    fill: url(#MyGradient);
-
     &.me {
-        fill: url(#MyGradientMe);
+        fill: url(/recordings/me#grad-me);
+    }
+
+    &.my-body {
+        fill: url(/recordings/my-body#grad-my-body);
+    }
+
+    &.self-confidence {
+        fill: url(/recordings/self-confidence#grad-self-confidence);
     }
 }

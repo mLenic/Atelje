@@ -17,6 +17,11 @@
                 margin: auto;
                 padding-top: 100px;
 
+                @include breakpoint-768 {
+                    width: 100%;
+                    padding: 100px $content-padding-mobile 0 $content-padding-mobile;
+                }
+
                 .about-recordings-title {
                     margin-bottom: 100px;
                     width: 100%;
@@ -40,6 +45,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @include breakpoint-768 {
+                width: 100%;
+                padding: 0 $content-padding-mobile;
+            } 
 
             .next-div {
                 width: 60%;

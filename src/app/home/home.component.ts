@@ -10,8 +10,6 @@ import { BlogService } from '../core/service/blog.service';
 })
 export class HomeComponent implements OnInit {
 
-  public posts: any;
-
   constructor(
     public generalService: GeneralService,
     private blogService: BlogService,
@@ -41,6 +39,5 @@ export class HomeComponent implements OnInit {
     } else {
       this.homeBlogs = jsonBlogs;
     }
-    
   }
 }
