@@ -5,9 +5,9 @@
             
         </div>
         <div *ngIf='element.show' class="answer-content-mobile">
-            <p>
-            {{element.answer}}
-            </p>
+            <div [innerHTML]="element.answer">
+            
+            </div>
         </div>
         </div>
     </div>
