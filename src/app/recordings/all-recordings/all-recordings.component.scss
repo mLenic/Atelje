@@ -158,3 +158,16 @@
         fill: url(/zvocniposnetki/samozavest#grad-self-confidence);
     }
 }
+
+.selected-recording-popup-blocker{
+    position: absolute; 
+    height:120px; 
+    z-index: 5; 
+    width:100%; 
+    opacity: 0.10; 
+    background-color: black;
+}
+
+.selected-recordings-list{
+    position: relative;
+}

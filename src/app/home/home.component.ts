@@ -44,8 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
   redirectToBlogPost(blog){
-    console.log(blog);
-    debugger;
+    console.log(blog);  
     this.router.navigate(['blog/' + blog.idvalue]);
   }
 

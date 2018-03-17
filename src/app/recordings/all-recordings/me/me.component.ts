@@ -41,6 +41,10 @@ export class MeComponent implements OnInit {
     this.currentlyShownElement = this.recordings[0];
   }
 
+  popUpClick(){
+    console.log("aa");
+  }
+
   elementClicked(element) {
     //if any other recording was shown close it
     if (this.currentlyShownElement != element && this.currentlyShownElement != null) {

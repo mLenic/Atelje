@@ -35,7 +35,9 @@ export class SelfConfidenceComponent implements OnInit {
     this.generalService.currentLink = 'hypnosis';
     this.currentlyShownElement = this.recordings[0];
   }
-
+  displayPopup(){
+    console.log("aa");
+  }
   elementClicked(element) {
     //if any other recording was shown close it
     if (this.currentlyShownElement != element && this.currentlyShownElement != null) {

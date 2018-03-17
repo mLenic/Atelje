@@ -25,6 +25,7 @@ $blogpost-header-height: 70vh;
                 height: $blogpost-header-height;
                 object-fit: cover;
                 overflow: hidden;
+                opacity: 0.75;
             }
         }
 
@@ -178,3 +179,24 @@ $blogpost-header-height: 70vh;
         transform: translateX(0);
     }
 } */
+
+.blogpost-next-previous-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: $narrower-width;
+    margin: auto;
+
+    @include breakpoint-960 {
+        width: $narrow-width;
+    }
+
+    @include breakpoint-768 {
+        width: 100%;
+        padding: $content-padding-mobile;
+    }
+
+    .button-gradient {
+        width: 150px;
+    }
+
+}
