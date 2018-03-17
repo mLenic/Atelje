@@ -81,6 +81,11 @@
             .about-signature {
                 margin-top: 20px;
                 text-align: center;
+
+                .about-signature-img {
+                    width: 100px;
+                    height: auto;
+                }
             }
         }
     }
@@ -92,7 +97,7 @@
 
         .hypnosis-home {
             width: $narrow-width;
-            padding: 20vh 0;
+            padding: 20vh 100px;
             text-align: center;
             background-color: $white;
 
@@ -104,7 +109,6 @@
             @include breakpoint-768 {
                 padding: $content-padding $content-padding-mobile;
             }
-    
 
             .title {
                 @include breakpoint-768 {
@@ -175,4 +179,8 @@
             }
         }
     }
+}
+
+.one-blog {
+    justify-content: center;
 }

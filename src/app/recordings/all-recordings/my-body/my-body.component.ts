@@ -13,19 +13,24 @@ export class MyBodyComponent implements OnInit {
   currentlyShownElement = null;
   recordings: any[] = [
     {
+      "title": "Prehranjevanje je umetnost",
+      "description": "<p>Tehnika se začne s sugestijami za sproščanje in pozitivnimi sugestijami za dobro počutje. Prehranjevanje je predstavljeno kot umetnost, ki spodbuja uživanje v hrani s preprostimi tehnikami, kot sta opazovanje barv in tekstur ter zaznavanje vonja, arom in okusa.</p><p class='text-margin-top'>Za zmanjševanje hrepenenj lahko uporabite tudi tehniko rdečega balona.</p>",
+      "show": true
+    },
+    {
       "title": "Brez hrepenenj",
-      "description": "Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
+      "description": "<p>V tej hipnotični seansi so podane sugestije za zmanjševanje in obvladovanje hrepenenj. Kaj pa, če se hrepenenje ne pojavlja le zaradi fizičnega pomanjkanja? Kako to obrniti sebi v korist? </p>",
       "show": false
     },
     {
-      "title": "Prehranjevanje je umetnost",
-      "description": "Ta kategorija zajema tehnike za večanje samozavestbe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
+      "title": "Grajska pot",
+      "description": "<p>Vabljeni na čudovito potovanje, ki se začne in konča na isti točki. Kaj pa vmes? Občutili boste prav posebne občutke. Počutili se boste resnično dobro, udobno in povsem sproščeno. Omenjeni občutki bodo prevzeli vaše telo in dušo. To pa vam bo pomagalo prevzeti nadzor nad prehranjevanjem. Pridobili boste moč in motivacijo za doseganje želenega rezultata. </p>",
       "show": false
     }
   ]
   recordingDescription: any[] = [
     {
-      "text": "Moje telo mopodobe, samospoštovanja, samostojnosti ter zmanjševanje tesnobe in skrbi. Krepitev samozavesti je del vsake dobre hipnoze, saj je močno orodje pri obravnavi širokega spektra težav. Nekateri avtorji navajajo, da je krepitev samozavesti primerna prav za vse ljudi, ne glede na njihove težave.  Gre za temeljni občutek jaz zmorem, pa naj bo to karkoli."
+      "text": "<p>Sugestije v tej kategoriji spodbujajo tako zdrav slog življenja kot tudi nadzor nad telesno težo in prehranjevanjem. Glavni namen je preoblikovati odnos do hrane, in sicer s poudarkom na zdravem načinu prehranjevanja. </p><p class='text-margin-top'>Za doseganje najboljšega rezultata svetujem poslušanje v kombinaciji s sugestijami za <a href='/zvocniposnetki/samozavest'><span class='text-link'>krepitev samozavesti.</span></a></p>"
     }
   ]
 
