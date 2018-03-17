@@ -161,11 +161,21 @@
 
 .selected-recording-popup-blocker{
     position: absolute; 
-    height:120px; 
+    cursor: pointer;
+    height:140px; 
     z-index: 5; 
-    width:100%; 
-    opacity: 0.10; 
+    width: $narrower-width;
+    opacity: 0; 
     background-color: black;
+
+    @include breakpoint-960 {
+        width: calc(100vw - 2 * #{$content-padding});
+        
+    }
+
+    @include breakpoint-768 {
+        width: 90%;
+    }
 }
 
 .selected-recordings-list{

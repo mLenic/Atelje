@@ -10,6 +10,8 @@ import { GeneralService } from '../../../core/service/general.service';
 export class SelfConfidenceComponent implements OnInit {
   recordingTitle: String = 'Samozavest';
   currentlyShownElement = null;
+
+  blockerShown = true;
   recordings: any[] = [
     
     {

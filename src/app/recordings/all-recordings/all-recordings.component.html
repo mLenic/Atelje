@@ -86,7 +86,7 @@
 
             <div *ngIf="recordingTitle === 'Jaz'">
               <div *ngIf="currentlyShownElement.title === 'Kamenčki za spremembe'">
-                <div class="selected-recording-popup-blocker" (click)="popUpClick()">
+                <div class="selected-recording-popup-blocker" [hidden]="currentlyShownElement.blockerShown" (click)="popUpClick()">
                   Neki za čez
                 </div>
                 <div class="selected-recordings-list">

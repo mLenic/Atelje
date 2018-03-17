@@ -11,6 +11,8 @@ import { DomSanitizer} from '@angular/platform-browser';
 export class MyBodyComponent implements OnInit {
   recordingTitle: String = 'Moje telo';
   currentlyShownElement = null;
+
+  blockerShown = true;
   recordings: any[] = [
     {
       "title": "Brez hrepenenj",

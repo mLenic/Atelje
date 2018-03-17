@@ -11,6 +11,8 @@ import { GeneralService } from '../../../core/service/general.service';
 export class MeComponent implements OnInit {
   recordingTitle: String = 'Jaz';
   currentlyShownElement = null;
+
+  blockerShown = true;
   recordings: any[] = [
     {
       "title": "Kamenčki za spremembe",
