@@ -60,9 +60,9 @@
 }
 
 .icon-svg {
-    stroke: url(#MyGradient);
+    stroke: url(/recordings#grad);
 
     &.me {
-        stroke: url(#MyGradientMe);
+        stroke: url(/recordings#grad-me);
     }
 }

@@ -50,6 +50,7 @@ $blogpost-header-height: 70vh;
             text-transform: uppercase;
             letter-spacing: 4px;
             font-size: 38px;
+            text-align: center;
         }
 
         .blogpost-date {
@@ -66,6 +67,11 @@ $blogpost-header-height: 70vh;
 
         @include breakpoint-960 {
             width: $narrow-width;
+        }
+
+        @include breakpoint-768 {
+            width: 100%;
+            padding: $content-padding $content-padding-mobile;
         }
 
         p {
@@ -149,7 +155,7 @@ $blogpost-header-height: 70vh;
 
             .next-previous-button-div {
                 button {
-                    width: 175px;
+                    width: 150px;
                 }
             }
         }

@@ -15,20 +15,18 @@
 
         .question {
             padding: 15px 15px 15px 0;
-            //border-right: 4px solid $light-gray;
-            //text-transform: uppercase;
             letter-spacing: 1px;
             font-size: $regular-font-size;
             color: $black;
-            border-right: 6px solid transparent;
-            //border-image: linear-gradient(to bottom, $pastel-purple 0%, $pastel-blue 40%, $pastel-green 80%, $pastel-purple 100%);
+            border-width: 0 6px 0 0;
+            border-style: solid;
             border-image: linear-gradient(to bottom, $pastel-pink 0%, $pastel-purple 10%, $pastel-blue 30%, $pastel-green 50%, $pastel-blue 70%, $pastel-purple 90%, $pastel-pink 100%);
             border-image-slice: 1;
+            transition: all 0.2s;
             cursor: pointer; 
             
             @include breakpoint-960 {
-                border-right: none;
-                border-left: 6px solid transparent;
+                border-width: 0 0 0 6px;
                 padding: 30px 15px 30px 20px;
                 text-transform: none;
 
@@ -39,28 +37,27 @@
 
             &.active  {
                 color: $black;
-                border-right: 6px solid $black;
+                border-width: 0 6px 0 0;
+                border-color: $black;
                 border-image: none;
 
                 @include breakpoint-960 {
-                    border-right: none;
-                    border-left: 6px solid $black;
+                    border-width: 0 0 0 6px;
 
                     .question-text {
                         margin-bottom: 20px;
                     }
                 }
             }
+
             &:hover  {
                 color: $black;
-                border-right: 6px solid $black;
+                border-width: 0 6px 0 0;
+                border-color: $black;
                 border-image: none;
-                //font-family: OpenSans-Semibold;
 
-                
                 @include breakpoint-960 {
-                    border-right: none;
-                    border-left: 6px solid $black;
+                    border-width: 0 0 0 6px;
                 }
             }
 

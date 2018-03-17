@@ -10,6 +10,16 @@ import { BlogService } from '../core/service/blog.service';
 })
 export class HomeComponent implements OnInit {
 
+  posts2: any[] = [
+    {
+      "title": "Kaj je hipnoza? Kaj je hipnoza",
+      "subtitle": "V preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.",
+      "date": "7.12.2017",
+      "category": "hipnoza",
+      "color": "#8C7BAD"
+    }
+  ]
+
   posts: any[] = [
     {
       "title": "Kaj je hipnoza? Kaj je hipnoza",
