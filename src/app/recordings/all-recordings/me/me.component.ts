@@ -16,23 +16,23 @@ export class MeComponent implements OnInit {
   recordings: any[] = [
     {
       "title": "Kamenčki za spremembe",
-      "description": "Ta kategorijitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
+      "description": "<p>To je ena od mojih najljubših tehnik. Popelje vas v čarobno naravo, kjer si lahko izberete kamenčke, ki predstavljajo spremembe v vašem življenju. Poleg tega se lahko znebite tistega, česar ne potrebujete več v vašem življenju, kot so razvade, negativne misli, hrepenenja, občutki... </p>",
       "show": true
     },
     {
       "title": "Rdeč balon",
-      "description": "Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
+      "description": "<p>Predstavljajte si, da bi lahko vse negativne in neprijetne občutke zložili v nahrbtnik ter ga odnesli na vrh gore. Predstavljajte si, da bi še zadnjič začutili vso težo teh občutkov, s pomočjo rdečega balona pa bi jim dovolili, da za vedno izginejo. Predstavljajte si to neskončno lahkotnost, srečo in svobodo, ki jih občutite, ko teh občutkov ni več. </p>",
       "show": false
     },
     {
-      "title": "Kraj Vedrine",
-      "description": "Ta kategorija zajema tehnike za večanje samozavestbe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
+      "title": "Kraj vedrine",
+      "description": "<p>Tehnika vas popelje na varen kraj po vaši izbiri. Na kraj, kjer boste pridobili novo energijo, uživali v občutkih sproščenosti, spokojnosti, miru in sreče... Vse to bo postalo del vas.</p>",
       "show": false
     }
   ]
   recordingDescription: any[] = [
     {
-      "text": "Ta kategorija zajema tehnike  za večanje samozavesti, samozaupanja, pozitivne samopodobe, samospoštovanja, samostojnosti ter zmanjševanje tesnobe in skrbi. Krepitev samozavesti je del vsake dobre hipnoze, saj je močno orodje pri obravnavi širokega spektra težav. Nekateri avtorji navajajo, da je krepitev samozavesti primerna prav za vse ljudi, ne glede na njihove težave.  Gre za temeljni občutek jaz zmorem, pa naj bo to karkoli."
+      "text": "<p>Zvočni posnetki v tej kategoriji vam ponujajo priložnost za sprostitev, premagovanje tesnobe, opustitev slabih navad in prepričanj, predvsem pa za doseganje sprememb v življenju. Namenjeni so spoznavanju vaših doslej neodkritih in skritih potencialov. Morda pa vam pomagajo tudi pri uresničitvi vaših želja. </p>"
     }
   ]
 

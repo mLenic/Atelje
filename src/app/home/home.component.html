@@ -22,17 +22,16 @@
       </div>
       <div class="main-text">
         <p>
-          V preteklosti me je navdihnila  moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr Pajntar Marjana.  Navdušil me je s primeri iz svoje klinične prakse ter mi podal znanje in zaupanje v moč te čudovite, tisočletja znane terapevtske tehnike. Tehnike, ki je v zahodnem svetu končno le priznana kot medicinska in terapevtksa metoda, ki ponuja neskončne možnosti za raziskovanje človekove duševnosti.
-          Tako sem lani pridobila kar dva naziva; diplomirana biopsihologinja in terapevtka medicinske hipnoze. 
+          v preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr. Marjana Pajntarja. Navdušil me je s primeri iz svoje klinične prakse ter mi podal znanje in zaupanje v moč te čudovite, tisočletja znane terapevtske tehnike. Tehnike, ki je priznana kot medicinska in terapevtska metoda, hkrati pa ponuja neskončne možnosti za raziskovanje človekove duševnosti.  
         </p>
         <p>
-          Želim vam podariti delček znanja o hipnozi in z vami deliti zvočne posnetke hipnotskih seans. Zvočni posnetki so razdeljeni na več kategorij; Samozavest, Jaz in Moje telo. Vsi spodbujajo naše skrite potenciale, nove načine razmišljanja in vedenja. 
+          Tako sem lani pridobila kar dva naziva: diplomirana biopsihologinja in terapevtka medicinske hipnoze. Svojo pot pa zdaj nadaljujem na magistrskem študiju klinične psihologije v Italiji.
         </p>
         <p>
-          V blogu z vami delilm svoja znanja in razmišljanja, ki jih trenutno pridobivam na magistrskem študiju klinične psihologije v Italiji.
+          Na tej spletni strani vam podarjam svoja znanja o hipnozi in drugih terapevtskih tehnikah ter z vami delim zvočne posnetke vodenihhipnotičnih seans. Zvočni posnetki so razdeljeni na tri kategorije: Samozavest, Jaz in Moje telo. Vsi spodbujajo naše skrite potenciale ter nove načine razmišljanja in vedenja.
         </p>
         <p>
-          Življenje je samo po sebi čarobna umetnost in Terapevtski atelje je prostor, ki predstavlja povabilo k spremembi, k usklajenosti s seboj in svetom, k polnemu in srečnemu življenju.
+          Življenje je samo po sebi čarobna umetnost, in Terapevtski atelje je prostor, ki predstavlja vabilo k spremembi, usklajenosti s samim seboj in svetom k polnemu in srečnejšemu življenju.
         </p>
         <div class="img-signature-wrapper">
           <div class="spela-img-div">
@@ -40,15 +39,13 @@
           </div>
           <div class="signature-wrapper">
           <p class="important-text">
-            Vabljeni, da skupaj ustvarjamo, stremimo k soncu in praznujemo vse dni našega življenja.
+            Vabljeni, da skupaj ustvarjamo, stremimo k soncu in praznujemo vse dni svojega življenja.
           </p>
           <div class="about-signature">
-            Špela
+            <img class="about-signature-img" src="assets/images/podpis.svg">
           </div>
         </div>
         </div>
-
-
       </div>
     </div>
   </div>
@@ -63,8 +60,13 @@
         Hipnoza
       </div>
       <div class="hypnosis-home-content">
+        <p>
         Hipnoza je stanje globoke sproščenosti, usmerjene pozornosti in 
         sprejemljivosti za sugestije. 
+        </p>
+        <p>
+        Tukaj lahko najdete vse kar morate vedeti o hipnozi in zbirko zvočnih posnetkov vodenih hipnotičnih seans, s katerimi lahko dosežete velike spremembe.
+        </p>
       </div>
       <div class="hypnosis-home-button">
         <a href="/hipnoza">
@@ -84,7 +86,7 @@
         <div class="title">
           Blog
         </div>
-        <div class="blog-posts-wrapper">
+        <div class="blog-posts-wrapper" [class.one-blog]="homeBlogs.length == 1">
             <div *ngFor='let blog of homeBlogs | slice:0:3' class="blog-element" (click)="redirectToBlogPost(blog)">
                   <div class="blog-element-img-div">
                     <img *ngIf="blog.pictures.length == 0" class="blog-element-img" src="assets/images/forest_blur.jpg">

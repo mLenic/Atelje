@@ -16,9 +16,8 @@
         {{currentlyShownElement.question}}
         </div>
         <div class="answer-content">
-        <p>
-        {{currentlyShownElement.answer}}
-        </p>
+        <div [innerHTML]="currentlyShownElement.answer">
+        </div>
         </div>
     </div>
 </div>

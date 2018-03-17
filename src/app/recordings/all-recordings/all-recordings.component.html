@@ -46,11 +46,9 @@
       </div>
       -->
       <div class="recording-content">
-        <p *ngFor='let element of recordingDescription'>
-            {{element.text}}
-        </p>
+        <div *ngFor='let element of recordingDescription' [innerHTML]="element.text">
+        </div>
       </div>
-  
       <div class="select-recording-wrapper">
         <div class="recordings-list">
           <div *ngFor='let element of recordings' class="recording-element" [class.active]="element.show" (click)="elementClicked(element)">
@@ -64,9 +62,8 @@
             {{currentlyShownElement.title}}
           </div>
           <div class="selected-recording-text">
-            <p>
-            {{currentlyShownElement.description}}
-            </p>   
+            <div [innerHTML]="currentlyShownElement.description">
+            </div>   
           </div>
           <div class="selected-recording-mix">
             <div *ngIf="recordingTitle === 'Moje telo'" (click)="displayPopup()">

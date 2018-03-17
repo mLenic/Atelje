@@ -16,34 +16,39 @@ export class AboutComponent implements OnInit {
   content: any[] = [
     {
       "question": "Kaj je hipnoza?",
-      "answer": "Hipnoza je vsakdanji psihološki pojav,enjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
+      "answer": "<p>Hipnoza je stanje uma. Na kratko jo lahko opredelimo kot postopek, pri katerem hipnoterapevt sugerira hipnotizirani osebi, da doživi spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju.</p><p class='important-text text-margin'>HIPNOZA JE STANJE GLOBOKE SPROŠČENOSTI, USMERJENE POZORNOSTI IN POVEČANE SPREJEMLJIVOSTI ZA SUGESTIJE.</p><p>Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo. To je stanje, ki je zelo podobno sanjarjenju. Je stanje uma, ki ga popolnoma naravno dosežemo večkrat na dan. Spomnimo se vožnje z avtomobilom. Naša pozornost je na cesti, a vendar se zgodi, da se na zavestni ravni ne ukvarjamo z vožnjo. Vse počnemo samodejno, a se kljub temu ustavimo pred rdečo lučjo. Naš um in telo vesta, kako odreagirati. Čeprav so nam omenjeni transi poznani, jih ne prepoznamo kot takšne, čeprav so točno to.</p>",
       "show": true
     },
     {
       "question": "Na katerih področjih lahko uporabljamo hipnozo?",
-      "answer": "- Krepitev ega (krepitev samozavesti, samospoštovanja, samopodobe..)	\n- tesnoba, strahovi in fobije \n- kajenje, odvisnosti in razvade \n- koncentracija in akademska uspešnost \n- športna uspešnost \n- depresivna stanja \n- nespečnost \n- težave z debelostjo",
+      "answer": "<p>Do leta 2012 je bilo objavljenih najmanj petsto raziskav o učinkovitosti hipnoze. Rezultati kažejo, da lahko z gotovostjo potrdimo obstoj pozitivnega učinka hipnoze za zdravljenje veliko različnih zdravstvenih in psiholoških težav.</p><p class='text-margin'>Hipnoza je še posebej učinkovita za obravnavo naslednjih področij: </p><p>−	krepitev samozavesti, samospoštovanja, samopodobe;</p><p>−	lajšanje tesnobe, strahov in fobij ter depresivnih stanj;</p><p>−	odvajanje od kajenja, drugih odvisnosti in razvad;</p><p>−	izboljšanje koncentracije ter akademske in športne uspešnosti;</p><p>−	odpravljanje težav v odnosih;</p><p>−	odpravljanje nespečnosti;</p><p>−	obravnavo motnje hranjenja (anoreksija, bulimija, kompulzivno prenajedanje in podobno);</p><p>−	lajšanje psihosomatskih motenj (obravnava simptomov, povzročenih zaradi stresa, alergije, glavobola, migrene, in podobno);</p><p>−	priprava na operacije, anestezijo in obvladovanje bolečin.</p>",
       "show": false
     },
     {
-      "question": "Ali je hipnoza primerna za vse?",
-      "answer": "Hipnoza je primerna za skoraj vse. Ni primerna za obravnavo psihoz (npr. shizofrenije). V teh primerih hipnoza ni škodljiva, vsekakor pa ni zadostna za obravnavo resnih psihičnih motenj. Kljub temu da osbtaja vedno več dokazov o učikovitosti hipnoze tudi za tovstne motnje, je le to izven obsega mojih zvočnih posnetkov. Hipnoza prav tako ni primerna za osebe z epilepsijo. \nMoja etična dolžnost  in odgovornost je, da v tovrstnih primerih ne dajem kakršnihkoli zdravstvenih nasvetov. V kolikor ste v dvomih glede poslušanja hipnoze, se prosim, posvetujte z vašim osebnim zdravnikom.",
+      "question": "Ali je lahko vsaka oseba hipnotizirana?",
+      "answer": "<p>Odgovor je preprost, vsaka oseba, ki je zmožna razumeti hipnoterapevtove besede, je zmožna vstopiti v hipnotizirano stanje. Seveda, če v to privoli in je primerno motivirana. </p><p class='text-margin-top'>Ne pozabimo, da govorimo o stanju globoke sproščenosti, usmerjene pozornosti in povečane sprejemljivosti za sugestije. </p>",
       "show": false
     },
     {
-      "question": "Ali je vsaka oseba lahko hipnotizirana?",
-      "answer": "Odgovor je preprost: JA. Vsaka oseba, ki je zmožna razumeti hipnoterapevtove besede je zmožna vstopiti v hipnotizirano stanje. Seveda, če oseba v to privoli in je primerno motivirana.",
+      "question": "Kdaj hipnoza ni primerna metoda zdravljenja?",
+      "answer": "<p>Hipnoza je primerna za skoraj vse ljudi. Ni primerna za obravnavo psihoz (na primer shizofrenije) in za osebe z epilepsijo. V teh primerih hipnoza ni škodljiva, vsekakor pa ni zadostna za obravnavo resnih psihičnih motenj. Čeprav obstaja vse več dokazov o učinkovitosti hipnoze tudi za tovrstne motnje, je to zunajpodročja mojega dela.</p><p class='text-margin-top'>Moja etična dolžnost in odgovornost je, da v omenjenih primerih ne dajem kakršnihkoli zdravstvenih nasvetov. Z veseljem pa vam svetujem, na koga se lahko obrnete. Če ste v dvomih, me lahko kontaktirate ali pa se posvetujete z vašim osebnim zdravnikom.</p>",
       "show": false
     },
     {
       "question": "Kakšni so stranski učinki?",
-      "answer": "Hipnoza je vsakdanji psihološki pojav, ki se pojavlja v mnogih življenjskih situacijah1,2, a ga ne prepoznamo kot hipnozo in ga s tem imenom niti ne poimenujemo1,3. Enotno mnenje, kaj hipnoza je, še ne obstaja3,4,5.Kljub temu pa lahko hipnozo na kratko opredelimo kot postopek, pri katerem hipnotizer sugerira hipnotizirani osebi, da bo doživela spremembe v občutenju, zaznavanju, čustvovanju, mišljenju in vedenju 6.",
+      "answer": "<p>Čeprav se hipnoza navadno uporablja za razreševanje neke določene težave, klienti pogosto poročajo o pozitivnih stranskih učinkih, kot so več energije, boljše spopadanje s stresom, predvsem pa zmožnost hitrejše in globlje sprostitve, zaradi česar je boljši tudi naš spanec. </p><p class='text-margin-top'>Hipnoza se lahko uporablja tudi za razreševanje travm in odkrivanje spominov, ki so bili potlačeni. Po tovrstnih terapijah se lahko pojavijo določeni odzivi, kot so zaspanost, vrtoglavica, togost, glavobol ali tesnoba. Vendar omenjeni stranski učinki niso večji kot pri drugih psiholoških metodah, ki ne vključujejo hipnoze. <b>Omenjeni posnetki niso del te spletne strani</b>, saj zahtevajo osebni in strokovni pristop.</p>",
       "show": false
     },
     {
-      "question": "Ali je obisk hipnoterapevta bolj koristen kot poslušanje zvočnih posnetkov?",
-      "answer": "Moji zvočni posnetki so učinkovito orodje, ki vam s pomočjo vaše podzavesti pomagajo, da dosežete kar želite. Kljub temu pa je hipnoterapija veliko bolj učinkovita kadar je individualizirana. Upoštevati je potrebno edinstvene motivacije, osebnost, zanimanja in klinentova nagnjenja. Le tako lahko terapevt prilagodi sugestije in metafore.  Za več inforformacij, mi lahko pišete (kontakt).",
+      "question": "Ali se lahko ne zbudim iz hipnotičnega stanja?",
+      "answer": "<p>Nobenega dokaza ni, da bi kdorkoli ostal v hipnotiziranem stanju. Vsaka hipnoza je tudi samohipnoza, zato se lahko kadarkoli (tudi med hipnotično seanso) odločite, da boste prenehali slediti mojim besedam ter boste tako izstopili iz hipnotičnega stanja.</p><p class='text-margin-top'>Če med hipnotično seanso zaspite, se boste zbudili povsem naravno. </p>",
       "show": false
-    }
+    },
+    {
+      "question": "Kaj pa odrska hipnoza?",
+      "answer": "Ločimo med medicinsko (oziroma terapevtsko) in odrsko hipnozo. Slednja je namenjena zabavi, kjer hipnotizer sugerira osebi, da ta počne nekaj nenavadnega in s tem zabava občinstvo. Vse poteka dramatično; uspešnost te je odvisna od karizmatičnosti voditeljain njegove avtoritete. V nasprotju s hipnoterapijo, pri kateri je uspešnost te odvisna predvsem od odnosa med terapevtom in klientom. Med hipnozo vedno počnemo ali povemo le stvari, ki so v skladu z našimi prepričanji in vrednotami ter jih želimo tudi deliti.",
+      "show": false
+    },
   ];
 
   constructor(@Inject(DOCUMENT) private document: Document, private generalService: GeneralService) { }

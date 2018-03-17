@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { GeneralService } from '../../../core/service/general.service';
 
 @Component({
   selector: 'app-recordings-self-confidence',
   templateUrl: '../all-recordings.component.html',
-  styleUrls: ['../all-recordings.component.scss']
+  styleUrls: ['../all-recordings.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SelfConfidenceComponent implements OnInit {
   recordingTitle: String = 'Samozavest';
@@ -15,19 +16,19 @@ export class SelfConfidenceComponent implements OnInit {
   recordings: any[] = [
     
     {
-      "title": "Veličastno Drevo",
-      "description": "Ta kategorijitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
+      "title": "Varna soba (»nočni posnetek«)",
+      "description": "<p>Tehnika je namenjena večanju samospoštovanja. Temelji na občutenju življenjske energije, ki je pomemben del nas, saj lahko zdravi in osrečuje. Odprt konec omogoča, da po hipnotični seansi prijetno zaspite. </p>",
       "show": true
     },
     {
-      "title": "Varna Soba",
-      "description": "Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe. Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe.",
+      "title": "Veličastno drevo",
+      "description": "To je zelo sproščujoča tehnika. Poudarja zavedanje in občutenje vaših čudovitih lastnosti pa tudi občutek hvaležnosti, za vse to, kar smo.",
       "show": false
     },
   ]
   recordingDescription: any[] = [
     {
-      "text": "Ta kategorija zajema tehnike  za večanje samozavesti, samozaupanja, pozitivne samopodobe, samospoštovanja, samostojnosti ter zmanjševanje tesnobe in skrbi. Krepitev samozavesti je del vsake dobre hipnoze, saj je močno orodje pri obravnavi širokega spektra težav. Nekateri avtorji navajajo, da je krepitev samozavesti primerna prav za vse ljudi, ne glede na njihove težave.  Gre za temeljni občutek jaz zmorem, pa naj bo to karkoli."
+      "text": "<p>Ta kategorija zajema tehnike za večanje samozavesti, samozaupanja, pozitivne samopodobe, samospoštovanja, samostojnosti ter zmanjševanje tesnobe in skrbi. Krepitev samozavesti je del vsake dobre hipnoze, saj je močno orodje pri obravnavi najrazličnejših težav. Nekateri avtorji navajajo, da je krepitev samozavesti primerna za vse ljudi, ne glede na njihove težave. Gre za temeljni občutek »jaz zmorem«, pa naj se to nanaša na karkoli.</p><p class='text-margin-top'>Zvočni posnetki se začnejo s sugestijami za globoko sprostitev, ki jim sledijo sugestije za krepitev samozavesti ter vodijo do osredotočanja na temeljne sposobnosti, vrline in pozitivne lastnosti. </p>"
     }
   ]
 
