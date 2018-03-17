@@ -1,27 +1,38 @@
 <div class="blogpost-wrapper">
-    <div class="blogpost-header" *ngIf="currentBlog != null">
-      <div class="blogpost-img-div">
-          <img class="blogpost-img" src="assets/images/birds_blur.jpg">
-      </div>
-      <div class="light-bg-div">
-      </div>
-      <div class="blogpost-category">
-        {{ datePipe() }} | {{getBlogCategory()}}
-      </div>
-      <div class="blogpost-title text">
-        {{currentBlog.title}}
-      </div>
-      <div class="blogpost-subtitle subtitle-small">
-        {{currentBlog.subTitle}}
-      </div>
+  <div class="blogpost-header" *ngIf="currentBlog != null">
+    <div class="blogpost-img-div">
+        <img *ngIf="currentBlog.pictures.length == 0" class="blogpost-img" src="assets/images/birds_blur.jpg">
+        <img *ngIf="currentBlog.pictures.length > 0" class="blogpost-img" [src]="currentBlog.pictures[0].url">
 
-      <div class="blogpost-date">
-       
+    </div>
+    <div class="light-bg-div">
+    </div>
+    <div class="blogpost-category">
+      {{ datePipe() }} | {{getBlogCategory()}}
+    </div>
+    <div class="blogpost-title text">
+      {{currentBlog.title}}
+    </div>
+    <div class="blogpost-subtitle subtitle-small">
+      {{currentBlog.subTitle}}
+    </div>
+
+    <div class="blogpost-date">
+     
+    </div>
+  </div>
+  <div class="a"></div>
+  <div *ngIf="currentBlog != null" [innerHTML]="currentBlogTest">
+      
+  </div>
+  <!--
+  <div class="blogpost-next-previous-wrapper">
+      <div [hidden]="getHidden(false)" class="next-previous-button-div"  >
+        <button class="button-gradient" (click)="loadNextBlogPost(true)">PREJŠNJI</button>
       </div>
-    </div>
-    <div class="a"></div>
-    <div *ngIf="currentBlog != null" [innerHTML]="currentBlogTest">
-        
-    </div>
-    
+      <div [hidden]="getHidden(true)" class="next-previous-button-div">
+        <button class="button-gradient" (click)="loadNextBlogPost(false)">NASLEDNJI</button>
+      </div>
+  </div>
+-->
 </div>

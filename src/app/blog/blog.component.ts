@@ -103,7 +103,6 @@ export class BlogComponent implements OnInit {
 
   redirectToBlogPost(blog){
     console.log(blog);
-    debugger;
     this.router.navigate(['blog/' + blog.idvalue]);
   }
 }

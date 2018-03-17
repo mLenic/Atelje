@@ -19,6 +19,10 @@ export class BlogpostComponent implements OnInit {
   private quotePosition: any = null;
   public animateText: boolean = false;
   public animateAuthor: boolean = false;
+
+  private nextBlogpostId:     number = null;
+  private previousBlogpostId: number = null;
+
   public months = ["Januar", "Februar", "Marec", "April", "Maj", "Junij", "Julij", "Avgust", "September", "Oktober", "November", "December" ];
 
   constructor(
@@ -45,6 +49,17 @@ export class BlogpostComponent implements OnInit {
       }
     });
     
+  }
+
+  getHidden(previous){
+    if(previous && this.previousBlogpostId != null){
+      return true;
+    }
+    if(!previous && this.nextBlogpostId != null){
+      return true;
+    }
+
+    return false;
   }
 
   get currentBlogTest(){
@@ -114,12 +129,22 @@ export class BlogpostComponent implements OnInit {
             console.log("Got blog post data");
             var res = JSON.parse(data.text());
             var found = false;
+            debugger;
             res.blog.forEach(blog => {
               if(blog.idvalue == this._routeId){
                 this.currentBlog = blog;  
                 found = true;
               }
               
+            });
+
+            res.blog.forEach(blog => {
+                if(blog.idvalue == this.currentBlog.idvalue-1){
+                  this.previousBlogpostId = blog.idvalue;
+                }
+                if(blog.idvalue == this.currentBlog.idvalue+1){
+                  this.nextBlogpostId = blog.idvalue;
+                }
             });
             if(!found){
               this.router.navigate(['/blog']);
@@ -175,34 +200,20 @@ export class BlogpostComponent implements OnInit {
   
 
   loadNextBlogPost(previous: boolean) {
-    console.log("called");
-    //Blogs should be saved in sessionStorage and ordered by Date (API sends data back sorted)
-    var jsonBlogs = this.blogService.getBlogPostsFromStorage();
-    var currIdx = -1;
-    
-    for(var i = 0; i < jsonBlogs.length; i++){
-      if(Number(this._routeId) === Number(jsonBlogs[i].idvalue)){
-        currIdx = i;
-      }
-    }
-    var idUrl = null;
-    
-    if(previous){
+    /* console.log("aaa");
+    debugger;
+    if(previous && this.previousBlogpostId != null){
+      this.router.navigate(['/blog/' + this.previousBlogpostId]);
       
-      if(currIdx == jsonBlogs.length -1){
-        idUrl = jsonBlogs[0].idvalue;
-      } else {
-        idUrl = jsonBlogs[currIdx+1].idvalue;
-      }
-    } else{
+    } else if (!previous && this.nextBlogpostId != null) {
+      this.router.navigate(['/blog/' + this.nextBlogpostId]);
       
-      if(currIdx == 0){
-        idUrl = jsonBlogs[jsonBlogs.length-1].idvalue;
-      } else {
-        idUrl = jsonBlogs[currIdx-1].idvalue;
-      }
-    }
+    } */
     
-    this.router.navigate(['/blogpost/' + idUrl]);
+  }
+
+  reloadComponent(id){
+    this._routeId = id;
+    this.fetchBlogpost();
   }
 }

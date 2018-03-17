@@ -147,14 +147,27 @@
 
 .icon-svg {
     &.me {
-        fill: url(/recordings/me#grad-me);
+        fill: url(/zvocniposnetki/jaz#grad-me);
     }
 
     &.my-body {
-        fill: url(/recordings/my-body#grad-my-body);
+        fill: url(/zvocniposnetki/mojetelo#grad-my-body);
     }
 
     &.self-confidence {
-        fill: url(/recordings/self-confidence#grad-self-confidence);
+        fill: url(/zvocniposnetki/samozavest#grad-self-confidence);
     }
+}
+
+.selected-recording-popup-blocker{
+    position: absolute; 
+    height:120px; 
+    z-index: 5; 
+    width:100%; 
+    opacity: 0.10; 
+    background-color: black;
+}
+
+.selected-recordings-list{
+    position: relative;
 }

@@ -266,7 +266,7 @@ export class BlogformComponent implements OnInit {
             }
         });
         this.createGallery();
-        this.createButtons();
+        //this.createButtons();
         this.finalizeContentHTML();
     }
 
