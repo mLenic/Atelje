@@ -20,8 +20,8 @@ const router = express.Router();
 const mongoUser = process.env.umongodb || globals.umongodb;
 const mongoPass = process.env.pmongodb || globals.pmongodb;
 //Change for productions/testing
-//var mongoDBuri = 'mongodb://' + mongoUser + ':' + mongoPass + '@ds151908.mlab.com:51908/atelje'; //Prod
-var mongoDBuri = 'mongodb://' + mongoUser + ':' + mongoPass + '@ds115579.mlab.com:15579/atelje-test'; //Test
+var mongoDBuri = 'mongodb://' + mongoUser + ':' + mongoPass + '@ds151908.mlab.com:51908/atelje'; //Prod
+//var mongoDBuri = 'mongodb://' + mongoUser + ':' + mongoPass + '@ds115579.mlab.com:15579/atelje-test'; //Test
 
 
 // Connect to the db
