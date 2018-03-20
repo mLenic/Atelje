@@ -274,21 +274,22 @@ export class BlogformComponent implements OnInit {
         this.blogContent.content = this.blogContent.content.concat(
             '<div class="blogpost-gallery">'
         );
-        this.picUrls.forEach(url => {
+        for(var i = 0; i < this.picUrls.length; i++){
+            if(i == 0) continue;
+            
             this.blogContent.content = this.blogContent.content.concat(
                 '<div class="gallery-img-div">'
             );
 
             this.blogContent.content = this.blogContent.content.concat(
-                '<img class="gallery-img" src="' + url.url + '">'
+                '<img class="gallery-img" src="' + this.picUrls[i].url + '">'
                 
             );
 
             this.blogContent.content = this.blogContent.content.concat(
                 '</div>'
             );
-        });
-
+        }
 
         this.blogContent.content = this.blogContent.content.concat(
             '</div>'

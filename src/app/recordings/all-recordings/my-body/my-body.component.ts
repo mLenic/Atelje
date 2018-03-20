@@ -16,7 +16,7 @@ export class MyBodyComponent implements OnInit {
   recordings: any[] = [
     {
       "title": "Prehranjevanje je umetnost",
-      "description": "<p>Tehnika se začne s sugestijami za sproščanje in pozitivnimi sugestijami za dobro počutje. Prehranjevanje je predstavljeno kot umetnost, ki spodbuja uživanje v hrani s preprostimi tehnikami, kot sta opazovanje barv in tekstur ter zaznavanje vonja, arom in okusa.</p><p class='text-margin-top'>Za zmanjševanje hrepenenj lahko uporabite tudi tehniko rdečega balona.</p>",
+      "description": "<p>Tehnika se začne s sugestijami za sproščanje in pozitivnimi sugestijami za dobro počutje. Prehranjevanje je predstavljeno kot umetnost, ki spodbuja uživanje v hrani s preprostimi tehnikami, kot sta opazovanje barv in tekstur ter zaznavanje vonja, arom in okusa.</p><p class='text-margin-top'>Za zmanjševanje hrepenenj lahko uporabite tudi <a href='/zvocniposnetki/jaz'><span class='text-link'>tehniko rdečega balona.</span></a></p>",
       "show": true
     },
     {
