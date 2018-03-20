@@ -46,7 +46,7 @@ export class AboutComponent implements OnInit {
     },
     {
       "question": "Kaj pa odrska hipnoza?",
-      "answer": "Ločimo med medicinsko (oziroma terapevtsko) in odrsko hipnozo. Slednja je namenjena zabavi, kjer hipnotizer sugerira osebi, da ta počne nekaj nenavadnega in s tem zabava občinstvo. Vse poteka dramatično; uspešnost te je odvisna od karizmatičnosti voditeljain njegove avtoritete. V nasprotju s hipnoterapijo, pri kateri je uspešnost te odvisna predvsem od odnosa med terapevtom in klientom. Med hipnozo vedno počnemo ali povemo le stvari, ki so v skladu z našimi prepričanji in vrednotami ter jih želimo tudi deliti.",
+      "answer": "<p>Ločimo med medicinsko (oziroma terapevtsko) in odrsko hipnozo. Slednja je namenjena zabavi, kjer hipnotizer sugerira osebi, da ta počne nekaj nenavadnega in s tem zabava občinstvo. Vse poteka dramatično; uspešnost te je odvisna od karizmatičnosti voditeljain njegove avtoritete. V nasprotju s hipnoterapijo, pri kateri je uspešnost te odvisna predvsem od odnosa med terapevtom in klientom. Med hipnozo vedno počnemo ali povemo le stvari, ki so v skladu z našimi prepričanji in vrednotami ter jih želimo tudi deliti.</p>",
       "show": false
     },
   ];
