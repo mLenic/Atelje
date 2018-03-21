@@ -15,7 +15,7 @@ import { BlogService } from '../core/service/blog.service';
 export class BlogpostComponent implements OnInit {
 
   public  currentBlog: any = null;
-  private _routeId: number = null;
+  public _routeId: number = null;
   private quotePosition: any = null;
   public animateText: boolean = false;
   public animateAuthor: boolean = false;
@@ -129,7 +129,7 @@ export class BlogpostComponent implements OnInit {
             console.log("Got blog post data");
             var res = JSON.parse(data.text());
             var found = false;
-            debugger;
+            
             res.blog.forEach(blog => {
               if(blog.idvalue == this._routeId){
                 this.currentBlog = blog;  

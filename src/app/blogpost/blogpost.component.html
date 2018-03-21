@@ -25,6 +25,12 @@
   <div *ngIf="currentBlog != null" [innerHTML]="currentBlogTest">
       
   </div>
+  <div class="blogpost-content" *ngIf="currentBlog != null && _routeId == 2">
+    <div class="videoWrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1RA2Zy_IZfQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    
+  </div>
   <!--
   <div class="blogpost-next-previous-wrapper">
       <div [hidden]="getHidden(false)" class="next-previous-button-div"  >
