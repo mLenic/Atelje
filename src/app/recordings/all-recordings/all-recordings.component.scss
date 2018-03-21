@@ -200,7 +200,7 @@ $popup-height: 350px;
 
     @include breakpoint-768 {
         width: 80%;
-        height: 380px;
+        height: 400px;
         margin: auto;
         top: calc(#{$nav-height} + 10px);
         left: 10%;
