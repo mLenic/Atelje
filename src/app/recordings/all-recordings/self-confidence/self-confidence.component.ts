@@ -14,17 +14,22 @@ export class SelfConfidenceComponent implements OnInit {
   blockerShown = true;
   popupShown = false;
   recordings: any[] = [
-    
+    {
+      "title":"Puhast oblak",
+      "description":"Kaj če bi lahko vse negativne vzorce, besede, dejanja, ki so razlog za vašo nižjo samozavest, postavili na oblak in opazovali, kako izginjajo? Ob tem pa občutili sončne žarke, ki božajo vaše telo in prijetno toploto sonca.",
+      "show": true
+    },
     {
       "title": "Varna soba (»nočni posnetek«)",
       "description": "<p>Tehnika je namenjena večanju samospoštovanja. Temelji na občutenju življenjske energije, ki je pomemben del nas, saj lahko zdravi in osrečuje. Odprt konec omogoča, da po hipnotični seansi prijetno zaspite. </p>",
-      "show": true
+      "show": false
     },
     {
       "title": "Veličastno drevo",
       "description": "To je zelo sproščujoča tehnika. Poudarja zavedanje in občutenje vaših čudovitih lastnosti pa tudi občutek hvaležnosti, za vse to, kar smo.",
       "show": false
     },
+    
   ]
   recordingDescription: any[] = [
     {
