@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+	<url>
+	  <loc>http://www.terapevtski-atelje.si/</loc>
+	  <lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/hipnoza</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/kontakt</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/blog</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/blog/1</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/blog/2</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/blogpost</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/zvocniposnetki</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/recording</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/hipnoterapija</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/zvocniposnetki/samozavest</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/zvocniposnetki/mojetelo</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>http://www.terapevtski-atelje.si/zvocniposnetki/jaz</loc>
+		<lastmod>2018-04-26T09:13:35+00:00</lastmod>
+	</url>
+</urlset>

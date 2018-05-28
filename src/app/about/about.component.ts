@@ -41,12 +41,12 @@ export class AboutComponent implements OnInit {
     },
     {
       "question": "Ali se lahko ne zbudim iz hipnotičnega stanja?",
-      "answer": "<p>Nobenega dokaza ni, da bi kdorkoli ostal v hipnotiziranem stanju. Vsaka hipnoza je tudi samohipnoza, zato se lahko kadarkoli (tudi med hipnotično seanso) odločite, da boste prenehali slediti mojim besedam ter boste tako izstopili iz hipnotičnega stanja.</p><p class='text-margin-top'>Če med hipnotično seanso zaspite, se boste zbudili povsem naravno. </p>",
+      "answer": "<p>Nobenega dokaza ni, da bi kdorkoli ostal v hipnotiziranem stanju. Vsaka hipnoza je tudi samohipnoza, zato se lahko kadarkoli (tudi med hipnotično seanso) odločite, da boste prenehali slediti mojim besedam ter boste tako izstopili iz hipnotičnega stanja.</p><p class='text-margin-top'>Če med hipnotično seanso zaspite, se boste zbudili povsem naravno. </p></br><p>Več o tem si lahko preberete <a href='/blog/1'><span class='text-link'>tukaj</span></a>.</p>",
       "show": false
     },
     {
       "question": "Kaj pa odrska hipnoza?",
-      "answer": "<p>Ločimo med medicinsko (oziroma terapevtsko) in odrsko hipnozo. Slednja je namenjena zabavi, kjer hipnotizer sugerira osebi, da ta počne nekaj nenavadnega in s tem zabava občinstvo. Vse poteka dramatično; uspešnost te je odvisna od karizmatičnosti voditeljain njegove avtoritete. V nasprotju s hipnoterapijo, pri kateri je uspešnost te odvisna predvsem od odnosa med terapevtom in klientom. Med hipnozo vedno počnemo ali povemo le stvari, ki so v skladu z našimi prepričanji in vrednotami ter jih želimo tudi deliti.</p>",
+      "answer": "<p>Ločimo med medicinsko (oziroma terapevtsko) in odrsko hipnozo. Slednja je namenjena zabavi, kjer hipnotizer sugerira osebi, da ta počne nekaj nenavadnega in s tem zabava občinstvo. Vse poteka dramatično; uspešnost te je odvisna od karizmatičnosti voditelja in njegove avtoritete. V nasprotju s hipnoterapijo, pri kateri je uspešnost te odvisna predvsem od odnosa med terapevtom in klientom. Med hipnozo vedno počnemo ali povemo le stvari, ki so v skladu z našimi prepričanji in vrednotami ter jih želimo tudi deliti.</p> </br><p>Več o odrski hipnozi in o mitih povezanih z njo, si lahko preberete <a href='/blog/2'><span class='text-link'>tukaj</span></a>.</p>",
       "show": false
     },
   ];
