@@ -15,9 +15,14 @@ export class MeComponent implements OnInit {
   popupShown = false;
   recordings: any[] = [
     {
+      "title": "Zaprt predal",
+      "description": "<p>S to tehniko lahko v namišljen predal zložite vse tisto, česar trenutno ne potrebujete v svojem življenju - čustva, napetosti, stres ali celo glavobol - in občutite neskončno lahkotnost ter se ob tem spočijete in sprostite. </p>",
+      "show": true
+    },
+    {
       "title": "Kamenčki za spremembe",
       "description": "<p>To je ena od mojih najljubših tehnik. Popelje vas v čarobno naravo, kjer si lahko izberete kamenčke, ki predstavljajo spremembe v vašem življenju. Poleg tega se lahko znebite tistega, česar ne potrebujete več v vašem življenju, kot so razvade, negativne misli, hrepenenja, občutki... </p>",
-      "show": true
+      "show": false
     },
     {
       "title": "Rdeč balon",
