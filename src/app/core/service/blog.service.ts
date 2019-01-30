@@ -19,7 +19,35 @@ export class BlogService {
         //TODO: Change for production
         this.uriBase =  this.globals.HTTP_GLOBAL_ADDRESS || 'http://localhost:3000';
     }
+    /***** EVENTS *****/
+    public saveEvent(json){
+        var uri = this.uriBase + "/api/event/new";
 
+        return this.http
+            .post(uri, json, {})
+            .map((response: Response) => {
+                return response.status;
+            });
+    }
+
+    public getEvents(){
+        var eventApiUri = this.uriBase + '/api/event';
+        return this.http
+            .get(eventApiUri, {})
+            .map((response: Response) => {
+                return response;
+            });
+    }
+
+    public getEvent(id: number){
+        var eventApiUri = this.uriBase + '/api/event/' + id;
+        return this.http
+            .get(eventApiUri, {})
+            .map((response: Response) => {
+                return response;
+            });
+    }
+    /***** BLOGS *****/
     public saveBlogPost(json){
         var uri = this.uriBase + "/api/blogposts/new";
 

@@ -11,6 +11,7 @@ var globals = require('../../globals');
 var user = require('../models/user');
 var log = require('../models/log');
 var blog = require('../models/blog');
+var event = require('../models/event');
 var mailer = require('../mailing/contact');
 var upload = require('../upload/file-upload');
 
@@ -42,8 +43,64 @@ getDatabase = function() {
 }
 
 app.set('port', process.env.PORT || 3000)
+
 /**
- * Routes that handle blog 
+ * Routes that handle blog
+ * /event - returns an array of all events from database
+ * /event/:id - Returns a single event that matches the provided id
+ * */
+router.get('/event', function (req, res) {
+  console.log('Fetching events from DB...');
+
+  log.saveLog("Fetch: events", db, req);
+  event.fetchEvents(db)
+    .then((events) => {
+      res.json({
+        message: 'success',
+        events: events,
+      })
+    }).catch((error) => {
+      res.json({
+        message: 'failure',
+        //TODO: Add reporting on failure (mail)
+      })
+    });
+});
+
+router.get('/event/:id', function(req, res){
+
+
+  var id = Number(req.params.id);
+
+  log.saveLog("Fetch: event " + id, db, req);
+
+  event.fetchEvent(db, id)
+        .then((event) => {
+          console.log(event.length);
+          if(blog.length == 0){
+            res.status(400);
+            res.json({
+              message: 'failure',
+            })
+          } else {
+            res.status(200);
+            res.json({
+              message: 'success',
+              event: event,
+            })
+          }
+
+        }).catch((error) => {
+          res.status(400);
+          res.json({
+              message: 'failure',
+            })
+          })
+  console.log(id)
+});
+
+/**
+ * Routes that handle blog
  * /blogposts - returns an array of all blog posts from database
  * /blogpost/:id - Returns a single blogpost that matches the provided id
  * @Input: Contact form (mail, name and message)
@@ -89,9 +146,9 @@ router.get('/blogpost/:id', function(req, res){
               blog: blog,
             })
           }
-          
+
         }).catch((error) => {
-          res.status(400);  
+          res.status(400);
           res.json({
               message: 'failure',
             })
@@ -126,15 +183,13 @@ router.post('/blogposts/new', function (req, res) {
     });
   }
 
-  
-  
 });
 
 /**
  * Route that handles AWS S3 file upload signatures
  */
 router.post('/sign-s3', function(req, res){
-  
+
 
   var setPassword = '65b9e48b0399b3d9010b510079560ebb';
   console.log(req.body.pwd);
@@ -149,20 +204,20 @@ router.post('/sign-s3', function(req, res){
   } else {
     upload.getSignedS3Url(req, function(data) {
       if(data.status === 'error'){
-  
+
         res.json({
           message: 'error'
         });
       } else {
-  
+
         res.json({
           message: 'success',
           data: data.data,
         });
       }
-      
+
     });
-  } 
+  }
 });
 
 /**
@@ -186,7 +241,18 @@ router.get('/init/blogs', function (req, res) {
     message: 'success'
   });
 });
+
+router.get('/init/events', function (req, res) {
+  console.log('Initalizing database, adding event...');
+  event.initEvent(db);
+
+  res.json({
+    message: 'success'
+  });
+});
+
 */
+
 
 /* GET api listing. */
 router.get('/', (req, res) => {
@@ -195,13 +261,13 @@ router.get('/', (req, res) => {
 
 
 /**
- * Route that handles messaging 
+ * Route that handles messaging
  * @Input: Contact form (mail, name and message)
  */
 router.post('/mailing/contact/new', function (req, res) {
-  
+
   log.saveLog("Mail: Send mail.", db, req);
-  
+
   mailer(req.body, function(status) {
       if(status){
         res.status(200);
@@ -211,11 +277,11 @@ router.post('/mailing/contact/new', function (req, res) {
         res.send("Error");
       }
   });
-  
+
 });
 
 /**
- * Route that handles login 
+ * Route that handles login
  * @Input: Contact form (Email and password)
  */
 router.post('/login', function (req, res) {

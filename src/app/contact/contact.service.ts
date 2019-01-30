@@ -16,7 +16,7 @@ export class ContactService {
 
         var url= this.globals.HTTP_GLOBAL_ADDRESS || "http://localhost:3000";
         url += "/api/mailing/contact/new";
-        
+
         return this.http
             .post(url, msgJson, {})
             .map((response: Response) => {
@@ -24,4 +24,14 @@ export class ContactService {
             });
     }
 
+    sendApplicationMail(msgJson) {
+      var url= this.globals.HTTP_GLOBAL_ADDRESS || "http://localhost:3000";
+        url += "/api/mailing/application/new";
+
+        return this.http
+            .post(url, msgJson, {})
+            .map((response: Response) => {
+                return response.status;
+            });
+    }
 }

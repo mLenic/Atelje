@@ -37,7 +37,7 @@ export class ContactComponent implements OnInit {
   public validationMessages = {
     'name': {
         'required':     'Manjkajoče ime.',
-        'minlength':    'Ime kampanije mora vsebovati vsaj en znak.'
+        'minlength':    'Ime mora vsebovati vsaj en znak.'
     },
     'message': {
         'required':     'Manjkajoče sporočilo.',
@@ -46,7 +46,7 @@ export class ContactComponent implements OnInit {
         'required':     'Manjkajoč Email.',
         'email':        'Napačna oblika Email naslova.'
     }
-    
+
   };
 
   public formErrors = {

@@ -28,11 +28,12 @@ export class EventComponent implements OnInit {
 
   fetchEvents() {
     // Change for event
-    this.blogService.getBlogPosts()
+    this.blogService.getEvents()
       .subscribe(data => {
         console.log("data blogposts recieved");
         var res = JSON.parse(data.text());
-        this.arrEvents = res.blogs;
+        console.log(res);
+        this.arrEvents = res.events;
 
       }, error => {
         console.log("error blogposts recieved");

@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent }    from './home/home.component';
 import { BlogComponent }    from './blog/blog.component';
 import { EventComponent }   from './event/event.component';
+import { EventpostComponent } from './eventpost/eventpost.component';
 import { AboutComponent }   from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { RecordingsComponent } from './recordings/recordings.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
      { path: 'hipnoza',                                 component: AboutComponent                           },
      { path: 'kontakt',                                 component: ContactComponent                         },
      { path: 'dogodki',                                 component: EventComponent                           },
+     { path: 'dogodek/:id',                             component: EventpostComponent                       },
      { path: 'blog',                                    component: BlogComponent                            },
      { path: 'blog/:id',                                component: BlogpostComponent                        },
      { path: 'blogpost',                                component: BlogpostComponent                        },
