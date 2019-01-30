@@ -196,7 +196,7 @@ a {
 .input {
     padding: 10px;
     border: 1px solid $black;
-    outline: none; 
+    outline: none;
 
     &:focus {
         outline: none;
@@ -298,6 +298,105 @@ a {
 
 //----------
 
+//---------- EVENTS ----------
+.event-posts-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: $narrow-width;
+  margin: auto;
+  .event-element {
+    width: 80%;
+    padding: 20px;
+    max-width: 2000px;
+
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: $narrow-width;
+    margin: auto;
+    flex-direction: row;
+    cursor: pointer;
+
+    @include breakpoint-960 {
+        width: 100%;
+    }
+
+    .event-break-element {
+      height: 100px;
+      width: 100%;
+      cursor: default;
+    }
+
+    @media screen and (min-width: 1000px) {
+      .event-element-img-div {
+        flex: 1 0 0;
+      }
+    }
+    .event-element-img-div {
+      margin: 20px 0;
+
+      .event-element-img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          overflow: hidden;
+          border: 1px solid $black;
+
+          @include breakpoint-960 {
+              width: 70%;
+              height: 300px;
+          }
+
+          @include breakpoint-768 {
+              width: 100%;
+              height: 200px;
+          }
+      }
+  }
+
+    .event-element-rest-div {
+      flex: 2 0 0;
+      .event-element-category {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: $smaller-font;
+    }
+
+    .event-element-title {
+        margin: 10px 0;
+        font-family: PlayfairDisplay-Regular;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 30px;
+    }
+
+    .event-element-date {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: $smaller-font;
+        margin-bottom: 20px;
+    }
+
+    .thin-black-line {
+        margin-bottom: 20px;
+    }
+    }
+
+
+
+
+    .event-element-description {
+        width: 80%;
+        margin-left: 10%;
+        text-align: center;
+        font-size: $small-font;
+        line-height: 22px;
+    }
+}
+
+}
 //---------- BLOG POSTS ----------
 
 .blog-posts-wrapper {

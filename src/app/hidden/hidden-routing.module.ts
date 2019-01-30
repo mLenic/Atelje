@@ -5,12 +5,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
 import { BlogformComponent } from './blogform/blogform.component';
+import { EventformComponent } from './eventform/eventform.component';
 
 import { AuthGuard } from '../hidden/guard/auth.guard';
 
 const routes: Routes = [
     { path: 'login',        component: LoginComponent    },
     { path: 'blogpost',     component: BlogformComponent, canActivate: [AuthGuard] },
+    { path: 'event',     component: BlogformComponent, canActivate: [AuthGuard] },
 ];
 @NgModule({
     imports: [ RouterModule.forChild(routes) ],

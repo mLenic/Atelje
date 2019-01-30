@@ -1,0 +1,35 @@
+@import '../../variables.scss';
+
+/*
+p {
+    text-indent: 50px;
+}
+*/
+
+.event-wrapper{
+    .title-line {
+        width: 170px;
+
+        @include breakpoint-768 {
+            width: 140px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .event-content {
+
+        background-color: $white;
+        padding: $content-padding 0;
+
+
+        .blog-line {
+            width: $narrow-width;
+            margin: 60px auto;
+        }
+        .event-posts-wrapper{
+            .blog-element{
+                cursor: pointer;
+            }
+        }
+    }
+}

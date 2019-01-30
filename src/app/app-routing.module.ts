@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 // Custom components
 import { HomeComponent }    from './home/home.component';
 import { BlogComponent }    from './blog/blog.component';
+import { EventComponent }   from './event/event.component';
 import { AboutComponent }   from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { RecordingsComponent } from './recordings/recordings.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
      { path: 'domov',                                   component: HomeComponent                            },
      { path: 'hipnoza',                                 component: AboutComponent                           },
      { path: 'kontakt',                                 component: ContactComponent                         },
+     { path: 'dogodki',                                 component: EventComponent                           },
      { path: 'blog',                                    component: BlogComponent                            },
      { path: 'blog/:id',                                component: BlogpostComponent                        },
      { path: 'blogpost',                                component: BlogpostComponent                        },

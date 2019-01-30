@@ -7,6 +7,7 @@ import { HiddenRoutingModule } from './hidden-routing.module';
 
 import { LoginComponent } from './login/login.component';
 import { BlogformComponent } from './blogform/blogform.component';
+import { EventformComponent } from './eventform/eventform.component';
 
 import { HiddenService } from './service/hidden.service';
 
@@ -16,8 +17,9 @@ import { AuthGuard } from './guard/auth.guard';
     declarations: [
         LoginComponent,
         BlogformComponent,
+        EventformComponent
     ],
-    imports: [ 
+    imports: [
         CommonModule,
         HiddenRoutingModule,
         FormsModule,

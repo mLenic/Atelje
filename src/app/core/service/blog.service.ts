@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 
 import { Globals } from '../../../../globals';
 
+// Service for blogs and events
 @Injectable()
 export class BlogService {
 
@@ -12,7 +13,7 @@ export class BlogService {
     constructor (
         private http: Http,
         private globals: Globals,
-    ) { 
+    ) {
         console.log("Making blog service");
 
         //TODO: Change for production
@@ -49,7 +50,7 @@ export class BlogService {
 
     public getSignedRequest(file, json){
         const fileName = encodeURIComponent(file.name);
-        const fileType = file.type; 
+        const fileType = file.type;
 
         var fileSignatureUri = this.uriBase + '/api/sign-s3?file-name=' + fileName + '&file-type=' + fileType;
 
@@ -58,7 +59,7 @@ export class BlogService {
                 .map((response: Response) => {
                     return response;
                 });
-        
+
     }
 
     uploadPicture(file: File, signedRequest, url){

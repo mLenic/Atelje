@@ -15,6 +15,7 @@ import { HomeComponent }  from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
+import { EventComponent } from './event/event.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { QuestionsAnswersRowComponent } from './core/questions-answers-row/questions-answers-row.component';
@@ -40,6 +41,7 @@ import { Globals } from '../../globals';
     AboutComponent,
     ContactComponent,
     BlogComponent,
+    EventComponent,
     RecordingsComponent,
     BlogpostComponent,
     RecordingComponent,
