@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var ObjectId = require('mongodb').ObjectID;
 
 var Schema = mongoose.Schema;
 
@@ -13,6 +14,7 @@ var eventSchema = new Schema({
     dateEvent: Date,
     price: Number,
     extra: String,
+    applicationsOpen: Boolean,
     pictures: {type: Array, "default": []},
     applications: {type: Array, "default": []}
 });
@@ -34,17 +36,18 @@ var initEvent = function(db){
   in10Days.setDate(new Date() + 10);
 
   var event = new Event({
-      idvalue: 1,
-      title: 'Skupinska hipnoterapija s Tibetanskimi posodami.',
-      subTitle: 'Poglabljanje vase',
+      idvalue: 2,
+      title: 'Skupinska hipnoterapija.',
+      subTitle: 'Poglabljanje vate',
       description: 'Na tej skupinski hipnoterapiji se bomo skupaj sproscali ob zvokih tibetanskih posod.',
       content: 'Na tej skupinski hipnoterapiji se bomo skupaj sproscali ob zvokih tibetanskih posod. Na tej skupinski hipnoterapiji se bomo skupaj sproscali ob zvokih tibetanskih posod. Na tej skupinski hipnoterapiji se bomo skupaj sproscali ob zvokih tibetanskih posod.',
       datePosted: new Date(),
       dateEvent: in10Days,
       price: 15,
       extra: String,
-      pictures: [{url: 'https://s3.eu-central-1.amazonaws.com/atelje-psihoterapije/20170727_121626.jpg'},
-                  {url: 'https://s3.eu-central-1.amazonaws.com/atelje-psihoterapije/20170727_121626.jpg'}],
+      applicationsOpen: true,
+      pictures: [{url: 'https://atelje-psihoterapije.s3.amazonaws.com/mak.jpg'},
+                  {url: 'https://atelje-psihoterapije.s3.amazonaws.com/mak.jpg'}],
       applications: [{name: 'Matevz', surname: 'Lenic', email: 'mta_lenko@hotmail.com'},
                     {name: 'Spela', surname: 'Verbnik', email: 'spela.verbnik@gmail.com'}]
   });
@@ -56,6 +59,27 @@ var initEvent = function(db){
       }
       console.log('Event saved successfully!');
   });
+}
+
+var updateApplicants = function(event, user, db, callback) {
+  var apps = event.applications;
+  apps.push(user);
+
+  event.applications = apps;
+
+  db.collection('event').update(
+    {'_id':ObjectId(event._id)},
+    {$set :{'applications' : apps}}
+    , function(err, result) {
+      if(err) {
+        console.log("Error updating");
+        console.log(err);
+        callback(false);
+      } else {
+        console.log("Successfully updated");
+        callback(true);
+      }
+    });
 }
 
 var saveEvent = function(event, db, callback){
@@ -122,4 +146,5 @@ module.exports = {
   fetchEvents: fetchEvents,
   fetchEvent: fetchEvent,
   saveEvent: saveEvent,
+  updateApplicants: updateApplicants,
 }

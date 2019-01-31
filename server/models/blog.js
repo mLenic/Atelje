@@ -20,7 +20,7 @@ var blogSchema = new Schema({
 var Blog = mongoose.model('Blog', blogSchema);
 
 var fetchBlogposts = function(db){
-    return db.collection('blog').find().sort({datePosted: -1}).toArray();  
+    return db.collection('blog').find().sort({datePosted: -1}).toArray();
 }
 
 var fetchBlogpost = function(db, id){
@@ -44,7 +44,7 @@ var initBlog = function(db){
         type: 'neki',
         pictures: [{url: 'https://aaa.aa.com'}, {url: 'https://bbb.bb.com'}]
     });
-    
+
     console.log('Inserting blog to db.');
     db.collection('blog').insert(blog, function(err) {
         if(err){
@@ -56,7 +56,7 @@ var initBlog = function(db){
 
 var saveBlogPost = function(blog, db, callback){
     //Check for md5 in request
-    
+
     //get latest blog ID:
     console.log("Getting blogs");
     this.fetchBlogposts(db)
@@ -88,7 +88,7 @@ var saveBlogPost = function(blog, db, callback){
             datePosted: new Date(),
             pictures: blog.pictures,
             type: '',
-            
+
         });
         console.log('Inserting new blog to db.');
         db.collection('blog').insert(blogPost, function(err) {
@@ -100,14 +100,14 @@ var saveBlogPost = function(blog, db, callback){
             callback(true);
         });
 
-        
+
     }).catch((error) => {
         console.log("Got error");
         latestId = -1;
         callback(false);
     });
 
-    
+
 }
 
 // make this available to our users in our Node applications

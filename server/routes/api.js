@@ -13,6 +13,7 @@ var log = require('../models/log');
 var blog = require('../models/blog');
 var event = require('../models/event');
 var mailer = require('../mailing/contact');
+var applicationMailer = require('../mailing/application.js');
 var upload = require('../upload/file-upload');
 
 var app = express();
@@ -77,7 +78,7 @@ router.get('/event/:id', function(req, res){
   event.fetchEvent(db, id)
         .then((event) => {
           console.log(event.length);
-          if(blog.length == 0){
+          if(event.length == 0){
             res.status(400);
             res.json({
               message: 'failure',
@@ -96,7 +97,6 @@ router.get('/event/:id', function(req, res){
               message: 'failure',
             })
           })
-  console.log(id)
 });
 
 /**
@@ -250,8 +250,8 @@ router.get('/init/events', function (req, res) {
     message: 'success'
   });
 });
-
 */
+
 
 
 /* GET api listing. */
@@ -259,6 +259,62 @@ router.get('/', (req, res) => {
   res.send('api works');
 });
 
+/**
+ * Route that handles event applications
+ * @Input: Contact form (mail, name and event title)
+ */
+router.post('/mailing/application/new', function (req, res) {
+
+  log.saveLog("Application: Send mail and save user as applicant.", db, req);
+
+  // Fetch event by id
+  console.log(req.body);
+  var id = Number(req.body.id);
+  var usr = {name: req.body.name, email: req.body.email};
+  var eventApplication = null;
+
+  event.fetchEvent(db, id)
+      .then((evs) => {
+
+        if(evs.length != 0){
+
+          event.updateApplicants(evs[0], usr, db, function(status) {
+            if(status) {
+              console.log("Successfully updated applications for event: " + evs[0].title);
+              log.saveLog("Successfully updated applications for event: " + evs[0].title, db, req);
+            } else {
+              console.log("Failed to update applications for event: " + evs[0].title);
+              log.saveLog("Failed to update applications for event: " + evs[0].title, db, req);
+            }
+          })
+
+        } else {
+          console.log("Failed to get event");
+          log.saveLog("Failed to get event with id. " + id, db, req);
+        }
+      }).catch((error) => {
+        console.log("ERROR: Failed to get event");
+        log.saveLog("ERROR: Failed to get event with id. " + id, db, req);
+        })
+
+
+  eventApplication = {
+    name: req.body.name,
+    email: req.body.email,
+    title: req.body.title,
+  }
+
+  applicationMailer(req.body, function(status) {
+    if(status){
+      res.status(200);
+      res.send("Sent Application");
+    } else{
+      res.status(400);
+      res.send("Error");
+    }
+  });
+
+});
 
 /**
  * Route that handles messaging
@@ -267,6 +323,7 @@ router.get('/', (req, res) => {
 router.post('/mailing/contact/new', function (req, res) {
 
   log.saveLog("Mail: Send mail.", db, req);
+
 
   mailer(req.body, function(status) {
       if(status){

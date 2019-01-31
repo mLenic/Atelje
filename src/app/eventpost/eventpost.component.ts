@@ -154,6 +154,7 @@ export class EventpostComponent implements OnInit {
       //send mail
 
       var form = {
+        id: this._routeId,
         name: this.applicationForm.controls['name'].value,
         email: this.applicationForm.controls['email'].value,
       }
@@ -166,7 +167,7 @@ export class EventpostComponent implements OnInit {
                       this.response.message = "Prijava je bilo uspešna.";
                     } else {
                       this.response.status = 400;
-                      this.response.message = "Prijava ni bila uspešna. Prosim posljite sporocilo na spela@terapevtski-atelje.si";
+                      this.response.message = "Prijava ni bila uspešna. Prosim pošljite sporočilo na spela@terapevtski-atelje.si";
                     }
                   })
     }

@@ -1,58 +1,69 @@
 <div class="eventpost-wrapper">
-  <div class="eventpost-header" *ngIf="currentEvent != null">
-    <div class="eventpost-img-div">
-        <img *ngIf="currentEvent.pictures.length == 0" class="eventpost-img" src="assets/images/birds_blur.jpg">
-        <img *ngIf="currentEvent.pictures.length > 0" class="eventpost-img" [src]="currentEvent.pictures[0].url">
+  <div *ngIf="currentEvent != null">
+    <div class="eventpost-header" >
+        <div class="eventpost-img-div">
+            <img *ngIf="currentEvent.pictures.length == 0" class="eventpost-img" src="assets/images/birds_blur.jpg">
+            <img *ngIf="currentEvent.pictures.length > 0" class="eventpost-img" [src]="currentEvent.pictures[0].url">
 
-    </div>
-    <div class="light-bg-div">
-      </div>
-      <div class="eventpost-category">
-        {{ datePipe() }}
-      </div>
-      <div class="eventpost-title text">
-        {{currentEvent.title}}
-      </div>
-      <div class="eventpost-subtitle subtitle-small">
-        {{currentEvent.subTitle}}
-      </div>
-
-      <div class="eventpost-date">
-
-      </div>
-
-  </div>
-  <div class="eventpost-content">
-    <p>
-    {{currentEvent.content}}
-    </p>
-  <br>
-  <br>
-  <br>
-    <div *ngIf="applicationsOpen">
-        <div class="contact-form-wrapper">
-            <div class="contact-form-title title-small">
-              Prijava na delavnico
-            </div>
-            <form name="applicationForm" [formGroup]="applicationForm" (ngSubmit)="sendApplicationMail()">
-                <div class="form-field">
-                  <!--<label for="name" class="label">Ime:</label>-->
-                  <input type="text" id="name" class="input underlined-input" name="fname" [formControl]="name" placeholder="Ime">
-                  <div *ngIf="formErrors.name" class="help-block alert alert-danger">{{ formErrors.name }}</div>
-                </div>
-                <br/>
-                <div class="form-field">
-                  <!--<label for="email" class="label">E-mail:</label>-->
-                  <input type="text" id="email" class ="input underlined-input" name="fname" [formControl]="email" placeholder="E-mail">
-                  <div *ngIf="formErrors.email" class="help-block alert alert-danger">{{ formErrors.email }}</div>
-                </div>
-                <br/>
-                <div class="send-button-wrapper">
-                  <button class="message button-dark" style="cursor: pointer">Prijava</button>
-                </div>
-                <div *ngIf="response.status">{{response.message}}</div>
-            </form>
+        </div>
+        <div class="light-bg-div">
           </div>
-    </div>
+          <div class="eventpost-category">
+            {{ datePipe() }}
+          </div>
+          <div class="eventpost-title text">
+            {{currentEvent.title}}
+          </div>
+          <div class="eventpost-subtitle subtitle-small">
+            {{currentEvent.subTitle}}
+          </div>
+
+          <div class="eventpost-date">
+
+          </div>
+
+      </div>
+      <div class="eventpost-content">
+        <p>
+        {{currentEvent.content}}
+        </p>
+      <br>
+      <br>
+      <br>
+        <div *ngIf="applicationsOpen && currentEvent.applicationsOpen">
+            <div class="contact-form-wrapper">
+                <div class="contact-form-title title-small">
+                  Prijava na delavnico
+                </div>
+                <form name="applicationForm" [formGroup]="applicationForm" (ngSubmit)="sendApplicationMail()">
+                    <div class="form-field">
+                      <!--<label for="name" class="label">Ime:</label>-->
+                      <input type="text" id="name" class="input underlined-input" name="fname" [formControl]="name" placeholder="Ime">
+                      <div *ngIf="formErrors.name" class="help-block alert alert-danger">{{ formErrors.name }}</div>
+                    </div>
+                    <br/>
+                    <div class="form-field">
+                      <!--<label for="email" class="label">E-mail:</label>-->
+                      <input type="text" id="email" class ="input underlined-input" name="fname" [formControl]="email" placeholder="E-mail">
+                      <div *ngIf="formErrors.email" class="help-block alert alert-danger">{{ formErrors.email }}</div>
+                    </div>
+                    <br/>
+                    <div class="send-button-wrapper">
+                      <button class="message button-dark" style="cursor: pointer">Prijava</button>
+                    </div>
+                    <div *ngIf="response.status">{{response.message}}</div>
+                </form>
+              </div>
+        </div>
+        <div *ngIf="!currentEvent.applicationsOpen">
+            <div class="contact-form-wrapper">
+              <div class="contact-form-title title-small-closed">
+                Delavnica je polna  .
+                <br>
+                Za dodatne informacije se obrnite na spela@terapevtski-atelje.si.
+              </div>
+            </div>
+        </div>
+      </div>
   </div>
 </div>
