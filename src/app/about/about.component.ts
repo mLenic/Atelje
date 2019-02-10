@@ -89,7 +89,7 @@ export class AboutComponent implements OnInit {
     },
     {
       "question": "Ali je obisk hipnoterapevta učinkovitejši kot poslušanje zvočnih posnetkov?",
-      "answer": "<p>Zvočni posnetki so učinkovito orodje, ki vam s pomočjo vaše podzavesti pomagajo, da dosežete, kar želite. Kljub temu pa je hipnoterapija veliko bolj učinkovita, kadar je prilagojena posamezniku. Upoštevati je treba edinstvene motivacije, osebnost, zanimanja in klientova nagnjenja,saj bo le tako lahko terapevt prilagodil sugestije in metafore. Več si lahko preberete <a href='/hipnoterapija'><span class='text-link'>tukaj</span></a>.</p>",
+      "answer": "<p>Zvočni posnetki so učinkovito orodje, ki vam s pomočjo vaše podzavesti pomagajo, da dosežete, kar želite. Kljub temu pa je hipnoterapija veliko bolj učinkovita, kadar je prilagojena posamezniku. Upoštevati je treba edinstvene motivacije, osebnost, zanimanja in klientova nagnjenja,saj bo le tako lahko terapevt prilagodil sugestije in metafore. Več si lahko preberete <a href='/individualno'><span class='text-link'>tukaj</span></a>.</p>",
       "show": false
     }
   ];

@@ -12,11 +12,11 @@
       Srečanja in delavnice
     </div>
   </div>
-  <div class="event-content">
+  <div class="event-content" *ngIf="arrEvents && arrEvents.length > 0">
       <div class="event-posts-wrapper">
           <div *ngFor='let event of arrEvents' class="event-post-wrapper" (click)="redirectToEvent(event)">
             <div class="event-element-date">
-              {{datePipe(event)}}
+              {{generalService.dateEventPipe(event)}}
             </div>
             <div class="event-element">
               <div class="event-element-img-div">

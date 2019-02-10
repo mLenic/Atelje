@@ -9,7 +9,7 @@
         <div class="light-bg-div">
           </div>
           <div class="eventpost-category">
-            {{ datePipe() }}
+            {{generalService.dateEventPipe(currentEvent)}}
           </div>
           <div class="eventpost-title text">
             {{currentEvent.title}}

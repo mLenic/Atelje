@@ -31,7 +31,7 @@ export class EventComponent implements OnInit {
     // Change for event
     this.blogService.getEvents()
       .subscribe(data => {
-        console.log("data blogposts recieved");
+        console.log("data events recieved");
         var res = JSON.parse(data.text());
         console.log(res);
         this.arrEvents = res.events;
@@ -45,16 +45,5 @@ export class EventComponent implements OnInit {
   redirectToEvent(event){
     console.log(event);
     this.router.navigate(['dogodek/' + event.idvalue]);
-  }
-
-  datePipe(event){
-    //Created custom - tolocaledateString not really supported in all browser
-    var fSPlt = event.dateEvent.split("T");
-    var lSplt = fSPlt[0].split("-");
-
-    const mnth = this.months[(Number)(lSplt[1]) - 1];
-
-    return lSplt[2] + '. ' + mnth + ' ' + lSplt[0];
-
   }
 }

@@ -62,4 +62,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['blog/' + blog.idvalue]);
   }
 
+  redirectToEvent(event){
+    this.router.navigate(['dogodek/' + event.idvalue]);
+  }
+
 }

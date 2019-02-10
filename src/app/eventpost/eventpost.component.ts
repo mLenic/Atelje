@@ -148,17 +148,6 @@ export class EventpostComponent implements OnInit {
         })
   }
 
-  datePipe(){
-    //Created custom - tolocaledateString not really supported in all browser
-    var fSPlt = this.currentEvent.dateEvent.split("T");
-    var lSplt = fSPlt[0].split("-");
-
-    const mnth = this.months[(Number)(lSplt[1]) - 1];
-
-    return lSplt[2] + '. ' + mnth + ' ' + lSplt[0];
-
-  }
-
   sendApplicationMail() {
     this.onValueChanged(this.applicationForm);
 
