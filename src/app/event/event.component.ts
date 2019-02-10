@@ -18,6 +18,7 @@ export class EventComponent implements OnInit {
   ) { }
 
   public arrEvents: Array<any>;
+  public months = ["Januar", "Februar", "Marec", "April", "Maj", "Junij", "Julij", "Avgust", "September", "Oktober", "November", "December" ];
 
   ngOnInit(){
     this.generalService.currentLink = 'dogodki';
@@ -44,5 +45,16 @@ export class EventComponent implements OnInit {
   redirectToEvent(event){
     console.log(event);
     this.router.navigate(['dogodek/' + event.idvalue]);
+  }
+
+  datePipe(event){
+    //Created custom - tolocaledateString not really supported in all browser
+    var fSPlt = event.dateEvent.split("T");
+    var lSplt = fSPlt[0].split("-");
+
+    const mnth = this.months[(Number)(lSplt[1]) - 1];
+
+    return lSplt[2] + '. ' + mnth + ' ' + lSplt[0];
+
   }
 }

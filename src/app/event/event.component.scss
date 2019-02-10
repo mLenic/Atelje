@@ -8,7 +8,7 @@ p {
 
 .event-wrapper{
     .title-line {
-        width: 170px;
+        width: 270px;
 
         @include breakpoint-768 {
             width: 140px;
@@ -21,6 +21,29 @@ p {
         background-color: $white;
         padding: $content-padding 0;
 
+        .event-element {
+          width: $narrower-width;
+
+
+          .event-element-img-div {
+            display: inline-block;
+
+            img {
+              display: inline-block;
+              vertical-align: middle;
+            }
+          }
+
+          .event-element-rest-div {
+            text-align: left;
+            padding-left: 5%;
+
+          }
+
+          .thin-black-line {
+            margin-top: 5%;
+          }
+        }
 
         .blog-line {
             width: $narrow-width;

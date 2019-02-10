@@ -305,10 +305,27 @@ a {
   flex-wrap: wrap;
   width: $narrow-width;
   margin: auto;
+
+  .event-post-wrapper {
+    margin: auto;
+  }
+
+  .event-element-date {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: $bigger-font;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 5%;
+    cursor: pointer;
+
+  }
   .event-element {
+
     width: 80%;
     padding: 20px;
     max-width: 2000px;
+    margin-left: 10vw;
 
     text-align: center;
     display: flex;
@@ -335,7 +352,6 @@ a {
       }
     }
     .event-element-img-div {
-      margin: 20px 0;
 
       .event-element-img {
           width: 100%;
@@ -365,18 +381,18 @@ a {
     }
 
     .event-element-title {
-        margin: 10px 0;
         font-family: PlayfairDisplay-Regular;
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-size: 30px;
+        font-size: 20px;
     }
 
-    .event-element-date {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: $smaller-font;
-        margin-bottom: 20px;
+    .event-element-subtitle {
+      padding-top: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-family: OpenSans-Regular;
+      font-size: $regular-font-size;
     }
 
     .thin-black-line {
@@ -388,11 +404,10 @@ a {
 
 
     .event-element-description {
-        width: 80%;
-        margin-left: 10%;
-        text-align: center;
+        text-align: left;
         font-size: $small-font;
         line-height: 22px;
+        padding-top: 20px;
     }
 }
 
@@ -431,6 +446,7 @@ a {
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 30px;
+            min-height: 90px;
         }
 
         .blog-element-date {

@@ -14,28 +14,33 @@
   </div>
   <div class="event-content">
       <div class="event-posts-wrapper">
-          <div *ngFor='let event of arrEvents' class="event-element" (click)="redirectToEvent(event)">
-
-            <div class="event-element-img-div">
-              <img *ngIf="event.pictures.length == 0" class="event-element-img" src="assets/images/forest_blur.jpg">
-              <img *ngIf="event.pictures.length > 0"  class="event-element-img" [src]="event.pictures[0].url">
+          <div *ngFor='let event of arrEvents' class="event-post-wrapper" (click)="redirectToEvent(event)">
+            <div class="event-element-date">
+              {{datePipe(event)}}
             </div>
-            <div class="event-element-rest-div">
-                <div class="event-break-element"></div>
-              <div class="event-element-title">
-                {{event.title}}
+            <div class="event-element">
+              <div class="event-element-img-div">
+                <img *ngIf="event.pictures.length == 0" class="event-element-img" src="assets/images/forest_blur.jpg">
+                <img *ngIf="event.pictures.length > 0"  class="event-element-img" [src]="event.pictures[0].url">
               </div>
-              <div class="event-element-date">
-                {{generalService.datePipe(event)}}
+              <div class="event-element-rest-div">
+
+                <div class="event-element-title">
+                  {{event.title}}
+                </div>
+                <div class="event-element-subtitle">
+                  {{event.subTitle}}
+                </div>
+                <div class="event-element-description">
+                    {{event.description}}
+                </div>
+
               </div>
-              <div class="event-element-description">
-                  {{event.description}}
-              </div>
-              <div class="event-break-element"></div>
+
+              <div class="thin-black-line">
+                </div>
             </div>
 
-            <div class="thin-black-line">
-              </div>
 
 
         </div>

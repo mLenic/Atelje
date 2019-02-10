@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   public homeBlogs: Array<any> = new Array<any>();
+  public arrEvents: Array<any> = new Array<any>();
 
   ngOnInit() {
     this.generalService.currentLink = 'home';
@@ -30,7 +31,6 @@ export class HomeComponent implements OnInit {
     if(jsonBlogs == null){
       this.blogService.getBlogPosts()
                     .subscribe(data => {
-                      console.log("data blogposts recieved");
                       var res = JSON.parse(data.text());
                       //this.blogService.saveBlogPostsToStorage(res.blogs);
                       this.homeBlogs = res.blogs;
@@ -41,10 +41,24 @@ export class HomeComponent implements OnInit {
     } else {
       this.homeBlogs = jsonBlogs;
     }
+
+    this.fetchEvents();
+  }
+
+  fetchEvents() {
+    // Change for event
+    this.blogService.getEvents()
+      .subscribe(data => {
+        var res = JSON.parse(data.text());
+        console.log(res);
+        this.arrEvents = res.events;
+      }, error => {
+        console.log(error);
+      })
   }
 
   redirectToBlogPost(blog){
-    console.log(blog);  
+    console.log(blog);
     this.router.navigate(['blog/' + blog.idvalue]);
   }
 

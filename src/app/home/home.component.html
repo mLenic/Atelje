@@ -22,25 +22,32 @@
       </div>
       <div class="main-text">
         <p>
-          v preteklosti me je navdihnila moč hipnoze, ki sem jo imela priložnost spoznati v sklopu izobraževanja za medicinsko hipnozo pod mentorstvom prof. dr. Marjana Pajntarja. Navdušil me je s primeri iz svoje klinične prakse ter mi podal znanje in zaupanje v moč te čudovite, tisočletja znane terapevtske tehnike. Tehnike, ki je priznana kot medicinska in terapevtska metoda, hkrati pa ponuja neskončne možnosti za raziskovanje človekove duševnosti.  
+            Moje ime je Špela Verbnik. Trenutno zaključujem magistrski študij klinične psihologije na University of Bergamo, v Italiji.
+        </p>
+        <br>
+        <p>
+            Od nekdaj sem želela bolje razumeti sebe in druge ter svet v katerem živimo. Kmalu sem spoznala, da svet vidimo takšen, kakršni smo sami,
+            da ga doživljamo skozi sebe, svoja znanja, prepričanja, vrednote in izkušnje. Spraševala sem se, kako ustvarjamo svojo lastno percepcijo sveta in
+            če le ta res nastaja v naši podzavesti, kako lahko dostopamo in vplivamo na ta skrivnostni in najgloblji del nas.
+
         </p>
         <p>
-          Tako sem lani pridobila kar dva naziva: diplomirana biopsihologinja in terapevtka medicinske hipnoze. Svojo pot pa zdaj nadaljujem na magistrskem študiju klinične psihologije v Italiji.
+            Med iskanjem odgovorov na ta in mnoga druga vprašanja sem se srečala s hipnozo, ki kot priznana medicinska in terapevtska metoda,
+            ponuja neskončne možnosti za raziskovanje človekove duševnosti. Leta 2017 sem pod okriljem Društva za medicinsko hipnozo Slovenije,
+            ki predstavlja krovno organizacijo za strokovno izobraževanje na področju medicinske hipnoze v Sloveniji,
+            prejela strokovni naziv Terapevtka medicinske hipnoze.
         </p>
         <p>
-          Na tej spletni strani vam podarjam svoja znanja o hipnozi in drugih terapevtskih tehnikah ter z vami delim zvočne posnetke vodenih hipnotičnih seans. Zvočni posnetki so razdeljeni na tri kategorije: Samozavest, Jaz in Moje telo. Vsi spodbujajo naše skrite potenciale ter nove načine razmišljanja in vedenja.
-        </p>
-        <p>
-          Življenje je samo po sebi čarobna umetnost, in Terapevtski atelje je prostor, ki predstavlja vabilo k spremembi, usklajenosti s samim seboj in svetom k polnemu in srečnejšemu življenju.
+            S pridobitvijo omenjenega naziva pa se je moja želja po raziskovanja različnih stanj zavesti
+            in možnosti, ki jih le ta ponujajo, še stopnjevala. Od takrat sem svoje znanje hipnoze, samohipnoze in uporabe terapevtskih glasbil skozi različna
+            izobraževanja, v Evropi in Ameriki, še poglobila in jih sedaj združujem pri svojem delu.
         </p>
         <div class="img-signature-wrapper">
           <div class="spela-img-div">
             <img class="spela-img" src="assets/images/spela3.jpg">
           </div>
           <div class="signature-wrapper">
-          <p class="important-text">
-            Vabljeni, da skupaj ustvarjamo, stremimo k soncu in praznujemo vse dni svojega življenja.
-          </p>
+
           <div class="about-signature">
             <img class="about-signature-img" src="assets/images/podpis.svg">
           </div>
@@ -49,37 +56,47 @@
       </div>
     </div>
   </div>
-  <!-- about -->
-  <!--
-  <div class="deltoid-line deltoid-line-light-green">
-  </div>
-  -->
-  <div class="hypnosis-home-wrapper full-screen">
-    <div class="hypnosis-home">
-      <div class="title">
-        Hipnoza
-      </div>
-      <div class="hypnosis-home-content">
-        <p>
-        Hipnoza je stanje globoke sproščenosti, usmerjene pozornosti in 
-        sprejemljivosti za sugestije. 
-        </p>
-        <p>
-        Tukaj lahko najdete vse kar morate vedeti o hipnozi in zbirko zvočnih posnetkov vodenih hipnotičnih seans, s katerimi lahko dosežete velike spremembe.
-        </p>
-      </div>
-      <div class="hypnosis-home-button">
-        <a href="/hipnoza">
-          <button class="button-dark">več</button>
-        </a>
+
+  <div class="hypnosis-empty-div"></div>
+  <!-- EVENTS SECTION -->
+  <div class="blog-home-wrapper full-screen" *ngIf="arrEvents && arrEvents.length > 0">
+      <div class="blog-home-line">
+        <div class="blog-home">
+          <div class="title">
+            Dogodki
+          </div>
+          <div class="blog-posts-wrapper" [class.one-blog]="arrEvents.length == 1">
+              <div *ngFor='let event of arrEvents | slice:0:3' class="blog-element" (click)="redirectToEventPost(event)">
+                    <div class="blog-element-img-div">
+                      <img *ngIf="event.pictures.length == 0" class="blog-element-img" src="assets/images/forest_blur.jpg">
+                      <img *ngIf="event.pictures.length > 0"  class="blog-element-img" [src]="event.pictures[0].url">
+                    </div>
+                    <div class="blog-element-date">
+                        {{generalService.dateEventPipe(event)}}
+                      </div>
+                    <div class="blog-element-title">
+                      {{event.title}}
+                    </div>
+                    <div class="thin-black-line">
+                    </div>
+                    <div class="blog-element-description">
+                          {{event.description}}
+                    </div>
+                </div>
+            </div>
+          <div class="blog-link-button-div">
+            <a href="/dogodki">
+            <button class="button-dark">
+              VSI DOGODKI
+            </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- hypnosis-home -->
-  <!--
-  <div class="deltoid-line deltoid-line-light-green">
-  </div>
-  -->
+  <div class="hypnosis-empty-div"></div>
+
+  <!-- BLOG SECTION -->
   <div class="blog-home-wrapper full-screen">
     <div class="blog-home-line">
       <div class="blog-home">
@@ -104,7 +121,7 @@
                   <div class="thin-black-line">
                   </div>
                   <div class="blog-element-description">
-                        {{blog.description}} 
+                        {{blog.description}}
                   </div>
               </div>
           </div>
@@ -119,25 +136,4 @@
     </div>
   </div>
 
-  <!--<div class="hypnosis-home-wrapper full-screen">
-    <div class="hypnosis-home">
-      <div class="title">
-        Zvočni posnetki
-      </div>
-      <div class="hypnosis-home-content">
-        <p>
-        Hipnoza je stanje globoke sproščenosti, usmerjene pozornosti in 
-        sprejemljivosti za sugestije. 
-        </p>
-        <p>
-        Tukaj lahko najdete vse kar morate vedeti o hipnozi in zbirko zvočnih posnetkov vodenih hipnotičnih seans, s katerimi lahko dosežete velike spremembe.
-        </p>
-      </div>
-      <div class="hypnosis-home-button">
-        <a href="/hipnoza">
-          <button class="button-dark">več</button>
-        </a>
-      </div>
-    </div>
-  </div>-->
 </div>
