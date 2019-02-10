@@ -29,7 +29,7 @@ export class SelfConfidenceComponent implements OnInit {
       "description": "To je zelo sproščujoča tehnika. Poudarja zavedanje in občutenje vaših čudovitih lastnosti pa tudi občutek hvaležnosti, za vse to, kar smo.",
       "show": false
     },
-    
+
   ]
   recordingDescription: any[] = [
     {
@@ -40,7 +40,7 @@ export class SelfConfidenceComponent implements OnInit {
   constructor(private generalService: GeneralService) { }
 
   ngOnInit() {
-    this.generalService.currentLink = 'hypnosis';
+    this.generalService.currentLink = 'zvocniposnetki';
     this.currentlyShownElement = this.recordings[0];
   }
   displayPopup(){
@@ -49,7 +49,7 @@ export class SelfConfidenceComponent implements OnInit {
   elementClicked(element) {
     //if any other recording was shown close it
     if (this.currentlyShownElement != element && this.currentlyShownElement != null) {
-      this.currentlyShownElement.show = false;  
+      this.currentlyShownElement.show = false;
     }
     //show or hide this element
     element.show = !element.show;

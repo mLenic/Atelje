@@ -17,7 +17,7 @@
                 width: 100%;
             }
 
-            .hypnosis-content { 
+            .hypnosis-content {
                 margin-top: 20px;
 
                 .introduction-wrapper {
@@ -31,7 +31,7 @@
                     .introduction {
                         margin: auto;
                         width: $narrower-width;
-                        
+
                         @include breakpoint-960 {
                             width: 100%;
                             padding: $content-padding;
@@ -71,6 +71,37 @@
                     background-color: transparent;
                 }
 
+                .about-recordings-questions-wrapper {
+                  //padding-top: $nav-height;
+                  background-color: $white;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  padding-bottom: $content-padding;
+
+                  .about-recordings-questions-inner-wrapper{
+                      width: 100%;
+
+                      .about-recordings-content {
+                          width: $narrow-width;
+                          margin: auto;
+                          padding-top: 100px;
+
+                          @include breakpoint-768 {
+                              width: 100%;
+                              padding: 100px $content-padding-mobile 0 $content-padding-mobile;
+                          }
+
+                          .about-recordings-title {
+                              margin-bottom: 100px;
+                              width: 100%;
+                              text-align: center;
+                          }
+                      }
+                  }
+              }
+
                 .hypnosis-questions-wrapper {
                     background-color: $white;
                     padding: $content-padding;
@@ -100,7 +131,7 @@
                 .hypnosis-invitation-wrapper {
                     background-color: $white;
                     padding: $content-padding;
-                    
+
                     @include breakpoint-768 {
                         padding: $content-padding $content-padding-mobile;
                     }

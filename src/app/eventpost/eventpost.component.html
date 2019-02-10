@@ -48,6 +48,21 @@
                       <div *ngIf="formErrors.email" class="help-block alert alert-danger">{{ formErrors.email }}</div>
                     </div>
                     <br/>
+                    <div class="form-field">
+                      <div *ngIf="!formErrors.termsComplicance" class="help-block alert alert-danger">
+                        <label class="checkbox-container">Strinjam se s pogoji prijave.
+                          <input type="checkbox"  [formControl]="termsComplicance">
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+
+                      <div *ngIf="formErrors.termsComplicance" class="help-block alert alert-danger">
+                        <label class="checkbox-container checkbox-container-error">Strinjam se s pogoji prijave.
+                          <input type="checkbox"  [formControl]="termsComplicance">
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
                     <div class="send-button-wrapper">
                       <button class="message button-dark" style="cursor: pointer">Prijava</button>
                     </div>
@@ -58,7 +73,7 @@
         <div *ngIf="!currentEvent.applicationsOpen">
             <div class="contact-form-wrapper">
               <div class="contact-form-title title-small-closed">
-                Delavnica je polna  .
+                Delavnica je polna.
                 <br>
                 Za dodatne informacije se obrnite na spela@terapevtski-atelje.si.
               </div>

@@ -41,10 +41,10 @@ export class MyBodyComponent implements OnInit {
     private sanitizer:      DomSanitizer,) { }
 
   ngOnInit() {
-    this.generalService.currentLink = 'hypnosis';
+    this.generalService.currentLink = 'zvocniposnetki';
     this.currentlyShownElement = this.recordings[0];
   }
-  
+
   sanitizedUrl(url){
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
@@ -65,7 +65,7 @@ export class MyBodyComponent implements OnInit {
   elementClicked(element) {
     //if any other recording was shown close it
     if (this.currentlyShownElement != element && this.currentlyShownElement != null) {
-      this.currentlyShownElement.show = false;  
+      this.currentlyShownElement.show = false;
     }
     //show or hide this element
     element.show = !element.show;

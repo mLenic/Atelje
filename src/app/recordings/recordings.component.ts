@@ -12,8 +12,8 @@ export class RecordingsComponent implements OnInit {
   constructor(private generalService: GeneralService) { }
 
   ngOnInit() {
-    this.generalService.currentLink = 'hypnosis';
-    this.generalService.currentHypnosisSublink = 'recordings';
+    this.generalService.currentLink = 'zvocniposnetki';
+    //this.generalService.currentHypnosisSublink = 'recordings';
   }
 
 }

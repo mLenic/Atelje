@@ -181,11 +181,15 @@
 
   <div class="links-wrapper" [class.visible-navigation]="mobileNavigation">
     <div class="link">
-      <a href="/hipnoza" [class.active]="generalService.currentLink=='hypnosis'">hipnoza</a>
+      <a href="/hipnoza" [class.active]="generalService.currentLink=='hypnosis'">o hipnozi</a>
     </div>
     <div class="link">
-      <a href="/hipnoterapija" [class.active]="generalService.currentLink=='therapy'">hipnoterapija</a>
+      <a href="/individualno" [class.active]="generalService.currentLink=='therapy'">individualno</a>
     </div>
+    <div class="link">
+      <a href="/zvocniposnetki" [class.active]="generalService.currentLink=='zvocniposnetki'">posnetki</a>
+    </div>
+
     <div class="link">
       <a href="/dogodki" [class.active]="generalService.currentLink=='dogodki'">dogodki</a>
     </div>
@@ -199,6 +203,7 @@
   <div class="nav-mobile-icon" (click)="toggleMobileNavigation()">
     <img class="nav-icon" src="assets/images/menu-icon.svg"/>
   </div>
+  <!--
   <div class="hypnosis-subnavigation" [class.white]="whiteNavBg" [class.transition]="bgTransition" [class.visible-hypnosis-subnavigation]="generalService.currentLink=='hypnosis'">
     <div class="subnavigation-links-wrapper" [class.visible-navigation]="mobileNavigation">
       <div class="subnavigation-link" [class.black]="whiteNavBg" [class.active]="generalService.currentHypnosisSublink=='about-hypnosis'">
@@ -212,4 +217,5 @@
       </div>
     </div>
   </div>
+  -->
 </div>

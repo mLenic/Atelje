@@ -34,6 +34,7 @@ export class EventpostComponent implements OnInit {
   public applicationForm: FormGroup;
   public name:        FormControl;
   public email:       FormControl;
+  public termsComplicance: FormControl;
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -52,6 +53,7 @@ export class EventpostComponent implements OnInit {
   public response = {
     status: null,
     message: null,
+    termsComplicance: null,
   }
 
   public validationMessages = {
@@ -62,6 +64,9 @@ export class EventpostComponent implements OnInit {
     'email': {
         'required':     'Manjkajoč Email.',
         'email':        'Napačna oblika Email naslova.'
+    },
+    'termsComplicance': {
+        'required':     'Potrebno se je strinjati s pogoji.'
     }
 
   };
@@ -69,6 +74,7 @@ export class EventpostComponent implements OnInit {
   public formErrors = {
     'name': '',
     'email':'',
+    'termsComplicance': '',
   };
 
   private buildForm() {
@@ -82,9 +88,14 @@ export class EventpostComponent implements OnInit {
       Validators.email,
     ]);
 
+    this.termsComplicance = new FormControl(false, [
+      Validators.requiredTrue
+    ])
+
     this.applicationForm = this.fb.group({
       name: this.name,
       email: this.email,
+      termsComplicance: this.termsComplicance,
     });
 
   }
@@ -113,6 +124,7 @@ export class EventpostComponent implements OnInit {
   initializeForm(){
     this.applicationForm.controls['name'].setValue("");
     this.applicationForm.controls['email'].setValue("");
+    this.applicationForm.controls['termsComplicance'].setValue(false);
   }
 
   fetchEvent() {
@@ -157,6 +169,8 @@ export class EventpostComponent implements OnInit {
         id: this._routeId,
         name: this.applicationForm.controls['name'].value,
         email: this.applicationForm.controls['email'].value,
+        title: this.currentEvent.title,
+        termsComplicance: this.applicationForm.controls['termsComplicance'].value,
       }
 
       console.log("Sending mail");

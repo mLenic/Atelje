@@ -4,45 +4,18 @@
   </div>
   <div class="home-cover-text page-title-div">
     <div class="title">
-      Hipnoza
+      O hipnozi
     </div>
     <div class="title-line">
     </div>
     <div class="subtitle">
-      Kaj je hipnoza in zvočni posnetki
+      Nekaj besed o hipnozi in posnetkih
     </div>
   </div>
   <div class="hypnosis-inner-wrapper">
     <div class="hypnosis">
       <div class="hypnosis-content">
-        <div class="introduction-wrapper full-screen">
-          <div class="introduction">
-            <div class="introduction-element title-small">
-                S hipnozo rasti & strmeti k soncu 
-            </div>
-            <div class="gradient-line"></div>
-            <div class="introduction-element">
-              <p>
-                  Hipnoza je stanje globoke sproščenosti, usmerjene pozornosti in povečane sprejemljivosti za sugestije. Vsaka oseba, ki je zmožna razumeti hipnoterapevtove besede, je zmožna vstopiti v hipnotizirano stanje. Seveda, če si to želi in je primerno motivirana.   
-              </p>
-            </div>
-            <div class="introduction-element">
-              <p class="important-text">
-                  Hipnoza je primerna za vse, ki bi radi nekaj spremenili.
-              </p>                  
-            </div>
-            <div class="introduction-element">
-              <p>
-                  Na tej strani vam podarjam zvočne posnetke vodenih hipnotičnih seans. 
-                  <br>Svetujem, da si pred poslušanjem preberete nekaj besed 
-                  <span class="text-link" (click)="aboutHypnosisClicked(hypnosis)">o hipnozi</span> in <a href="/oposnetkih">
-                    <span class="text-link">zvočnih posnetkih</span></a>. 
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="hypnosis-empty-div">
-        </div>
+
         <div class="hypnosis-questions-wrapper full-screen">
           <div class="hypnosis-questions-inner-wrapper" #hypnosis>
             <div class="about-hypnosis-questions-title title-medium">
@@ -51,31 +24,22 @@
             <app-questions-answers-row [content]="content"></app-questions-answers-row>
           </div>
         </div>
+
         <div class="hypnosis-empty-div">
-        </div>
-        <div class="hypnosis-invitation-wrapper">
-          <div class="hypnosis-invitation full-screen">
-            <div class="invitation-div border-line">
-              <p class="invitation-div-text important-text">
-                  Bi bil to doprinos k vašemu življenju?  
-              </p>
-              <p class="invitation-div-text important-text">
-                  – Vabljeni k poslušanju.
-              </p>
-              <p class="invitation-div-text important-text">
-                  Morda pa je to tisto, kar potrebujete za velike spremembe.
-              </p>
-              <div class="invitation-buttons-div">
-                <a href="/oposnetkih">
-                  <button class="button-dark recordings-button">o posnetkih</button>
-                </a>
-                <a href="/zvocniposnetki">
-                <button class="button-dark recordings-button">posnetki</button>
-                </a>
+          </div>
+
+        <div class="about-recordings-questions-wrapper">
+          <div class="about-recordings-questions-inner-wrapper full-screen">
+            <div class="about-recordings-content">
+              <div class="about-recordings-title title-medium">
+                O posnetkih
               </div>
+              <app-questions-answers-row [content]="contentRecordings"></app-questions-answers-row>
             </div>
           </div>
         </div>
+
+
       </div>
     </div>
   </div>

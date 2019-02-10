@@ -44,7 +44,7 @@ export class MeComponent implements OnInit {
   constructor(private generalService: GeneralService) { }
 
   ngOnInit() {
-    this.generalService.currentLink = 'hypnosis';
+    this.generalService.currentLink = 'zvocniposnetki';
     this.currentlyShownElement = this.recordings[0];
   }
 
@@ -61,7 +61,7 @@ export class MeComponent implements OnInit {
   elementClicked(element) {
     //if any other recording was shown close it
     if (this.currentlyShownElement != element && this.currentlyShownElement != null) {
-      this.currentlyShownElement.show = false;  
+      this.currentlyShownElement.show = false;
     }
     //show or hide this element
     element.show = !element.show;

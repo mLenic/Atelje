@@ -30,7 +30,7 @@ const routes: Routes = [
      { path: 'blogpost',                                component: BlogpostComponent                        },
      { path: 'zvocniposnetki',                          component: RecordingsComponent                      },
      { path: 'recording',                               component: RecordingComponent                       },
-     { path: 'hipnoterapija',                           component: TherapyComponent                         },
+     { path: 'individualno',                            component: TherapyComponent                         },
      { path: 'oposnetkih',                              component: AboutRecordingsComponent                 },
      { path: 'zvocniposnetki/samozavest',               component: SelfConfidenceComponent                  },
      { path: 'zvocniposnetki/mojetelo',                 component: MyBodyComponent                          },
