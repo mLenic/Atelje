@@ -18,7 +18,7 @@ export class EventComponent implements OnInit {
   ) { }
 
   public arrEvents: Array<any>;
-  public months = ["Januar", "Februar", "Marec", "April", "Maj", "Junij", "Julij", "Avgust", "September", "Oktober", "November", "December" ];
+  public months = ["JANUAR", "FEBRUAR", "MAREC", "APRIL", "MAJ", "JUNIJ", "JULIJ", "AVGUST", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DECEMBER" ];
 
   ngOnInit(){
     this.generalService.currentLink = 'dogodki';
@@ -45,5 +45,15 @@ export class EventComponent implements OnInit {
   redirectToEvent(event){
     console.log(event);
     this.router.navigate(['dogodek/' + event.idvalue]);
+  }
+
+  getEventDay(event) {
+    var dt = new Date(event.dateEvent);
+    return dt.getDate();
+  }
+
+  getEventMonth(event) {
+    var dt = new Date(event.dateEvent);
+    return this.months[dt.getMonth()];
   }
 }

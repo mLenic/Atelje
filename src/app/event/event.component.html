@@ -15,13 +15,13 @@
   <div class="event-content" *ngIf="arrEvents && arrEvents.length > 0">
       <div class="event-posts-wrapper">
           <div *ngFor='let event of arrEvents' class="event-post-wrapper" (click)="redirectToEvent(event)">
-            <div class="event-element-date">
-              {{generalService.dateEventPipe(event)}}
-            </div>
+
             <div class="event-element">
               <div class="event-element-img-div">
-                <img *ngIf="event.pictures.length == 0" class="event-element-img" src="assets/images/forest_blur.jpg">
-                <img *ngIf="event.pictures.length > 0"  class="event-element-img" [src]="event.pictures[0].url">
+                <div class="event-element-date-div">
+                  <span class="event-date-day">{{ getEventDay(event) }}.</span>
+                  <span class="event-date-month">{{ getEventMonth(event) }}</span>
+                </div>
               </div>
               <div class="event-element-rest-div">
 

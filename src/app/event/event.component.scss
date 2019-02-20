@@ -27,10 +27,40 @@ p {
 
           .event-element-img-div {
             display: inline-block;
+            width: 100%;
+            @include breakpoint-960 {
+              margin-bottom: 30px;
+            }
 
-            img {
-              display: inline-block;
-              vertical-align: middle;
+
+            .event-element-date-div {
+              width: 100%;
+              background-color: #E5E9FC;
+              border: 1px solid black;
+              max-width: 400px;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+
+              @include breakpoint-960 {
+                  width: 100%;
+                  max-width: 1000px;
+              }
+
+              .event-date-day {
+                font-size: 450%;
+                line-height: inherit;
+                height: 50%;
+                font-family: PlayfairDisplay-Regular;
+              }
+              .event-date-month {
+                font-size: 300%;
+                line-height: inherit;
+                height: 50%;
+                font-family: PlayfairDisplay-Regular;
+              }
             }
           }
 

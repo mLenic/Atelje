@@ -12,6 +12,7 @@ $blogpost-header-height: 70vh;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: #E5E9FC;
 
         .eventpost-img-div {
             position: absolute;
@@ -62,7 +63,8 @@ $blogpost-header-height: 70vh;
     }
 
     .eventpost-content {
-        padding: $content-padding 0;
+        padding-top: $content-padding;
+        padding-bottom: 20px;
         width: $narrower-width;
         margin: auto;
 
@@ -73,6 +75,15 @@ $blogpost-header-height: 70vh;
         @include breakpoint-768 {
             width: 100%;
             padding: $content-padding $content-padding-mobile;
+        }
+
+        .gradient-line {
+          margin-bottom: 40px;
+          margin-top: 20px;
+        }
+
+        .eventpost-content-title {
+          text-align: center;
         }
 
         p {
@@ -141,6 +152,13 @@ $blogpost-header-height: 70vh;
               @include breakpoint-960 {
                   text-align: center;
               }
+          }
+
+          .termsandconditions {
+            label {
+              font-size: 10px !important;
+            }
+
           }
 
           .title-small-closed {

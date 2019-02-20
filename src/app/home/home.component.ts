@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
   public homeBlogs: Array<any> = new Array<any>();
   public arrEvents: Array<any> = new Array<any>();
 
+  public months = ["JANUAR", "FEBRUAR", "MAREC", "APRIL", "MAJ", "JUNIJ", "JULIJ", "AVGUST", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DECEMBER" ];
+
   ngOnInit() {
     this.generalService.currentLink = 'home';
     this.generalService.printCurrentLink();
@@ -66,4 +68,13 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['dogodek/' + event.idvalue]);
   }
 
+  getEventDay(event) {
+    var dt = new Date(event.dateEvent);
+    return dt.getDate();
+  }
+
+  getEventMonth(event) {
+    var dt = new Date(event.dateEvent);
+    return this.months[dt.getMonth()];
+  }
 }

@@ -66,23 +66,27 @@
             Dogodki
           </div>
           <div class="blog-posts-wrapper" [class.one-blog]="arrEvents.length == 1">
-              <div *ngFor='let event of arrEvents | slice:0:3' class="blog-element" (click)="redirectToEvent(event)">
+              <div *ngFor='let event of arrEvents | slice:0:3' class="blog-element event-element" (click)="redirectToEvent(event)">
                     <div class="blog-element-img-div">
-                      <img *ngIf="event.pictures.length == 0" class="blog-element-img" src="assets/images/forest_blur.jpg">
-                      <img *ngIf="event.pictures.length > 0"  class="blog-element-img" [src]="event.pictures[0].url">
-                    </div>
-                    <div class="blog-element-date">
-                        {{generalService.dateEventPipe(event)}}
+                      <div class="event-element-home-date-div">
+                        <span class="event-date-home-day">{{ getEventDay(event) }}. {{ getEventMonth(event) }}</span>
                       </div>
+                    </div>
+
                     <div class="blog-element-title">
                       {{event.title}}
                     </div>
+                    <div class="blog-element-date">
+                      {{event.subTitle}}
+                    </div>
                     <div class="thin-black-line">
                     </div>
+
+
                     <div class="blog-element-description">
-                          {{event.description}}
+                      {{event.description}}
                     </div>
-                </div>
+                                    </div>
             </div>
           <div class="blog-link-button-div">
             <a href="/dogodki">

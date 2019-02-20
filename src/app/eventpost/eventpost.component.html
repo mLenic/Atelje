@@ -2,14 +2,14 @@
   <div *ngIf="currentEvent != null">
     <div class="eventpost-header" >
         <div class="eventpost-img-div">
-            <img *ngIf="currentEvent.pictures.length == 0" class="eventpost-img" src="assets/images/birds_blur.jpg">
-            <img *ngIf="currentEvent.pictures.length > 0" class="eventpost-img" [src]="currentEvent.pictures[0].url">
+
 
         </div>
         <div class="light-bg-div">
           </div>
           <div class="eventpost-category">
-            {{generalService.dateEventPipe(currentEvent)}}
+            {{generalService.dateEventPipe(currentEvent)}} -
+            {{currentEvent.hourEvent}}
           </div>
           <div class="eventpost-title text">
             {{currentEvent.title}}
@@ -23,14 +23,9 @@
           </div>
 
       </div>
-      <div class="eventpost-content">
-        <p>
-        {{currentEvent.content}}
-        </p>
-      <br>
-      <br>
-      <br>
-        <div *ngIf="applicationsOpen && currentEvent.applicationsOpen">
+      <div *ngIf="currentEvent != null" [innerHTML]="currentEvent.content" class="eventpost-content"></div>
+
+        <div *ngIf="applicationsOpen && currentEvent.applicationsOpen" class="eventpost-content">
             <div class="contact-form-wrapper">
                 <div class="contact-form-title title-small">
                   Prijava na delavnico
@@ -49,18 +44,8 @@
                     </div>
                     <br/>
                     <div class="form-field">
-                      <div *ngIf="!formErrors.termsComplicance" class="help-block alert alert-danger">
-                        <label class="checkbox-container">Strinjam se s pogoji prijave.
-                          <input type="checkbox"  [formControl]="termsComplicance">
-                          <span class="checkmark"></span>
-                        </label>
-                      </div>
-
-                      <div *ngIf="formErrors.termsComplicance" class="help-block alert alert-danger">
-                        <label class="checkbox-container checkbox-container-error">Strinjam se s pogoji prijave.
-                          <input type="checkbox"  [formControl]="termsComplicance">
-                          <span class="checkmark"></span>
-                        </label>
+                      <div *ngIf="!formErrors.termsComplicance" class="help-block alert alert-danger termsandconditions">
+                        <label class="checkbox-container">* {{terms}}</label>
                       </div>
                     </div>
                     <div class="send-button-wrapper">
@@ -79,6 +64,6 @@
               </div>
             </div>
         </div>
-      </div>
+
   </div>
 </div>
