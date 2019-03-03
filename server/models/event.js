@@ -22,7 +22,7 @@ var eventSchema = new Schema({
 var Event = mongoose.model('Event', eventSchema);
 
 var fetchEvents = function(db){
-    return db.collection('event').find().sort({dateEvent: -1}).toArray();
+    return db.collection('event').find().sort({dateEvent: 1}).toArray();
 }
 
 var fetchEvent = function(db, id){
