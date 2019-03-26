@@ -17,7 +17,11 @@ export class EventComponent implements OnInit {
     private blogService:    BlogService,
   ) { }
 
-  public arrEvents: Array<any>;
+  public arrEvents: Array<any> = new Array();
+  public arrPastEvents: Array<any> = new Array();
+
+  public currentEventsSelected: boolean = true;
+
   public months = ["JANUAR", "FEBRUAR", "MAREC", "APRIL", "MAJ", "JUNIJ", "JULIJ", "AVGUST", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DECEMBER" ];
 
   ngOnInit(){
@@ -31,10 +35,20 @@ export class EventComponent implements OnInit {
     // Change for event
     this.blogService.getEvents()
       .subscribe(data => {
-        console.log("data events recieved");
         var res = JSON.parse(data.text());
-        console.log(res);
-        this.arrEvents = res.events;
+
+        var events = res.events;
+        if(events && events.length > 0) {
+          var dtNow = new Date();
+          events.forEach(event => {
+            var dtEvent = new Date(event.dateEvent);
+            if(dtEvent > dtNow) {
+              this.arrEvents.push(event);
+            } else {
+              this.arrPastEvents.push(event);
+            }
+          });
+        }
 
       }, error => {
         console.log("error blogposts recieved");
@@ -55,5 +69,10 @@ export class EventComponent implements OnInit {
   getEventMonth(event) {
     var dt = new Date(event.dateEvent);
     return this.months[dt.getMonth()];
+  }
+
+  showEvents(showCurrent) {
+    console.log("settings current events");
+    this.currentEventsSelected = showCurrent;
   }
 }

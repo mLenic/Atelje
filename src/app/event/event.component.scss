@@ -26,9 +26,42 @@ p {
         background-color: $white;
         padding: $content-padding 0;
 
+        .event-posts-selected {
+          display: none;
+        }
+
+        .events-tabs{
+          width: 80%;
+          margin: auto;
+          font-family: PlayfairDisplay-Regular;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 35px;
+          text-align: center;
+
+          .event-current-tab {
+            float: left;
+          }
+          .event-past-tab {
+            float:right;
+          }
+
+          .event-tab {
+            width: 50%;
+            height: $content-padding;
+            cursor: pointer;
+            padding-bottom: $content-padding;
+          }
+          .event-tab-selected {
+            background: linear-gradient(to top, rgba(229,233,252,0.6) 0%, rgba(255,255,255,1) 100%);
+          }
+        }
+
         .event-element {
           width: $narrower-width;
-
+          @include breakpoint-768 {
+            width:100%;
+          }
 
           .event-element-img-div {
             display: inline-block;
@@ -85,9 +118,34 @@ p {
             margin: 60px auto;
         }
         .event-posts-wrapper{
+          padding-top: $content-padding;
             .blog-element{
                 cursor: pointer;
             }
         }
     }
+}
+
+.panel-animation-fadein {
+  animation: fadein 2s;
+}
+.panel-animation-fadeout {
+  animation: fadeout 2s;
+}
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to  {
+    opacity: 0;
+  }
 }

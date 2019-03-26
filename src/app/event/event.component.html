@@ -13,7 +13,23 @@
     </div>
   </div>
   <div class="event-content" *ngIf="arrEvents && arrEvents.length > 0">
-      <div class="event-posts-wrapper">
+
+    <div class="events-tabs">
+        <div class="event-tab event-current-tab " [class.event-tab-selected]="currentEventsSelected" (click)="showEvents(true);">
+          <div class="event-element-title" (click)="showEvents(true);">
+            Prihajajoči dogodki
+          </div>
+        </div>
+        <div class="event-tab  event-past-tab" [class.event-tab-selected]="!currentEventsSelected" (click)="showEvents(false);">
+            <div class="event-element-title" (click)="showEvents(true);">
+              Pretekli dogodki
+              </div>
+        </div>
+
+    </div>
+
+
+      <div *ngIf="currentEventsSelected" class="event-posts-wrapper" [ngClass]="{'panel-animation-fadein' : currentEventsSelected, 'panel-animation-fadeout' : !currentEventsSelected}">
           <div *ngFor='let event of arrEvents' class="event-post-wrapper" (click)="redirectToEvent(event)">
 
             <div class="event-element">
@@ -45,5 +61,37 @@
 
         </div>
     </div>
+    <div *ngIf="!currentEventsSelected" class="event-posts-wrapper" [ngClass]="{'panel-animation-fadein' : !currentEventsSelected, 'panel-animation-fadeout' : currentEventsSelected}">
+      <div *ngFor='let event of arrPastEvents' class="event-post-wrapper" (click)="redirectToEvent(event)">
+
+        <div class="event-element">
+          <div class="event-element-img-div">
+            <div class="event-element-date-div">
+              <span class="event-date-day">{{ getEventDay(event) }}.</span>
+              <span class="event-date-month">{{ getEventMonth(event) }}</span>
+            </div>
+          </div>
+          <div class="event-element-rest-div">
+
+            <div class="event-element-title">
+              {{event.title}}
+            </div>
+            <div class="event-element-subtitle">
+              {{event.subTitle}}
+            </div>
+            <div class="event-element-description">
+                {{event.description}}
+            </div>
+
+          </div>
+
+          <div class="thin-black-line">
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
   </div>
 </div>
