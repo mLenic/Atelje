@@ -92,7 +92,7 @@ export class EventpostComponent implements OnInit {
   }
 
   private onValueChanged(data?: any) {
-      console.log("value changed");
+
       if (!this.applicationForm) { return; }
       const form = this.applicationForm;
 
@@ -120,7 +120,7 @@ export class EventpostComponent implements OnInit {
   fetchEvent() {
     this.blogService.getEvent(this._routeId)
         .subscribe((data) => {
-          console.log(data);
+
           var res = JSON.parse(data.text());
           if(res.event.length > 0) {
             this.currentEvent = res.event[0];
@@ -128,11 +128,9 @@ export class EventpostComponent implements OnInit {
             this.router.navigate(['/dogodki']);
           }
 
-          console.log(this.currentEvent);
           var eventDt = new Date(this.currentEvent.dateEvent);
-          console.log(eventDt);
+
           if(eventDt > new Date()) {
-            console.log("Applications open!");
             this.applicationsOpen = true;
           }
         })
@@ -152,7 +150,6 @@ export class EventpostComponent implements OnInit {
         termsComplicance: true,
       }
 
-      console.log("Sending mail");
       this.contactService.sendApplicationMail(form)
                   .subscribe(data => {
                     if(data == 200){

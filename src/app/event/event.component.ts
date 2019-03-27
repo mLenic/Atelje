@@ -57,7 +57,6 @@ export class EventComponent implements OnInit {
   }
 
   redirectToEvent(event){
-    console.log(event);
     this.router.navigate(['dogodek/' + event.idvalue]);
   }
 
@@ -72,7 +71,6 @@ export class EventComponent implements OnInit {
   }
 
   showEvents(showCurrent) {
-    console.log("settings current events");
     this.currentEventsSelected = showCurrent;
   }
 }
