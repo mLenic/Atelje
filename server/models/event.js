@@ -48,8 +48,8 @@ var initEvent = function(db){
       applicationsOpen: true,
       pictures: [{url: 'https://atelje-psihoterapije.s3.amazonaws.com/mak.jpg'},
                   {url: 'https://atelje-psihoterapije.s3.amazonaws.com/mak.jpg'}],
-      applications: [{name: 'Matevz', surname: 'Lenic', email: 'mta_lenko@hotmail.com'},
-                    {name: 'Spela', surname: 'Verbnik', email: 'spela.verbnik@gmail.com'}]
+      applications: [{name: 'Matevz', surname: 'Lenic', email: ''},
+                    {name: 'Spela', surname: 'Verbnik', email: ''}]
   });
 
   console.log('Inserting event to db.');

@@ -46,7 +46,7 @@ getDatabase = function() {
 app.set('port', process.env.PORT || 3000)
 
 /**
- * Routes that handle blog
+ * Routes that handle events
  * /event - returns an array of all events from database
  * /event/:id - Returns a single event that matches the provided id
  * */
@@ -56,6 +56,10 @@ router.get('/event', function (req, res) {
   log.saveLog("Fetch: events", db, req);
   event.fetchEvents(db)
     .then((events) => {
+      events.forEach(event => {
+        event.applications = [];
+      });
+
       res.json({
         message: 'success',
         events: events,
@@ -83,7 +87,9 @@ router.get('/event/:id', function(req, res){
             res.json({
               message: 'failure',
             })
-          } else {
+          } else {;
+            event[0].applications = [];
+
             res.status(200);
             res.json({
               message: 'success',
