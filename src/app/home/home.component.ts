@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
       .subscribe(data => {
         var res = JSON.parse(data.text());
         console.log(res);
-        this.arrEvents = res.events;
+        this.arrEvents = res.events.reverse();
       }, error => {
         console.log(error);
       })
