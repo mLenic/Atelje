@@ -21,6 +21,7 @@ export class EventComponent implements OnInit {
   public arrPastEvents: Array<any> = new Array();
 
   public currentEventsSelected: boolean = true;
+  public showDefaultImage: boolean = true;
 
   public months = ["JANUAR", "FEBRUAR", "MAREC", "APRIL", "MAJ", "JUNIJ", "JULIJ", "AVGUST", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DECEMBER" ];
 
@@ -29,6 +30,7 @@ export class EventComponent implements OnInit {
     this.generalService.printCurrentLink();
 
     this.fetchEvents();
+    this.showDefaultImage = window.innerHeight > window.innerWidth;
   }
 
   fetchEvents() {

@@ -8,7 +8,7 @@
     }
 
     .title-line {
-        width: 430px;
+        width: 185px;
 
         @include breakpoint-768 {
             width: 350px;
@@ -23,7 +23,7 @@
         .therapy-content {
             width: $narrower-width;
             margin: auto;
-    
+
             @include breakpoint-960 {
                 width: 100%;
                 padding: $content-padding;
@@ -33,7 +33,7 @@
                 width: 100%;
                 padding: $content-padding $content-padding-mobile;
             }
-    
+
 
             .therapy-line {
                 margin: 70px 0;
@@ -43,6 +43,24 @@
                 margin: 0 0 30px 0;
                 text-align: center;
             }
+
+            .img-signature-wrapper {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              .spela-img-div {
+                  width: 250px;
+                  margin: 30px auto 0 auto;
+
+                  .spela-img {
+                      width: 100%;
+                      height: auto;
+                      border-radius: 50%;
+                      border: 1px solid black;
+                  }
+              }
+          }
 
             .border-div {
                 width: 50%;

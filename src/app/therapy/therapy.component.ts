@@ -9,10 +9,13 @@ import { GeneralService } from '../core/service/general.service';
 })
 export class TherapyComponent implements OnInit {
 
+  public showDefaultImage: boolean = true;
+
   constructor(private generalService: GeneralService) { }
 
   ngOnInit() {
     this.generalService.currentLink = 'therapy';
+    this.showDefaultImage = window.innerHeight > window.innerWidth;
   }
 
 }

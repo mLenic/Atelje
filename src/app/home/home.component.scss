@@ -9,7 +9,7 @@
         }
 
         .title-line {
-            width: 530px;
+            width: 675px;
             margin: 5px 0;
 
             @include breakpoint-768 {
@@ -33,6 +33,7 @@
 
         .about-home {
             width: $narrower-width;
+            margin-bottom: 50px;
 
             @include breakpoint-768 {
                 width: 100%;

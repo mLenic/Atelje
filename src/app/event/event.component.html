@@ -1,15 +1,12 @@
 <div class="event-wrapper">
   <div class="bg-img-div">
-    <img class="bg-img" src="assets/images/dogodki.jpg">
+    <img *ngIf="!showDefaultImage" class="bg-img" src="assets/images/dfs3rz/meditation.jpg">
+    <img *ngIf="showDefaultImage" class="bg-img" src="assets/images/dfs3rz/terapevtske_meditacije_img.jpg">
   </div>
   <div class="home-cover-text page-title-div">
     <div class="title">
-      Dogodki
-    </div>
-    <div class="title-line">
     </div>
     <div class="subtitle">
-      Srečanja in delavnice
     </div>
   </div>
   <div class="event-content" *ngIf="arrEvents && arrEvents.length > 0">

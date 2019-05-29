@@ -19,23 +19,23 @@ import { MeComponent } from './recordings/all-recordings/me/me.component';
 import { MyBodyComponent } from './recordings/all-recordings/my-body/my-body.component';
 
 const routes: Routes = [
-     { path: '',                                        redirectTo: '/domov',        pathMatch: 'full'      },
-     { path: 'domov',                                   component: HomeComponent                            },
+     { path: '',                                        component: HomeComponent                            },
      { path: 'hipnoza',                                 component: AboutComponent                           },
      { path: 'kontakt',                                 component: ContactComponent                         },
      { path: 'dogodki',                                 component: EventComponent                           },
      { path: 'dogodek/:id',                             component: EventpostComponent                       },
-     { path: 'blog',                                    component: BlogComponent                            },
-     { path: 'blog/:id',                                component: BlogpostComponent                        },
-     { path: 'blogpost',                                component: BlogpostComponent                        },
-     { path: 'zvocniposnetki',                          component: RecordingsComponent                      },
-     { path: 'recording',                               component: RecordingComponent                       },
-     { path: 'individualno',                            component: TherapyComponent                         },
-     { path: 'oposnetkih',                              component: AboutRecordingsComponent                 },
-     { path: 'zvocniposnetki/samozavest',               component: SelfConfidenceComponent                  },
-     { path: 'zvocniposnetki/mojetelo',                 component: MyBodyComponent                          },
-     { path: 'zvocniposnetki/jaz',                      component: MeComponent                              },
-     { path: 'hidden',                                  loadChildren: './hidden/hidden.module#HiddenModule' },
+     { path: 'omeni',                                 component: TherapyComponent                         },
+     //{ path: 'blog',                                    component: BlogComponent                            },
+     //{ path: 'blog/:id',                                component: BlogpostComponent                        },
+     //{ path: 'blogpost',                                component: BlogpostComponent                        },
+     //{ path: 'zvocniposnetki',                          component: RecordingsComponent                      },
+     //{ path: 'recording',                               component: RecordingComponent                       },
+
+     //{ path: 'oposnetkih',                              component: AboutRecordingsComponent                 },
+     //{ path: 'zvocniposnetki/samozavest',               component: SelfConfidenceComponent                  },
+     ///{ path: 'zvocniposnetki/mojetelo',                 component: MyBodyComponent                          },
+     //{ path: 'zvocniposnetki/jaz',                      component: MeComponent                              },
+     //{ path: 'hidden',                                  loadChildren: './hidden/hidden.module#HiddenModule' },
      { path: '**',                                      component: HomeComponent                            }
 ];
 
