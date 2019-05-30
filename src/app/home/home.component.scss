@@ -135,7 +135,7 @@
         .blog-home-line {
             border-style: solid;
             border-width: 3px;
-            border-image: linear-gradient(to right, $pastel-pink 0%, $pastel-purple 20%, $pastel-blue 80%, $pastel-green 100%);
+            border-image: linear-gradient(to right, $purple 0%, $purple 20%, $purple 80%, $purple 100%);
             border-image-slice: 1;
             width: calc(100vw - 100px);
             margin: 50px 0;
@@ -176,6 +176,7 @@
             .blog-posts-wrapper{
                 .blog-element{
                     cursor: pointer;
+                    margin-bottom: 30px;
                 }
             }
         }

@@ -279,7 +279,7 @@ a {
 .gradient-line {
     height: 2px;
     width: 100%;
-    background: linear-gradient(to right, $pastel-pink, $pastel-purple, $pastel-blue, $pastel-green); /* Standard syntax (must be last) */
+    background: linear-gradient(to right, $purple, $purple, $purple, $purple); /* Standard syntax (must be last) */
 }
 
 .border-line {
@@ -422,7 +422,7 @@ a {
     margin: auto;
 
     .event-element{
-      border: 2px solid #E5E9FC;
+      border: 2px solid $purple;
     }
 
     .blog-element {

@@ -23,12 +23,12 @@
           </div>
 
       </div>
-      <div *ngIf="currentEvent != null" [innerHTML]="currentEvent.content" class="eventpost-content"></div>
+      <div *ngIf="currentEvent != null" [innerHTML]="currentEvent.content" class="eventpost-content" ></div>
 
-        <div *ngIf="applicationsOpen && currentEvent.applicationsOpen" class="eventpost-content">
+        <div *ngIf="applicationsOpen && currentEvent.applicationsOpen" class="eventpost-content" >
             <div class="contact-form-wrapper">
-                <div class="contact-form-title title-small">
-                  Prijava na delavnico
+                <div class="contact-form-title title-small" style="padding-top: 0px; text-align: center;">
+                  Prijava na dogodek
                 </div>
                 <form name="applicationForm" [formGroup]="applicationForm" (ngSubmit)="sendApplicationMail()">
                     <div class="form-field">
@@ -55,7 +55,7 @@
                 </form>
               </div>
         </div>
-        <div *ngIf="!currentEvent.applicationsOpen" class="eventpost-content">
+        <div *ngIf="!currentEvent.applicationsOpen" class="eventpost-content" style="padding-top: 0px;">
             <div class="contact-form-wrapper">
               <div class="contact-form-title title-small-closed">
                 Delavnica je polna.

@@ -54,13 +54,13 @@ p {
           }
           .event-tab-selected {
 
-            background: rgba(229,233,252,0.6);
+            background: rgba(245, 247, 253, 0.6);
             background: -moz-linear-gradient(top, rgba(229,233,252,0.6) 0%, rgba(255,255,255,1) 100%);
-            background: -webkit-gradient(top, color-stop(0%, rgba(229,233,252,0.6)), color-stop(100%, rgba(255,255,255,1)));
-            background: -webkit-linear-gradient(top, rgba(229,233,252,0.6) 0%, rgba(255,255,255,1) 100%);
-            background: -o-linear-gradient(top, rgba(229,233,252,0.6) 0%, rgba(255,255,255,1) 100%);
-            background: -ms-linear-gradient(top, rgba(229,233,252,0.6) 0%, rgba(255,255,255,1) 100%);
-            background: linear-gradient(to top, rgba(229,233,252,0.6) 0%, rgba(255,255,255,1) 100%);
+            background: -webkit-gradient(top, color-stop(0%, rgba(245, 247, 253, 0.6)), color-stop(100%, rgba(255,255,255,1)));
+            background: -webkit-linear-gradient(top, rgba(245, 247, 253, 0.6) 0%, rgba(255,255,255,1) 100%);
+            background: -o-linear-gradient(top, rgba(245, 247, 253, 0.6) 0%, rgba(255,255,255,1) 100%);
+            background: -ms-linear-gradient(top, rgba(245, 247, 253, 0.6) 0%, rgba(255,255,255,1) 100%);
+            background: linear-gradient(to top, rgba(245, 247, 253, 0.6) 0%, rgba(255,255,255,1) 100%);
           }
         }
 
@@ -71,6 +71,7 @@ p {
           }
 
           .event-element-img-div {
+            background-color: rgb(245, 247, 253);
             display: inline-block;
             width: 100%;
             @include breakpoint-960 {

@@ -50,12 +50,17 @@ export class EventComponent implements OnInit {
               this.arrPastEvents.push(event);
             }
           });
+          console.log(this.arrPastEvents);
         }
-
+        this.arrPastEvents.sort(this.date_sort_event);
       }, error => {
         console.log("error blogposts recieved");
         console.log(error);
       })
+  }
+
+  date_sort_event(event1: any, event2: any) {
+      return new Date(event2.dateEvent).getTime() - new Date(event1.dateEvent).getTime();
   }
 
   redirectToEvent(event){
