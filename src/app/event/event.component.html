@@ -1,25 +1,17 @@
 <div class="event-wrapper">
-  <div class="bg-img-div">
-    <img *ngIf="!showDefaultImage" class="bg-img" src="assets/images/dfs3rz/meditation.jpg">
-    <img *ngIf="showDefaultImage" class="bg-img" src="assets/images/dfs3rz/terapevtske_meditacije_img.jpg">
-  </div>
-  <div class="home-cover-text page-title-div">
-    <div class="title">
-    </div>
-    <div class="subtitle">
-    </div>
-  </div>
   <div class="event-content" *ngIf="arrEvents && arrEvents.length > 0">
-
+      <div class="title-smaller event-title">
+          DOGODKI
+        </div>
     <div class="events-tabs">
         <div class="event-tab event-current-tab " [class.event-tab-selected]="currentEventsSelected" (click)="showEvents(true);">
           <div class="event-element-title" (click)="showEvents(true);">
-            Prihajajoči dogodki
+            Prihajajoči
           </div>
         </div>
         <div class="event-tab  event-past-tab" [class.event-tab-selected]="!currentEventsSelected" (click)="showEvents(false);">
             <div class="event-element-title" (click)="showEvents(true);">
-              Pretekli dogodki
+              Pretekli
               </div>
         </div>
 
